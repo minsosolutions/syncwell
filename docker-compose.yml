@@ -1,0 +1,16 @@
+# Ports are overridable: if one is already taken on your machine, put a line like
+# MOCKAPI_PORT=9099 in a .env file next to this one rather than editing this file.
+services:
+  mockapi:
+    build: .
+    ports:
+      - "${MOCKAPI_PORT:-8099}:8080"
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "${MAILPIT_SMTP_PORT:-1025}:1025"   # SMTP
+      - "${MAILPIT_UI_PORT:-8025}:8025"     # web UI
