@@ -1,0 +1,39 @@
+{
+  "vendor": {
+    "name": "Minso",
+    "domain": "minso.se",
+    "product": "Grantly"
+  },
+  "customers": [
+    {
+      "slug": "nordstad",
+      "name": "Nordstad kommun",
+      "kind": "municipality",
+      "domains": ["nordstad.se"],
+      "slack_channel_prefix": "cust-nordstad-",
+      "zammad_organization": "Nordstad kommun"
+    },
+    {
+      "slug": "ebbahus",
+      "name": "Ebbahus Stiftelse",
+      "kind": "private-foundation",
+      "domains": ["ebbahus.se"],
+      "slack_channel_prefix": "cust-ebbahus-",
+      "zammad_organization": "Ebbahus Stiftelse"
+    },
+    {
+      "slug": "utvecklingsverket",
+      "name": "Regionalt Utvecklingsverket",
+      "kind": "national-agency",
+      "domains": ["utvecklingsverket.se", "ruv.se"],
+      "slack_channel_prefix": "cust-utvecklingsverket-",
+      "zammad_organization": "Regionalt Utvecklingsverket"
+    }
+  ],
+  "routing": {
+    "slack": "channel_prefix",
+    "zammad": "organization_then_email_domain",
+    "email": "peer_email_domain",
+    "transcripts": "attendee_email_domain"
+  }
+}
