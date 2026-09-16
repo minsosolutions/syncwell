@@ -1,0 +1,5 @@
+# Customer isolation lives in the Routing Rule, not in Source authentication
+
+Real Sources are multi-tenant: one Slack workspace carries every Customer's channels, one Zammad instance carries every Customer's tickets. We considered modelling isolation as per-Customer API credentials, which would make cross-Customer reads impossible at the Source, but no such credentials exist in the systems we actually integrate with — it would have been a fiction that taught the wrong lesson.
+
+So Collectors read across all Customers and the Routing Rule is the sole point where separation is decided. Isolation then becomes structural one step later: an Agent is handed a single Customer Directory and has no path to any other. The trade-off is that a wrong Routing Rule is now a leak, which is why the rule is deterministic code over stable Source metadata (channel name, Zammad organization, sender domain), never a model's judgement, and why a Source Record that does not route to exactly one Customer goes to Quarantine rather than to a guess.
