@@ -1,0 +1,24 @@
+[
+  {
+    "type": "message",
+    "user": "U09HNYB01",
+    "text": "the deadline for the innovationsutlysning was yesterday 23:59. two applicants claim they submitted in time, we have nothing registered on our side",
+    "ts": "1786707600.000137",
+    "thread_ts": "1786707600.000137",
+    "reply_count": 2
+  },
+  {
+    "type": "message",
+    "user": "U04SHOLM1",
+    "text": "we can check the logs for those users, send me the org numbers",
+    "ts": "1786709100.000274",
+    "thread_ts": "1786707600.000137"
+  },
+  {
+    "type": "message",
+    "user": "U09HNYB01",
+    "text": "the problem for us is evidentiary. if we can't show when an application was received we can't defend a rejection if it goes to förvaltningsrätten",
+    "ts": "1786713600.000411",
+    "thread_ts": "1786707600.000137"
+  }
+]

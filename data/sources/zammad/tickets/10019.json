@@ -1,0 +1,28 @@
+{
+  "id": 10019,
+  "number": "10019",
+  "title": "September invoice is missing the VAT line",
+  "group_id": 3,
+  "state": "new",
+  "priority": "2 normal",
+  "customer_id": 20,
+  "organization_id": 2,
+  "created_at": "2026-09-15T13:10:00+02:00",
+  "updated_at": "2026-09-15T13:10:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 98,
+      "ticket_id": 10019,
+      "from": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "September invoice is missing the VAT line",
+      "body": "<p>Hello,</p><p>The invoice we received this morning shows a total but no VAT specification. Our auditor requires the VAT amount and rate to be stated separately.</p><p>Could you send a corrected invoice?</p><p>Kind regards,<br>Gustav Ebbe<br>Director, Ebbahus Stiftelse<br>gustav.ebbe@ebbahus.se</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-09-15T13:10:00+02:00"
+    }
+  ]
+}

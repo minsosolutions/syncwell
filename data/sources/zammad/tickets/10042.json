@@ -1,0 +1,93 @@
+{
+  "id": 10042,
+  "number": "10042",
+  "title": "Bulk export of applications times out",
+  "group_id": 2,
+  "state": "solved",
+  "priority": "3 high",
+  "customer_id": 11,
+  "organization_id": 1,
+  "created_at": "2026-08-04T08:20:00+02:00",
+  "updated_at": "2026-08-19T15:45:00+02:00",
+  "close_at": "2026-08-19T15:45:00+02:00",
+  "articles": [
+    {
+      "id": 34,
+      "ticket_id": 10042,
+      "from": "Per Ek <per.ek@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Bulk export of applications times out",
+      "body": "<p>Hi,</p><p>Our monthly export of all applications in the spring round fails. I pick the round, choose Excel, and after about two minutes the browser shows the Grantly error page. Tried four times yesterday and twice this morning.</p><p>We need this for the council reporting, so it is fairly urgent.</p><p>--<br>Per Ek<br>IT, Nordstad kommun</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-04T08:20:00+02:00"
+    },
+    {
+      "id": 35,
+      "ticket_id": 10042,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "Per Ek <per.ek@nordstad.se>",
+      "subject": "Re: Bulk export of applications times out",
+      "body": "<p>Hi Per,</p><p>I can see the failures in the logs, the request is cut off at 120 seconds by the gateway. Your spring round has just over 9 300 applications, which is by some margin the largest export we run for any customer.</p><p>I am looking at where the time goes. Will come back this week.</p><p>Regards,<br>Jonas Frid</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-05T10:35:00+02:00"
+    },
+    {
+      "id": 36,
+      "ticket_id": 10042,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "",
+      "subject": "Bulk export of applications times out",
+      "body": "<p>Profiled it. The attachment count subquery ran once per application row. Rewrote it as a single aggregate and added an index on <code>application_id</code>. Export of the full spring round now runs in 38 s locally against a copy of their data, down from well over three minutes.</p><p>Goes out with the release on the 18th.</p>",
+      "content_type": "text/html",
+      "type": "note",
+      "sender": "Agent",
+      "internal": true,
+      "created_at": "2026-08-12T17:05:00+02:00"
+    },
+    {
+      "id": 37,
+      "ticket_id": 10042,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "Per Ek <per.ek@nordstad.se>",
+      "subject": "Re: Bulk export of applications times out",
+      "body": "<p>Hi Per,</p><p>The fix is in production as of this morning. The export query was doing one extra lookup per application row; that is now a single aggregate with a new index behind it.</p><p>Could you run your export once and confirm?</p><p>Regards,<br>Jonas</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-18T09:00:00+02:00"
+    },
+    {
+      "id": 38,
+      "ticket_id": 10042,
+      "from": "Per Ek <per.ek@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Bulk export of applications times out",
+      "body": "Ran it just now and got the file. Much better, thanks.\n\n/Per",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-19T14:10:00+02:00"
+    },
+    {
+      "id": 39,
+      "ticket_id": 10042,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "Per Ek <per.ek@nordstad.se>",
+      "subject": "Re: Bulk export of applications times out",
+      "body": "<p>Great. Root cause was an N+1 query in the export job, fixed and verified with the full spring round on your production data. The export is comfortably inside the gateway timeout now, so this should not come back.</p><p>Closing as solved.</p><p>Regards,<br>Jonas Frid<br>Minso</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-19T15:45:00+02:00"
+    }
+  ]
+}

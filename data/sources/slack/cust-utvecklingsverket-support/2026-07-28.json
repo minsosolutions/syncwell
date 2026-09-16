@@ -1,0 +1,14 @@
+[
+  {
+    "type": "message",
+    "user": "U09HNYB01",
+    "text": "we have around 40 new handläggare starting in august. what's the smoothest way to create accounts in bulk?",
+    "ts": "1785226500.000137"
+  },
+  {
+    "type": "message",
+    "user": "U04SHOLM1",
+    "text": "csv import under admin. i'll send you the template. roles have to be set after the import unfortunately, that part is manual",
+    "ts": "1785228480.000274"
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "id": 10010,
+  "number": "10010",
+  "title": "The portal loses documents on submit",
+  "group_id": 1,
+  "state": "open",
+  "priority": "3 high",
+  "customer_id": 20,
+  "organization_id": 2,
+  "created_at": "2026-07-24T09:30:00+02:00",
+  "updated_at": "2026-07-28T10:25:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 5,
+      "ticket_id": 10010,
+      "from": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "The portal loses documents on submit",
+      "body": "<p>Dear Minso,</p><p>Three of our grantees have sent their annual accounts twice now because the documents are not in the case afterwards. I suspect it is our own doing, we export from our old Acrobat plugin and the resulting files are enormous, often scans of signed pages.</p><p>Before I go and buy a new PDF tool for the foundation, could you confirm whether the portal has a size ceiling we are running into? I would rather fix it on our side than bother you.</p><p>Kind regards,<br>Gustav Ebbe<br>Director, Ebbahus Stiftelse</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-07-24T09:30:00+02:00"
+    },
+    {
+      "id": 6,
+      "ticket_id": 10010,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "subject": "Re: The portal loses documents on submit",
+      "body": "<p>Dear Gustav,</p><p>There is a documented ceiling of 25 MB per document, and files above it are rejected with a visible message. If your grantees see no message at all then this is something else.</p><p>Do the grantees remember roughly how long they had the form open before sending? And could you ask one of them to try again immediately after reloading the page?</p><p>Kind regards,<br>Sara Holm<br>Support lead, Minso</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-07-24T15:10:00+02:00"
+    },
+    {
+      "id": 7,
+      "ticket_id": 10010,
+      "from": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: The portal loses documents on submit",
+      "body": "I asked two of them. Both said they had been working in the form \"most of the morning\" before sending. One tried again after reloading and it worked on the first attempt.\n\nI still think our scans are heavier than they should be, we are 40 MB for a set of accounts sometimes. But that does not explain the silence.\n\nGustav",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-07-27T11:20:00+02:00"
+    },
+    {
+      "id": 8,
+      "ticket_id": 10010,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "",
+      "subject": "The portal loses documents on submit",
+      "body": "<p>Same pattern as the case we have open with the municipality: long-idle form, large document, no error surfaced. Gustav is convinced it is his own PDF tooling, I have not argued because we do not have a confirmed root cause yet.</p>",
+      "content_type": "text/html",
+      "type": "note",
+      "sender": "Agent",
+      "internal": true,
+      "created_at": "2026-07-28T10:00:00+02:00"
+    },
+    {
+      "id": 9,
+      "ticket_id": 10010,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "subject": "Re: The portal loses documents on submit",
+      "body": "<p>Dear Gustav,</p><p>Please hold off on buying anything. Reloading before sending is a workaround that seems to work, and the pattern you describe (long time in the form, then a large document, then silence) is something we are actively looking into on our side.</p><p>Kind regards,<br>Sara</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-07-28T10:25:00+02:00"
+    }
+  ]
+}

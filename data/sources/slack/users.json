@@ -1,0 +1,132 @@
+[
+  {
+    "id": "U04RBAUHN",
+    "name": "robin.bauhn",
+    "real_name": "Robin Bauhn",
+    "is_bot": false,
+    "profile": {
+      "email": "robin@minso.se",
+      "title": "Project manager"
+    }
+  },
+  {
+    "id": "U04SHOLM1",
+    "name": "sara.holm",
+    "real_name": "Sara Holm",
+    "is_bot": false,
+    "profile": {
+      "email": "sara.holm@minso.se",
+      "title": "Support lead"
+    }
+  },
+  {
+    "id": "U04JFRID2",
+    "name": "jonas.frid",
+    "real_name": "Jonas Frid",
+    "is_bot": false,
+    "profile": {
+      "email": "jonas.frid@minso.se",
+      "title": "Backend engineer"
+    }
+  },
+  {
+    "id": "U04MBERG3",
+    "name": "mia.berg",
+    "real_name": "Mia Berg",
+    "is_bot": false,
+    "profile": {
+      "email": "mia.berg@minso.se",
+      "title": "Customer success"
+    }
+  },
+  {
+    "id": "U07ALIND1",
+    "name": "anna.lind",
+    "real_name": "Anna Lind",
+    "is_bot": false,
+    "profile": {
+      "email": "anna.lind@nordstad.se",
+      "title": "grants manager"
+    }
+  },
+  {
+    "id": "U07PEREK2",
+    "name": "per.ek",
+    "real_name": "Per Ek",
+    "is_bot": false,
+    "profile": {
+      "email": "per.ek@nordstad.se",
+      "title": "IT"
+    }
+  },
+  {
+    "id": "U07KSJO33",
+    "name": "karin.sjo",
+    "real_name": "Karin Sjö",
+    "is_bot": false,
+    "profile": {
+      "email": "karin.sjo@nordstad.se",
+      "title": "caseworker"
+    }
+  },
+  {
+    "id": "U08GEBBE1",
+    "name": "gustav.ebbe",
+    "real_name": "Gustav Ebbe",
+    "is_bot": false,
+    "profile": {
+      "email": "gustav.ebbe@ebbahus.se",
+      "title": "director"
+    }
+  },
+  {
+    "id": "U08NDAHL2",
+    "name": "nina.dahl",
+    "real_name": "Nina Dahl",
+    "is_bot": false,
+    "profile": {
+      "email": "nina.dahl@ebbahus.se",
+      "title": "program officer"
+    }
+  },
+  {
+    "id": "U09HNYB01",
+    "name": "hakan.nyberg",
+    "real_name": "Håkan Nyberg",
+    "is_bot": false,
+    "profile": {
+      "email": "hakan.nyberg@utvecklingsverket.se",
+      "title": "programme director"
+    }
+  },
+  {
+    "id": "U09ESUND2",
+    "name": "elin.sund",
+    "real_name": "Elin Sund",
+    "is_bot": false,
+    "profile": {
+      "email": "elin.sund@utvecklingsverket.se",
+      "title": "DPO"
+    }
+  },
+  {
+    "id": "U09TAHL33",
+    "name": "tobias.ahl",
+    "real_name": "Tobias Ahl",
+    "is_bot": false,
+    "profile": {
+      "email": "tobias.ahl@ruv.se",
+      "title": "architect"
+    }
+  },
+  {
+    "id": "B02GRNTLY",
+    "name": "grantly-bot",
+    "real_name": "Grantly Bot",
+    "is_bot": true,
+    "profile": {
+      "email": "grantly-bot@minso.se",
+      "title": "Grantly release and alert bot"
+    }
+  }
+]

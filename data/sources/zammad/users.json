@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "email": "sara.holm@minso.se",
+    "firstname": "Sara",
+    "lastname": "Holm",
+    "organization_id": null,
+    "active": true,
+    "roles": [
+      "Agent"
+    ]
+  },
+  {
+    "id": 2,
+    "email": "jonas.frid@minso.se",
+    "firstname": "Jonas",
+    "lastname": "Frid",
+    "organization_id": null,
+    "active": true,
+    "roles": [
+      "Agent"
+    ]
+  },
+  {
+    "id": 3,
+    "email": "mia.berg@minso.se",
+    "firstname": "Mia",
+    "lastname": "Berg",
+    "organization_id": null,
+    "active": true,
+    "roles": [
+      "Agent"
+    ]
+  },
+  {
+    "id": 4,
+    "email": "robin@minso.se",
+    "firstname": "Robin",
+    "lastname": "Bauhn",
+    "organization_id": null,
+    "active": true,
+    "roles": [
+      "Agent",
+      "Admin"
+    ]
+  },
+  {
+    "id": 10,
+    "email": "anna.lind@nordstad.se",
+    "firstname": "Anna",
+    "lastname": "Lind",
+    "organization_id": 1,
+    "active": true,
+    "roles": [
+      "Customer"
+    ]
+  },
+  {
+    "id": 11,
+    "email": "per.ek@nordstad.se",
+    "firstname": "Per",
+    "lastname": "Ek",
+    "organization_id": 1,
+    "active": true,
+    "roles": [
+      "Customer"
+    ]
+  },
+  {
+    "id": 12,
+    "email": "karin.sjo@nordstad.se",
+    "firstname": "Karin",
+    "lastname": "Sjö",
+    "organization_id": 1,
+    "active": true,
+    "roles": [
+      "Customer"
+    ]
+  },
+  {
+    "id": 20,
+    "email": "gustav.ebbe@ebbahus.se",
+    "firstname": "Gustav",
+    "lastname": "Ebbe",
+    "organization_id": 2,
+    "active": true,
+    "roles": [
+      "Customer"
+    ]
+  },
+  {
+    "id": 21,
+    "email": "nina.dahl@ebbahus.se",
+    "firstname": "Nina",
+    "lastname": "Dahl",
+    "organization_id": 2,
+    "active": true,
+    "roles": [
+      "Customer"
+    ]
+  },
+  {
+    "id": 30,
+    "email": "hakan.nyberg@utvecklingsverket.se",
+    "firstname": "Håkan",
+    "lastname": "Nyberg",
+    "organization_id": 3,
+    "active": true,
+    "roles": [
+      "Customer"
+    ]
+  },
+  {
+    "id": 31,
+    "email": "elin.sund@utvecklingsverket.se",
+    "firstname": "Elin",
+    "lastname": "Sund",
+    "organization_id": 3,
+    "active": true,
+    "roles": [
+      "Customer"
+    ]
+  },
+  {
+    "id": 32,
+    "email": "tobias.ahl@ruv.se",
+    "firstname": "Tobias",
+    "lastname": "Ahl",
+    "organization_id": 3,
+    "active": true,
+    "roles": [
+      "Customer"
+    ]
+  },
+  {
+    "id": 40,
+    "email": "karin.sjo@hotmail.com",
+    "firstname": "Karin",
+    "lastname": "Sjö",
+    "organization_id": null,
+    "active": true,
+    "roles": [
+      "Customer"
+    ]
+  }
+]

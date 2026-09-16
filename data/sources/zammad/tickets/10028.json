@@ -1,0 +1,67 @@
+{
+  "id": 10028,
+  "number": "10028",
+  "title": "Bulk letter generation queues but never finishes",
+  "group_id": 2,
+  "state": "pending reminder",
+  "priority": "3 high",
+  "customer_id": 32,
+  "organization_id": 3,
+  "created_at": "2026-09-08T08:15:00+02:00",
+  "updated_at": "2026-09-09T09:20:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 91,
+      "ticket_id": 10028,
+      "from": "Tobias Ahl <tobias.ahl@ruv.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Bulk letter generation queues but never finishes",
+      "body": "<p>Hi,</p><p>Generated decision letters for 1 800 cases at 17:00 on Friday. The job is still shown as queued this morning, three days later. No error, no progress. We cancelled and retried once with the same result.</p><p>The regional offices are waiting to send these out.</p><p>--<br>Tobias Ahl<br>Architect, Regionalt Utvecklingsverket</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-09-08T08:15:00+02:00"
+    },
+    {
+      "id": 92,
+      "ticket_id": 10028,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "Tobias Ahl <tobias.ahl@ruv.se>",
+      "subject": "Re: Bulk letter generation queues but never finishes",
+      "body": "<p>Hi Tobias,</p><p>Found it. One case in the batch has a decision template that references a field removed in your last configuration change. The worker throws on that case and the retry loop keeps putting the whole batch back in the queue.</p><p>I have taken the offending case out of the batch and restarted the job, letters are generating now. The real fix is that one bad case should not stall the batch; we are logging that.</p><p>Regards,<br>Jonas</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-09-08T10:30:00+02:00"
+    },
+    {
+      "id": 93,
+      "ticket_id": 10028,
+      "from": "Tobias Ahl <tobias.ahl@ruv.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Bulk letter generation queues but never finishes",
+      "body": "All 1 799 letters are out. The remaining case is RUV-2026-0904, we will handle it manually.\n\nLeave the ticket open until the batch handling is fixed, please.\n\n/Tobias",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-09-08T16:45:00+02:00"
+    },
+    {
+      "id": 94,
+      "ticket_id": 10028,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "",
+      "subject": "Bulk letter generation queues but never finishes",
+      "body": "<p>Keeping open per customer request, pending the worker fix. Reminder 22 Sep.</p>",
+      "content_type": "text/html",
+      "type": "note",
+      "sender": "Agent",
+      "internal": true,
+      "created_at": "2026-09-09T09:20:00+02:00"
+    }
+  ]
+}

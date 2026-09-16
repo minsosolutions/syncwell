@@ -1,0 +1,54 @@
+{
+  "id": 10016,
+  "number": "10016",
+  "title": "Can we cap the total awarded amount per programme?",
+  "group_id": 1,
+  "state": "closed",
+  "priority": "1 low",
+  "customer_id": 21,
+  "organization_id": 2,
+  "created_at": "2026-08-27T09:25:00+02:00",
+  "updated_at": "2026-08-31T15:30:00+02:00",
+  "close_at": "2026-08-31T15:30:00+02:00",
+  "articles": [
+    {
+      "id": 74,
+      "ticket_id": 10016,
+      "from": "Nina Dahl <nina.dahl@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Can we cap the total awarded amount per programme?",
+      "body": "<p>Hi,</p><p>Our board sets a yearly ceiling per programme. Today we keep track in a spreadsheet and it is easy to approve past the ceiling by mistake. Is there a setting where Grantly warns or blocks when the sum of approved decisions in a programme passes a number we set?</p><p>Best,<br>Nina</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-27T09:25:00+02:00"
+    },
+    {
+      "id": 75,
+      "ticket_id": 10016,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "Nina Dahl <nina.dahl@ebbahus.se>",
+      "subject": "Re: Can we cap the total awarded amount per programme?",
+      "body": "<p>Hi Nina,</p><p>Yes. Under <em>Programme &gt; Budget</em> you set an annual frame, and you choose whether passing it gives a warning at decision time or blocks the decision entirely. The counter includes approved decisions in the current year, not drafts.</p><p>I have set the frame for your two programmes to warning mode in your test environment so you can see how it looks before deciding.</p><p>Best,<br>Mia</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-28T14:05:00+02:00"
+    },
+    {
+      "id": 76,
+      "ticket_id": 10016,
+      "from": "Nina Dahl <nina.dahl@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Can we cap the total awarded amount per programme?",
+      "body": "Tested it, warning mode is exactly what we want. Please switch it on in production for both programmes.\n\nAnd thank you for setting it up in test first, that made the decision easy.\n\n/Nina",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-31T15:30:00+02:00"
+    }
+  ]
+}

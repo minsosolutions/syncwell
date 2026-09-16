@@ -1,0 +1,17 @@
+[
+  {
+    "type": "message",
+    "user": "U09ESUND2",
+    "text": "for the migrated records, do they inherit the new retention period or the old one? i need this in writing before 1 october",
+    "ts": "1789389000.000137",
+    "thread_ts": "1789389000.000137",
+    "reply_count": 1
+  },
+  {
+    "type": "message",
+    "user": "U04JFRID2",
+    "text": "i'd say the new one but don't quote me on it. robin can you confirm with legal?",
+    "ts": "1789391400.000274",
+    "thread_ts": "1789389000.000137"
+  }
+]

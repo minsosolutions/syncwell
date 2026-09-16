@@ -1,0 +1,24 @@
+[
+  {
+    "type": "message",
+    "user": "U08NDAHL2",
+    "text": "the bookkeeping file for july looks odd, there are two rows for the same disbursement",
+    "ts": "1785917640.000137",
+    "thread_ts": "1785917640.000137",
+    "reply_count": 2
+  },
+  {
+    "type": "message",
+    "user": "U04JFRID2",
+    "text": "i see it, the job seems to have run twice on the 1st. i'm temporarily disabling the nightly bookkeeping export job while i debug this, otherwise we keep writing duplicates into your ledger",
+    "ts": "1785919920.000274",
+    "thread_ts": "1785917640.000137"
+  },
+  {
+    "type": "message",
+    "user": "U08NDAHL2",
+    "text": "ok, thanks for looking at it so fast",
+    "ts": "1785920580.000411",
+    "thread_ts": "1785917640.000137"
+  }
+]

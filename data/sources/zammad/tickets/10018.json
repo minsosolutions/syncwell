@@ -1,0 +1,54 @@
+{
+  "id": 10018,
+  "number": "10018",
+  "title": "Excel export of grantees mangles Swedish characters",
+  "group_id": 1,
+  "state": "solved",
+  "priority": "2 normal",
+  "customer_id": 20,
+  "organization_id": 2,
+  "created_at": "2026-09-07T15:20:00+02:00",
+  "updated_at": "2026-09-10T11:40:00+02:00",
+  "close_at": "2026-09-10T11:40:00+02:00",
+  "articles": [
+    {
+      "id": 88,
+      "ticket_id": 10018,
+      "from": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Excel export of grantees mangles Swedish characters",
+      "body": "<p>Hello,</p><p>The grantee list exported to Excel turns åäö into strange character pairs. \"Bröderna Öberg\" becomes something unreadable. It looked fine last spring.</p><p>Kind regards,<br>Gustav Ebbe</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-09-07T15:20:00+02:00"
+    },
+    {
+      "id": 89,
+      "ticket_id": 10018,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "subject": "Re: Excel export of grantees mangles Swedish characters",
+      "body": "<p>Hi Gustav,</p><p>Are you opening the file directly in Excel, or importing it? We send UTF-8 CSV, and Excel on Windows assumes the old Windows encoding unless the file carries a byte order mark.</p><p>We can add the byte order mark to the export, which makes Excel open it correctly on double-click. I have asked for it to be added.</p><p>Best,<br>Mia</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-09-08T10:05:00+02:00"
+    },
+    {
+      "id": 90,
+      "ticket_id": 10018,
+      "from": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Excel export of grantees mangles Swedish characters",
+      "body": "The new export opens correctly, names look right. Thank you for the quick turn.\n\nGustav Ebbe\nDirector, Ebbahus Stiftelse",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-09-10T11:40:00+02:00"
+    }
+  ]
+}

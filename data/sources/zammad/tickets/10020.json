@@ -1,0 +1,67 @@
+{
+  "id": 10020,
+  "number": "10020",
+  "title": "Retention period for rejected applications",
+  "group_id": 2,
+  "state": "solved",
+  "priority": "2 normal",
+  "customer_id": 31,
+  "organization_id": 3,
+  "created_at": "2026-08-12T09:40:00+02:00",
+  "updated_at": "2026-08-14T15:20:00+02:00",
+  "close_at": "2026-08-14T15:20:00+02:00",
+  "articles": [
+    {
+      "id": 53,
+      "ticket_id": 10020,
+      "from": "Elin Sund <elin.sund@utvecklingsverket.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Retention period for rejected applications",
+      "body": "<p>Hello,</p><p>As part of preparing our updated processing agreement I need a written statement of how long personal data in <em>rejected</em> applications is retained in Grantly before it is erased.</p><p>Our own documentation, which we took from your platform documentation last autumn, says 24 months. A colleague claims it is longer now. I need the correct figure and what it is based on, since it goes into an annex that our lawyers will read.</p><p>Best regards,<br>Elin Sund<br>Data protection officer, Regionalt Utvecklingsverket</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-12T09:40:00+02:00"
+    },
+    {
+      "id": 54,
+      "ticket_id": 10020,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "",
+      "subject": "Retention period for rejected applications",
+      "body": "<p>Checking with Jonas before answering. The default changed in the July release and I want the release note reference in the reply, not just my memory.</p>",
+      "content_type": "text/html",
+      "type": "note",
+      "sender": "Agent",
+      "internal": true,
+      "created_at": "2026-08-12T14:05:00+02:00"
+    },
+    {
+      "id": 55,
+      "ticket_id": 10020,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "Elin Sund <elin.sund@utvecklingsverket.se>",
+      "subject": "Re: Retention period for rejected applications",
+      "body": "<p>Hello Elin,</p><p>Your colleague is right. The platform default retention for rejected applications is <strong>36 months</strong> from the decision date, counted from when the decision is registered.</p><p>It was 24 months until the <strong>July 2026 release (2026.7, released 14 July)</strong>, where the default was raised to 36 months following the review of archival obligations for public-sector customers. The change is listed in the release notes for 2026.7 under \"Retention defaults\". Existing tenants, including yours, were migrated to the new default at the same time, so your environment is on 36 months today.</p><p>Two things worth putting in your annex:</p><p>1. The 36 months is a tenant-level setting and can be lowered for your tenant on request, with a documented decision from you.<br>2. Attachments follow the application record, they are not kept longer.</p><p>Note that any documentation of ours that still states 24 months predates the July release and is out of date. Please use this reply as the reference.</p><p>Regards,<br>Jonas Frid<br>Backend engineer, Minso</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-13T11:20:00+02:00"
+    },
+    {
+      "id": 56,
+      "ticket_id": 10020,
+      "from": "Elin Sund <elin.sund@utvecklingsverket.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Retention period for rejected applications",
+      "body": "&gt; The platform default retention for rejected applications is 36 months from the decision date\n\nThank you, that is exactly what I needed, and good that you gave the release reference. I will cite 2026.7 in the annex.\n\nI will come back separately about the processing agreement itself.\n\nElin Sund\nData protection officer",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-14T15:20:00+02:00"
+    }
+  ]
+}

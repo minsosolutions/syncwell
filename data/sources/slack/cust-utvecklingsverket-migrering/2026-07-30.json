@@ -1,0 +1,24 @@
+[
+  {
+    "type": "message",
+    "user": "U04JFRID2",
+    "text": "first test load of the legacy dataset is done. 214k records in, 1.3k rejected on validation",
+    "ts": "1785396000.000137",
+    "thread_ts": "1785396000.000137",
+    "reply_count": 2
+  },
+  {
+    "type": "message",
+    "user": "U09TAHL33",
+    "text": "what's in the rejected pile?",
+    "ts": "1785396900.000274",
+    "thread_ts": "1785396000.000137"
+  },
+  {
+    "type": "message",
+    "user": "U04JFRID2",
+    "text": "mostly missing organisationsnummer and a handful of date formats we don't accept. sending you the list",
+    "ts": "1785398520.000411",
+    "thread_ts": "1785396000.000137"
+  }
+]

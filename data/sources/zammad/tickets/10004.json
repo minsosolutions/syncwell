@@ -1,0 +1,54 @@
+{
+  "id": 10004,
+  "number": "10004",
+  "title": "New grant category for Kultur och fritid",
+  "group_id": 2,
+  "state": "pending reminder",
+  "priority": "2 normal",
+  "customer_id": 10,
+  "organization_id": 1,
+  "created_at": "2026-08-03T11:05:00+02:00",
+  "updated_at": "2026-08-12T09:10:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 31,
+      "ticket_id": 10004,
+      "from": "Anna Lind <anna.lind@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "New grant category for Kultur och fritid",
+      "body": "<p>Hi,</p><p>The council decided in June that cultural associations will apply through Grantly from the autumn round instead of by paper. We need a new category with its own form, its own decision template and its own budget ceiling.</p><p>Who do we talk to about the form design? Our unit for culture and leisure wants three extra questions on the form.</p><p>Best regards,<br>Anna Lind</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-03T11:05:00+02:00"
+    },
+    {
+      "id": 32,
+      "ticket_id": 10004,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "Anna Lind <anna.lind@nordstad.se>",
+      "subject": "Re: New grant category for Kultur och fritid",
+      "body": "<p>Hi Anna,</p><p>Happy to hear it. The category itself is configuration and I can set it up in a day once we have the form fields. The three extra questions are fine as long as they are of the standard field types.</p><p>Could you send the field list with type and whether each is mandatory? Then we do it in your test environment first and you review it there.</p><p>Best,<br>Mia</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-04T15:30:00+02:00"
+    },
+    {
+      "id": 33,
+      "ticket_id": 10004,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "",
+      "subject": "New grant category for Kultur och fritid",
+      "body": "<p>Waiting on the field list from the culture unit. Anna says it is with them. Reminder set for the 26th; if nothing by then this will not make the autumn round and someone needs to say that out loud.</p>",
+      "content_type": "text/html",
+      "type": "note",
+      "sender": "Agent",
+      "internal": true,
+      "created_at": "2026-08-12T09:10:00+02:00"
+    }
+  ]
+}

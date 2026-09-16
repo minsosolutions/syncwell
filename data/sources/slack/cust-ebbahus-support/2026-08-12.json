@@ -1,0 +1,20 @@
+[
+  {
+    "type": "message",
+    "user": "U08GEBBE1",
+    "text": "one of our applicants says the portal lost their attachments when they sent the application in. have you seen that before?",
+    "ts": "1786533720.000137"
+  },
+  {
+    "type": "message",
+    "user": "U04SHOLM1",
+    "text": "not that i know of. do you have the application number?",
+    "ts": "1786538400.000274"
+  },
+  {
+    "type": "message",
+    "user": "U08GEBBE1",
+    "text": "i'll ask her. honestly it's probably our own pdf export, it produces quite heavy files and we've never really tuned it",
+    "ts": "1786545000.000411"
+  }
+]

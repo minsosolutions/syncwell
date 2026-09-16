@@ -1,0 +1,14 @@
+[
+  {
+    "type": "message",
+    "user": "U04JFRID2",
+    "text": "third load: 219k in, 180 rejected. the remaining ones look like genuinely bad data to me",
+    "ts": "1788851700.000137"
+  },
+  {
+    "type": "message",
+    "user": "U09TAHL33",
+    "text": "agreed, we'll clean those manually on our side. it's a known mess from the 2011 system",
+    "ts": "1788853440.000274"
+  }
+]

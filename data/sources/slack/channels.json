@@ -1,0 +1,123 @@
+[
+  {
+    "id": "C0NORDSUP1",
+    "name": "cust-nordstad-support",
+    "created": 1768345200,
+    "is_shared": true,
+    "topic": {
+      "value": "Grantly support — Nordstad kommun"
+    },
+    "purpose": {
+      "value": "Day-to-day support for Nordstad kommun. Bugs, questions, portal incidents. For delivery and plan topics use #cust-nordstad-leverans."
+    },
+    "members": [
+      "U04RBAUHN",
+      "U04SHOLM1",
+      "U04JFRID2",
+      "U04MBERG3",
+      "U07ALIND1",
+      "U07PEREK2",
+      "U07KSJO33",
+      "B02GRNTLY"
+    ]
+  },
+  {
+    "id": "C0NORDLEV1",
+    "name": "cust-nordstad-leverans",
+    "created": 1768345200,
+    "is_shared": true,
+    "topic": {
+      "value": "Leverans Nordstad — launch 2026, data migration"
+    },
+    "purpose": {
+      "value": "Delivery track for Nordstad kommun: plan, milestones, launch and the migration of the old case system."
+    },
+    "members": [
+      "U04RBAUHN",
+      "U04MBERG3",
+      "U04JFRID2",
+      "U07ALIND1",
+      "U07PEREK2"
+    ]
+  },
+  {
+    "id": "C0EBBASUP1",
+    "name": "cust-ebbahus-support",
+    "created": 1770073200,
+    "is_shared": true,
+    "topic": {
+      "value": "Grantly + Ebbahus Stiftelse"
+    },
+    "purpose": {
+      "value": "Shared channel with Ebbahus Stiftelse. Support, the bookkeeping export integration and everything else."
+    },
+    "members": [
+      "U04RBAUHN",
+      "U04SHOLM1",
+      "U04JFRID2",
+      "U04MBERG3",
+      "U08GEBBE1",
+      "U08NDAHL2",
+      "B02GRNTLY"
+    ]
+  },
+  {
+    "id": "C0UTVSUPP1",
+    "name": "cust-utvecklingsverket-support",
+    "created": 1773010800,
+    "is_shared": true,
+    "topic": {
+      "value": "Grantly support — Regionalt Utvecklingsverket"
+    },
+    "purpose": {
+      "value": "Support for Regionalt Utvecklingsverket. Incidents, user administration, compliance questions."
+    },
+    "members": [
+      "U04RBAUHN",
+      "U04SHOLM1",
+      "U04MBERG3",
+      "U09HNYB01",
+      "U09ESUND2",
+      "B02GRNTLY"
+    ]
+  },
+  {
+    "id": "C0UTVMIGR1",
+    "name": "cust-utvecklingsverket-migrering",
+    "created": 1776636000,
+    "is_shared": true,
+    "topic": {
+      "value": "Migrering av ärendedata — RUV → Grantly"
+    },
+    "purpose": {
+      "value": "Working channel for the migration of legacy case data from the old RUV system into Grantly. Test loads, validation, cutover planning."
+    },
+    "members": [
+      "U04RBAUHN",
+      "U04JFRID2",
+      "U04MBERG3",
+      "U09HNYB01",
+      "U09TAHL33",
+      "U09ESUND2"
+    ]
+  },
+  {
+    "id": "C0SYNCINT1",
+    "name": "syncwell-internt",
+    "created": 1762038000,
+    "is_shared": false,
+    "topic": {
+      "value": "Minso internt — kunder, leverans, support"
+    },
+    "purpose": {
+      "value": "Internal Minso channel. Weekly planning, customer status, anything we do not want in a shared channel."
+    },
+    "members": [
+      "U04RBAUHN",
+      "U04SHOLM1",
+      "U04JFRID2",
+      "U04MBERG3",
+      "B02GRNTLY"
+    ]
+  }
+]

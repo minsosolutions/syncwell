@@ -1,0 +1,54 @@
+{
+  "id": 10026,
+  "number": "10026",
+  "title": "Role for regional offices with read-only on other regions",
+  "group_id": 1,
+  "state": "closed",
+  "priority": "1 low",
+  "customer_id": 30,
+  "organization_id": 3,
+  "created_at": "2026-08-27T11:35:00+02:00",
+  "updated_at": "2026-09-02T14:00:00+02:00",
+  "close_at": "2026-09-02T14:00:00+02:00",
+  "articles": [
+    {
+      "id": 77,
+      "ticket_id": 10026,
+      "from": "Håkan Nyberg <hakan.nyberg@utvecklingsverket.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Role for regional offices with read-only on other regions",
+      "body": "<p>Hello,</p><p>Our six regional offices handle their own cases but need to see what the other regions have decided, for consistency. Today they either see everything with full rights or only their own region.</p><p>Is a read-only view across regions possible without giving edit rights?</p><p>Best regards,<br>Håkan Nyberg</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-27T11:35:00+02:00"
+    },
+    {
+      "id": 78,
+      "ticket_id": 10026,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "Håkan Nyberg <hakan.nyberg@utvecklingsverket.se>",
+      "subject": "Re: Role for regional offices with read-only on other regions",
+      "body": "<p>Hi Håkan,</p><p>Yes, that is the <em>Regional handler</em> role combined with the <em>Cross-region read</em> permission. The combination gives edit rights inside the user's own region and read-only everywhere else. Decisions and attachments are visible, internal notes from other regions are not.</p><p>Do you want me to set it up for one office first so you can look at it?</p><p>Best,<br>Mia</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-28T10:20:00+02:00"
+    },
+    {
+      "id": 79,
+      "ticket_id": 10026,
+      "from": "Håkan Nyberg <hakan.nyberg@utvecklingsverket.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Role for regional offices with read-only on other regions",
+      "body": "We tried it in the north office and it is exactly right. Please apply it to the remaining five.\n\nHåkan Nyberg\nProgramme director",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-09-02T14:00:00+02:00"
+    }
+  ]
+}

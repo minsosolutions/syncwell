@@ -1,0 +1,54 @@
+{
+  "id": 10006,
+  "number": "10006",
+  "title": "Caseworker cannot see cases assigned to a colleague",
+  "group_id": 1,
+  "state": "closed",
+  "priority": "2 normal",
+  "customer_id": 12,
+  "organization_id": 1,
+  "created_at": "2026-08-17T15:25:00+02:00",
+  "updated_at": "2026-08-20T11:00:00+02:00",
+  "close_at": "2026-08-20T11:00:00+02:00",
+  "articles": [
+    {
+      "id": 57,
+      "ticket_id": 10006,
+      "from": "Karin Sjö <karin.sjo@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Caseworker cannot see cases assigned to a colleague",
+      "body": "Hi,\n\nI am covering for a colleague who is on leave until September. I can find her cases in the search but when I open one I get \"You do not have access to this case\". Applicant 2026-0455 has called twice asking for a decision and I cannot even read the file.\n\nCan you give me access to her cases for the rest of August?\n\nKarin",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-17T15:25:00+02:00"
+    },
+    {
+      "id": 58,
+      "ticket_id": 10006,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "Karin Sjö <karin.sjo@nordstad.se>",
+      "subject": "Re: Caseworker cannot see cases assigned to a colleague",
+      "body": "<p>Hi Karin,</p><p>Access to another caseworker's cases is granted by a unit administrator in Grantly, we cannot do it from our side without an approval from you. Anna Lind is an administrator for your unit, she can add you as a deputy under <em>Unit &gt; Deputies</em>.</p><p>I have written a short note on how to do it below, feel free to forward it to her.</p><p>Kind regards,<br>Sara Holm</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-18T09:15:00+02:00"
+    },
+    {
+      "id": 59,
+      "ticket_id": 10006,
+      "from": "Karin Sjö <karin.sjo@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Caseworker cannot see cases assigned to a colleague",
+      "body": "Anna added me as deputy this morning and I can open them now. Thanks.",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-20T11:00:00+02:00"
+    }
+  ]
+}

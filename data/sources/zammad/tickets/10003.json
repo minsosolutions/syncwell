@@ -1,0 +1,54 @@
+{
+  "id": 10003,
+  "number": "10003",
+  "title": "Decision letter PDF uses the old municipal logo",
+  "group_id": 1,
+  "state": "solved",
+  "priority": "1 low",
+  "customer_id": 12,
+  "organization_id": 1,
+  "created_at": "2026-07-30T13:12:00+02:00",
+  "updated_at": "2026-08-04T10:30:00+02:00",
+  "close_at": "2026-08-04T10:30:00+02:00",
+  "articles": [
+    {
+      "id": 25,
+      "ticket_id": 10003,
+      "from": "Karin Sjö <karin.sjo@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Decision letter PDF uses the old municipal logo",
+      "body": "Hi,\n\nThe decision letters we generate still have the old coat of arms in the header. We changed our graphic profile in May and communications is on my back about it.\n\nI have attached the new logo files in the formats our comms unit delivered.\n\nBest,\nKarin",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-07-30T13:12:00+02:00"
+    },
+    {
+      "id": 26,
+      "ticket_id": 10003,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "Karin Sjö <karin.sjo@nordstad.se>",
+      "subject": "Re: Decision letter PDF uses the old municipal logo",
+      "body": "<p>Hi Karin,</p><p>New logo is in place in your letter template in production since this morning. I generated a test decision letter on a draft case and it looks correct, but please have your comms unit confirm the placement before you send a real batch.</p><p>Best,<br>Mia Berg<br>Customer success, Minso</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-03T09:40:00+02:00"
+    },
+    {
+      "id": 27,
+      "ticket_id": 10003,
+      "from": "Karin Sjö <karin.sjo@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Decision letter PDF uses the old municipal logo",
+      "body": "Comms approved it. Thank you!",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-04T10:30:00+02:00"
+    }
+  ]
+}

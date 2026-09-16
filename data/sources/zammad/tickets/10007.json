@@ -1,0 +1,41 @@
+{
+  "id": 10007,
+  "number": "10007",
+  "title": "Invoice 2026-0731 has the wrong reference",
+  "group_id": 3,
+  "state": "solved",
+  "priority": "1 low",
+  "customer_id": 10,
+  "organization_id": 1,
+  "created_at": "2026-08-21T10:40:00+02:00",
+  "updated_at": "2026-08-25T13:15:00+02:00",
+  "close_at": "2026-08-25T13:15:00+02:00",
+  "articles": [
+    {
+      "id": 66,
+      "ticket_id": 10007,
+      "from": "Anna Lind <anna.lind@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Invoice 2026-0731 has the wrong reference",
+      "body": "<p>Hi,</p><p>Our finance department bounced invoice 2026-0731 because the reference says <em>A. Lind</em> and it must be our cost centre code <em>NK-4412</em>. Otherwise it cannot be routed in our e-invoicing system.</p><p>Could you issue a credit and a corrected invoice, and use NK-4412 from now on?</p><p>Best regards,<br>Anna Lind</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-21T10:40:00+02:00"
+    },
+    {
+      "id": 67,
+      "ticket_id": 10007,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "Anna Lind <anna.lind@nordstad.se>",
+      "subject": "Re: Invoice 2026-0731 has the wrong reference",
+      "body": "<p>Hi Anna,</p><p>Credit note and corrected invoice were sent this morning, and NK-4412 is now stored as the standing reference on your account so future invoices carry it automatically.</p><p>Best,<br>Mia Berg</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-25T13:15:00+02:00"
+    }
+  ]
+}

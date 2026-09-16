@@ -1,0 +1,80 @@
+{
+  "id": 10002,
+  "number": "10002",
+  "title": "Applicants call in saying their budget file disappeared",
+  "group_id": 1,
+  "state": "open",
+  "priority": "3 high",
+  "customer_id": 10,
+  "organization_id": 1,
+  "created_at": "2026-07-28T09:15:00+02:00",
+  "updated_at": "2026-07-31T16:20:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 17,
+      "ticket_id": 10002,
+      "from": "Anna Lind <anna.lind@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Applicants call in saying their budget file disappeared",
+      "body": "<p>Hello,</p><p>Our switchboard has taken eleven calls in two weeks from applicants who say the budget file they picked is simply not there when they come back to the form. Applicant 2026-0412 called twice about it. They are quite upset, several of them think we lost it on purpose.</p><p>The caseworkers see nothing in the case, so we have to ask people to redo the work. It is the bigger files, the ones with the multi-year budget sheets, that people mention.</p><p>Can you look at this? The volume is getting hard to handle.</p><p>Best regards,<br>Anna Lind<br>Grants manager, Nordstad kommun</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-07-28T09:15:00+02:00"
+    },
+    {
+      "id": 18,
+      "ticket_id": 10002,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "Anna Lind <anna.lind@nordstad.se>",
+      "subject": "Re: Applicants call in saying their budget file disappeared",
+      "body": "<p>Hi Anna,</p><p>Sorry about that, and thanks for the call volume figure, it helps us prioritise.</p><p>To narrow it down: do the applicants get any error message on screen, or does the form simply continue as if nothing happened? And do you have a rough time of day for a couple of the cases so we can find them in the logs?</p><p>Kind regards,<br>Sara Holm<br>Support lead, Minso</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-07-28T11:40:00+02:00"
+    },
+    {
+      "id": 19,
+      "ticket_id": 10002,
+      "from": "Anna Lind <anna.lind@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Applicants call in saying their budget file disappeared",
+      "body": "&gt; do the applicants get any error message on screen\n\nNo message at all, that is what makes them so sure it went through. One of them described it as the page just scrolling back to the top.\n\nTimes: applicant 2026-0412 says around 16:30 on 23 July, and applicant 2026-0387 says late afternoon on 25 July. Both worked on the form over a long period, they said they had it open most of the afternoon.\n\n/Anna",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-07-29T14:02:00+02:00"
+    },
+    {
+      "id": 20,
+      "ticket_id": 10002,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "",
+      "subject": "Applicants call in saying their budget file disappeared",
+      "body": "<p>Reproduced once in staging: leave the form idle for a long stretch, then pick a large file and the POST comes back 401 but the front end swallows it. Both reported cases were people who had the form open all afternoon.</p><p>Handing to Jonas. Not telling the customer a root cause until we have it confirmed in production logs.</p>",
+      "content_type": "text/html",
+      "type": "note",
+      "sender": "Agent",
+      "internal": true,
+      "created_at": "2026-07-30T08:55:00+02:00"
+    },
+    {
+      "id": 21,
+      "ticket_id": 10002,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "Anna Lind <anna.lind@nordstad.se>",
+      "subject": "Re: Applicants call in saying their budget file disappeared",
+      "body": "<p>Hi Anna,</p><p>Update: we can reproduce the behaviour when the form has been open for a long time before the file is picked. We are investigating on our side and will come back with a fix plan.</p><p>In the meantime, if a caseworker tells the applicant to reload the page before adding the file, it should go through.</p><p>Kind regards,<br>Sara</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-07-31T16:20:00+02:00"
+    }
+  ]
+}

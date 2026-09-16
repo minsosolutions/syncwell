@@ -1,0 +1,67 @@
+{
+  "id": 10013,
+  "number": "10013",
+  "title": "Response times on our tickets",
+  "group_id": 1,
+  "state": "open",
+  "priority": "3 high",
+  "customer_id": 20,
+  "organization_id": 2,
+  "created_at": "2026-08-10T08:05:00+02:00",
+  "updated_at": "2026-08-17T09:55:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 45,
+      "ticket_id": 10013,
+      "from": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Response times on our tickets",
+      "body": "<p>Dear Minso,</p><p>I need to raise something that is becoming a pattern rather than an incident.</p><p>We are a small foundation with two people administering our grants. When something stops working we cannot route around it, and lately we wait days for a first answer. Our request about the disbursement view sat a full day, the document problem from July is still open after two weeks, and a question Nina sent on 6 August has had no reply at all.</p><p>I am not asking for miracles, but I would like to know what response time we are entitled to and whether you consider it met.</p><p>Kind regards,<br>Gustav Ebbe<br>Director, Ebbahus Stiftelse</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-10T08:05:00+02:00"
+    },
+    {
+      "id": 46,
+      "ticket_id": 10013,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "subject": "Re: Response times on our tickets",
+      "body": "<p>Dear Gustav,</p><p>You are right and I am sorry, not least because this mail itself has now waited four days for an answer, which rather proves your point.</p><p>Your agreement says one business day for a first response and we have not held that in August. Two of the three people who normally handle your account were on leave in the same weeks and we did not cover properly.</p><p>From this week Mia Berg is the named contact for Ebbahus and will pick up anything that has not been answered by lunchtime the following day. I will also go through your open tickets and give you a status on each by Monday.</p><p>Kind regards,<br>Sara Holm<br>Support lead, Minso</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-14T16:40:00+02:00"
+    },
+    {
+      "id": 47,
+      "ticket_id": 10013,
+      "from": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Response times on our tickets",
+      "body": "&gt; Your agreement says one business day for a first response and we have not held that in August.\n\nThank you for a straight answer. Let us see how September goes.\n\nGustav",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-17T09:10:00+02:00"
+    },
+    {
+      "id": 48,
+      "ticket_id": 10013,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "",
+      "subject": "Response times on our tickets",
+      "body": "<p>Taking over as named contact. Gustav is polite but this is the second time he has raised responsiveness this year. Worth watching, small account but a vocal one.</p>",
+      "content_type": "text/html",
+      "type": "note",
+      "sender": "Agent",
+      "internal": true,
+      "created_at": "2026-08-17T09:55:00+02:00"
+    }
+  ]
+}

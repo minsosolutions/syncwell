@@ -1,0 +1,20 @@
+[
+  {
+    "type": "message",
+    "user": "U08GEBBE1",
+    "text": "our auditor wants a list of all approved grants 2024-2026 in august. can grantly produce that or do we do it by hand?",
+    "ts": "1785403200.000137"
+  },
+  {
+    "type": "message",
+    "user": "U04SHOLM1",
+    "text": "there's a report for it. i'll send you the steps, the year range might need a filter tweak",
+    "ts": "1785404100.000274"
+  },
+  {
+    "type": "message",
+    "user": "U08GEBBE1",
+    "text": "thanks. no rush, but not too slow either 🙂",
+    "ts": "1785419220.000411"
+  }
+]

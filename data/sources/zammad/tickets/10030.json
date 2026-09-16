@@ -1,0 +1,41 @@
+{
+  "id": 10030,
+  "number": "10030",
+  "title": "Question about a withdrawn application that has already been paid",
+  "group_id": 1,
+  "state": "open",
+  "priority": "2 normal",
+  "customer_id": 40,
+  "organization_id": null,
+  "created_at": "2026-09-10T20:12:00+02:00",
+  "updated_at": "2026-09-11T09:30:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 95,
+      "ticket_id": 10030,
+      "from": "Karin Sjö <karin.sjo@hotmail.com>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Question about a withdrawn application that has already been paid",
+      "body": "<p>Hi,</p><p>Sorry for writing from my private address, I am at home and could not get into the work laptop.</p><p>I am a caseworker in the grants unit at Nordstad kommun. I have an association that withdrew its application after we had already made the first disbursement. In Grantly I cannot set the case to withdrawn, the system says the case has payments and refuses.</p><p>How do I handle this so the bookkeeping stays correct? The applicant wants to return the money. Anna is away until Monday and the association is calling every day.</p><p>Best,<br>Karin</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-09-10T20:12:00+02:00"
+    },
+    {
+      "id": 96,
+      "ticket_id": 10030,
+      "from": "Sara Holm <sara.holm@minso.se>",
+      "to": "Karin Sjö <karin.sjo@hotmail.com>",
+      "subject": "Re: Question about a withdrawn application that has already been paid",
+      "body": "<p>Hi Karin,</p><p>A case with a disbursement cannot be withdrawn directly, that is by design so that the payment history is not orphaned. The route is to register a repayment on the disbursement first, and once the paid amount is zero the case can be set to withdrawn.</p><p>Two things though. I cannot see which customer environment you are writing from since this address is not connected to an account, so I have answered generally. Please reply from your work address, or ask an administrator to, and I will look at the actual case.</p><p>Kind regards,<br>Sara Holm<br>Support lead, Minso</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-09-11T09:30:00+02:00"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": 10009,
+  "number": "10009",
+  "title": "Read-only access for the council auditors",
+  "group_id": 2,
+  "state": "new",
+  "priority": "2 normal",
+  "customer_id": 11,
+  "organization_id": 1,
+  "created_at": "2026-09-14T16:05:00+02:00",
+  "updated_at": "2026-09-14T16:05:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 97,
+      "ticket_id": 10009,
+      "from": "Per Ek <per.ek@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Read-only access for the council auditors",
+      "body": "<p>Hi,</p><p>Our elected auditors will review the spring grant round in October. They need to read cases and decisions but must not be able to change anything, and it should be visible in the log that they only read.</p><p>Is there a ready-made role for that, or do we build one? Three named people, access needed from 1 October.</p><p>--<br>Per Ek<br>IT, Nordstad kommun<br>per.ek@nordstad.se | 070-555 21 08</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-09-14T16:05:00+02:00"
+    }
+  ]
+}

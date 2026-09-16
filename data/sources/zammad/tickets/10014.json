@@ -1,0 +1,54 @@
+{
+  "id": 10014,
+  "number": "10014",
+  "title": "Board report should include the grantee organisation number",
+  "group_id": 1,
+  "state": "pending reminder",
+  "priority": "1 low",
+  "customer_id": 20,
+  "organization_id": 2,
+  "created_at": "2026-08-18T14:20:00+02:00",
+  "updated_at": "2026-09-02T09:00:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 63,
+      "ticket_id": 10014,
+      "from": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Board report should include the grantee organisation number",
+      "body": "<p>Hello Mia,</p><p>A small wish. The board report we generate before each meeting lists grantee names only. Our treasurer wants the organisation number next to each name so he can match against the ledger without looking each one up.</p><p>Not urgent, but it would save him an evening every quarter.</p><p>Kind regards,<br>Gustav</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-18T14:20:00+02:00"
+    },
+    {
+      "id": 64,
+      "ticket_id": 10014,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "Gustav Ebbe <gustav.ebbe@ebbahus.se>",
+      "subject": "Re: Board report should include the grantee organisation number",
+      "body": "<p>Hi Gustav,</p><p>That is a template change and I can do it, but the report template is shared with two other customers so I need to add the column as optional rather than by default. I have asked our developers what that takes.</p><p>I will come back to you within two weeks.</p><p>Best,<br>Mia</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-19T10:35:00+02:00"
+    },
+    {
+      "id": 65,
+      "ticket_id": 10014,
+      "from": "Mia Berg <mia.berg@minso.se>",
+      "to": "",
+      "subject": "Board report should include the grantee organisation number",
+      "body": "<p>Reminder pushed to 16 Sep. Still waiting for an estimate on making report columns configurable. Low value on its own but it is the kind of small ask that makes Gustav feel heard.</p>",
+      "content_type": "text/html",
+      "type": "note",
+      "sender": "Agent",
+      "internal": true,
+      "created_at": "2026-09-02T09:00:00+02:00"
+    }
+  ]
+}

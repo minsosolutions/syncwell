@@ -1,0 +1,24 @@
+[
+  {
+    "type": "message",
+    "user": "U07KSJO33",
+    "text": "two applicants called today saying the budget file disappeared. they upload it, and when they come back to the application it isn't there",
+    "ts": "1786439880.000137",
+    "thread_ts": "1786439880.000137",
+    "reply_count": 2
+  },
+  {
+    "type": "message",
+    "user": "U04SHOLM1",
+    "text": "can you get me the application numbers? then we can see what the application actually has on it",
+    "ts": "1786441200.000274",
+    "thread_ts": "1786439880.000137"
+  },
+  {
+    "type": "message",
+    "user": "U07KSJO33",
+    "text": "2026-0417 and 2026-0431. both are sure they uploaded the budget, we only see the cover letter",
+    "ts": "1786449300.000411",
+    "thread_ts": "1786439880.000137"
+  }
+]

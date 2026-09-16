@@ -1,0 +1,17 @@
+[
+  {
+    "type": "message",
+    "user": "U09TAHL33",
+    "text": "one thing we haven't settled: are the legacy case ids preserved through the migration? our diarium references them and so do a lot of paper files in the archive",
+    "ts": "1787215500.000137",
+    "thread_ts": "1787215500.000137",
+    "reply_count": 1
+  },
+  {
+    "type": "message",
+    "user": "U04MBERG3",
+    "text": "good question, i'll have to check with the team how the id mapping works",
+    "ts": "1787218200.000274",
+    "thread_ts": "1787215500.000137"
+  }
+]

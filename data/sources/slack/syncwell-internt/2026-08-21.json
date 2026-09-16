@@ -1,0 +1,8 @@
+[
+  {
+    "type": "message",
+    "user": "U04JFRID2",
+    "text": "comparing the two migrations since people keep asking: nordstad is a big bang over one weekend with a full freeze of the old case system, utvecklingsverket wants two waves, closed cases first then open ones. the wave approach is less scary but it means we run dual lookup for weeks, and uv has an open question about whether legacy ids survive that nordstad simply doesn't have because they're not keeping their old ids at all. if nordstad's weekend slips we have no fallback, with uv we can just pause between waves",
+    "ts": "1787303100.000137"
+  }
+]

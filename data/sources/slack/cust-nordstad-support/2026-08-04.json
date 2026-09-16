@@ -1,0 +1,14 @@
+[
+  {
+    "type": "message",
+    "user": "U07PEREK2",
+    "text": "we're rolling out new laptops next week, anything grantly needs on the browser side? we're standardising on edge",
+    "ts": "1785826320.000137"
+  },
+  {
+    "type": "message",
+    "user": "U04JFRID2",
+    "text": "edge is fine. just don't block third party cookies for our domain in the policy, the file upload widget stops working if you do",
+    "ts": "1785828000.000274"
+  }
+]

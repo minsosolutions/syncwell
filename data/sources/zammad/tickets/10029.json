@@ -1,0 +1,28 @@
+{
+  "id": 10029,
+  "number": "10029",
+  "title": "Refreshed data set for the training environment",
+  "group_id": 1,
+  "state": "new",
+  "priority": "1 low",
+  "customer_id": 30,
+  "organization_id": 3,
+  "created_at": "2026-09-15T15:40:00+02:00",
+  "updated_at": "2026-09-15T15:40:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 99,
+      "ticket_id": 10029,
+      "from": "Håkan Nyberg <hakan.nyberg@utvecklingsverket.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Refreshed data set for the training environment",
+      "body": "<p>Hello,</p><p>We are training the regional offices in week 40 and the training environment still holds data from February. We would like a refreshed copy, with personal data replaced, so that the exercises use realistic case types.</p><p>Is that something you can prepare before the end of September?</p><p>Best regards,<br>Håkan Nyberg<br>Programme director, Regionalt Utvecklingsverket</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-09-15T15:40:00+02:00"
+    }
+  ]
+}

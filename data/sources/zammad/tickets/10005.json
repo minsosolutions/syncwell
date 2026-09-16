@@ -1,0 +1,67 @@
+{
+  "id": 10005,
+  "number": "10005",
+  "title": "Data migration cutover from Byggreda — planning",
+  "group_id": 2,
+  "state": "open",
+  "priority": "3 high",
+  "customer_id": 11,
+  "organization_id": 1,
+  "created_at": "2026-08-11T10:15:00+02:00",
+  "updated_at": "2026-08-14T09:05:00+02:00",
+  "close_at": null,
+  "articles": [
+    {
+      "id": 49,
+      "ticket_id": 10005,
+      "from": "Per Ek <per.ek@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Data migration cutover from Byggreda — planning",
+      "body": "<p>Hi,</p><p>We need to agree a date for moving the remaining historical cases out of Byggreda and into Grantly. There are roughly 41 000 cases from 2019 onwards, plus their documents.</p><p>Requirements from our side: the old system must be readable during the move, and the downtime window has to be outside office hours. I would rather not do it on a Monday.</p><p>--<br>Per Ek<br>IT, Nordstad kommun</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-11T10:15:00+02:00"
+    },
+    {
+      "id": 50,
+      "ticket_id": 10005,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "Per Ek <per.ek@nordstad.se>",
+      "subject": "Re: Data migration cutover from Byggreda — planning",
+      "body": "<p>Hi Per,</p><p>Understood. Our estimate for 41 000 cases with documents is six to eight hours including verification, so we want a full evening plus the night.</p><p>Proposal: dry run on a copy in week 37, then the real cutover in the evening of <strong>Friday 25 September</strong> starting 18:00, with the system back before Saturday morning. Byggreda stays readable throughout; we only freeze writes in Grantly.</p><p>Does the 25th work for you?</p><p>Regards,<br>Jonas</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-08-13T14:50:00+02:00"
+    },
+    {
+      "id": 51,
+      "ticket_id": 10005,
+      "from": "Per Ek <per.ek@nordstad.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Data migration cutover from Byggreda — planning",
+      "body": "&gt; Proposal: dry run on a copy in week 37, then the real cutover in the evening of Friday 25 September\n\nThe 25th works. I will book our operations people for that evening and let the grants unit know that Grantly is read-only from 18:00.\n\n/Per",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-14T08:30:00+02:00"
+    },
+    {
+      "id": 52,
+      "ticket_id": 10005,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "",
+      "subject": "Data migration cutover from Byggreda — planning",
+      "body": "<p>Migration window booked: <strong>2026-09-25, 18:00–02:00</strong>. Dry run week 37. Nobody has checked this against the public launch date; someone on the delivery side should.</p>",
+      "content_type": "text/html",
+      "type": "note",
+      "sender": "Agent",
+      "internal": true,
+      "created_at": "2026-08-14T09:05:00+02:00"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 10023,
+  "number": "10023",
+  "title": "SAML metadata renewal for the agency IdP",
+  "group_id": 2,
+  "state": "solved",
+  "priority": "2 normal",
+  "customer_id": 32,
+  "organization_id": 3,
+  "created_at": "2026-07-29T14:10:00+02:00",
+  "updated_at": "2026-08-03T09:30:00+02:00",
+  "close_at": "2026-08-03T09:30:00+02:00",
+  "articles": [
+    {
+      "id": 22,
+      "ticket_id": 10023,
+      "from": "Tobias Ahl <tobias.ahl@ruv.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "SAML metadata renewal for the agency IdP",
+      "body": "Hi,\n\nOur signing certificate expires 20 August. New metadata is attached. Please load it in good time, we do not want a repeat of last year when everyone lost access on a Monday morning.\n\n/Tobias Ahl",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-07-29T14:10:00+02:00"
+    },
+    {
+      "id": 23,
+      "ticket_id": 10023,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "Tobias Ahl <tobias.ahl@ruv.se>",
+      "subject": "Re: SAML metadata renewal for the agency IdP",
+      "body": "<p>Hi Tobias,</p><p>Loaded in your test environment now. Both certificates are configured in parallel, so the old one keeps working until it expires and the new one is accepted immediately. No cutover moment needed.</p><p>Please verify a login in test and I will do the same in production.</p><p>Regards,<br>Jonas</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-07-30T10:50:00+02:00"
+    },
+    {
+      "id": 24,
+      "ticket_id": 10023,
+      "from": "Tobias Ahl <tobias.ahl@ruv.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: SAML metadata renewal for the agency IdP",
+      "body": "Verified in test and in production. Good that we did it a few weeks early this time.\n\n/Tobias",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-08-03T09:30:00+02:00"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": 10011,
+  "number": "10011",
+  "title": "Bookkeeping export: which field carries the grantee number?",
+  "group_id": 2,
+  "state": "solved",
+  "priority": "2 normal",
+  "customer_id": 21,
+  "organization_id": 2,
+  "created_at": "2026-07-27T13:45:00+02:00",
+  "updated_at": "2026-07-30T16:00:00+02:00",
+  "close_at": "2026-07-30T16:00:00+02:00",
+  "articles": [
+    {
+      "id": 14,
+      "ticket_id": 10011,
+      "from": "Nina Dahl <nina.dahl@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Bookkeeping export: which field carries the grantee number?",
+      "body": "Hi Jonas,\n\nOur accountant is setting up the import on her side and asks which column in the nightly file holds the grantee number. She sees \"party_ref\" and \"counterparty\" and they are not always the same.\n\n/Nina",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-07-27T13:45:00+02:00"
+    },
+    {
+      "id": 15,
+      "ticket_id": 10011,
+      "from": "Jonas Frid <jonas.frid@minso.se>",
+      "to": "Nina Dahl <nina.dahl@ebbahus.se>",
+      "subject": "Re: Bookkeeping export: which field carries the grantee number?",
+      "body": "<p>Hi Nina,</p><p><code>party_ref</code> is the grantee number as registered in Grantly. <code>counterparty</code> is the payee on the disbursement, which differs when a grant is paid to a project account rather than the organisation itself.</p><p>For bookkeeping she should use <code>party_ref</code>.</p><p>Regards,<br>Jonas Frid</p>",
+      "content_type": "text/html",
+      "type": "email",
+      "sender": "Agent",
+      "internal": false,
+      "created_at": "2026-07-28T09:05:00+02:00"
+    },
+    {
+      "id": 16,
+      "ticket_id": 10011,
+      "from": "Nina Dahl <nina.dahl@ebbahus.se>",
+      "to": "Grantly Support <support@minso.se>",
+      "subject": "Re: Bookkeeping export: which field carries the grantee number?",
+      "body": "Perfect, she has it working. Thank you.",
+      "content_type": "text/plain",
+      "type": "email",
+      "sender": "Customer",
+      "internal": false,
+      "created_at": "2026-07-30T16:00:00+02:00"
+    }
+  ]
+}

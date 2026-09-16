@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Nordstad kommun",
+    "domain": "nordstad.se",
+    "domain_assignment": true,
+    "note": "Municipality. Grantly since 2024. High application volume, two grant rounds per year.",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Ebbahus Stiftelse",
+    "domain": "ebbahus.se",
+    "domain_assignment": true,
+    "note": "Private foundation. Bespoke nightly bookkeeping export. High-touch account.",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Regionalt Utvecklingsverket",
+    "domain": "utvecklingsverket.se",
+    "domain_assignment": true,
+    "note": "National agency. Also uses ruv.se for staff mail. Mid-migration from the legacy case system.",
+    "active": true
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "type": "message",
+    "user": "U07ALIND1",
+    "text": "two caseworkers say the applicant portal was slow around 8 this morning, anything on your side?",
+    "ts": "1784790720.000137",
+    "thread_ts": "1784790720.000137",
+    "reply_count": 2
+  },
+  {
+    "type": "message",
+    "user": "U04SHOLM1",
+    "text": "nothing in the monitoring i'm afraid. was it the login step or the form itself?",
+    "ts": "1784791860.000274",
+    "thread_ts": "1784790720.000137"
+  },
+  {
+    "type": "message",
+    "user": "U07ALIND1",
+    "text": "the form. it went through after a reload so nobody bothered to make a ticket",
+    "ts": "1784793840.000411",
+    "thread_ts": "1784790720.000137"
+  }
+]
