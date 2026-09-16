@@ -1,0 +1,51 @@
+{
+  "customer": "nordstad",
+  "run_at": "2026-09-09T06:00:00Z",
+  "outputs": [
+    {
+      "kind": "linear_project",
+      "id": "prj_0001",
+      "identifier": null,
+      "name": "Nordstad kommun \u2014 Grantly rollout"
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0011",
+      "identifier": "SYN-11",
+      "title": "Bulk export performance for Nordstad kommun",
+      "priority": 2
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0012",
+      "identifier": "SYN-12",
+      "title": "Confirm data migration window with Nordstad IT",
+      "priority": 2
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0013",
+      "identifier": "SYN-13",
+      "title": "Applicant reports of missing budget attachments",
+      "priority": 1
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0014",
+      "identifier": "SYN-14",
+      "title": "Prepare launch readiness checklist for 1 October",
+      "priority": 2
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0015",
+      "identifier": "SYN-15",
+      "title": "Follow up on caseworker onboarding sessions",
+      "priority": 4
+    },
+    {
+      "kind": "file",
+      "path": "outputs/report.md"
+    }
+  ]
+}

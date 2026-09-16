@@ -1,0 +1,44 @@
+{
+  "customer": "utvecklingsverket",
+  "run_at": "2026-09-09T06:00:00Z",
+  "outputs": [
+    {
+      "kind": "linear_project",
+      "id": "prj_0003",
+      "identifier": null,
+      "name": "Regionalt Utvecklingsverket \u2014 migration"
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0031",
+      "identifier": "SYN-31",
+      "title": "Legacy case ID mapping decision",
+      "priority": 2
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0032",
+      "identifier": "SYN-32",
+      "title": "Data processing agreement renewal before 1 October",
+      "priority": 1
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0034",
+      "identifier": "SYN-34",
+      "title": "Audit trail for applicant submission timestamps",
+      "priority": 2
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0035",
+      "identifier": "SYN-35",
+      "title": "Migration dry-run scheduling",
+      "priority": 3
+    },
+    {
+      "kind": "file",
+      "path": "outputs/report.md"
+    }
+  ]
+}

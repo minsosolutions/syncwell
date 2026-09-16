@@ -1,0 +1,172 @@
+[
+  {
+    "text": "good to know, we'll keep an eye on the queue that week",
+    "ts": "1789455720.000274",
+    "type": "message",
+    "user": "U04MBERG3"
+  },
+  {
+    "text": "we close the autumn call on the 30th, expect a spike the last two days. last year it was half the applications in 48 hours",
+    "ts": "1789455000.000137",
+    "type": "message",
+    "user": "U08NDAHL2"
+  },
+  {
+    "text": "still waiting on an application number i'm afraid",
+    "ts": "1789127700.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "any news on the documents thing? our applicants keep asking and i don't have an answer for them",
+    "ts": "1789115400.000137",
+    "type": "message",
+    "user": "U08GEBBE1"
+  },
+  {
+    "text": "noted. i'll book time with you in early october",
+    "ts": "1788767040.000274",
+    "type": "message",
+    "user": "U04MBERG3"
+  },
+  {
+    "text": "the styrelse meets 14 october, gustav will want a summary of the year before that",
+    "ts": "1788765900.000137",
+    "type": "message",
+    "user": "U08NDAHL2"
+  },
+  {
+    "text": "sorry, busy week here. if you can get me one single application number i'll dig into it properly",
+    "thread_ts": "1788436920.000137",
+    "ts": "1788446640.000411",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "i've told them to send their files straight to nina for now, we'll work around it. but our pdf export is on my list to look at",
+    "thread_ts": "1788436920.000137",
+    "ts": "1788438900.000274",
+    "type": "message",
+    "user": "U08GEBBE1"
+  },
+  {
+    "reply_count": 2,
+    "text": "it happened again. two applicants this week say the portal lost documents on submit, one of them a big application we really wanted",
+    "thread_ts": "1788436920.000137",
+    "ts": "1788436920.000137",
+    "type": "message",
+    "user": "U08GEBBE1"
+  },
+  {
+    "text": "easy fix, i'll put it in",
+    "ts": "1788250740.000274",
+    "type": "message",
+    "user": "U04MBERG3"
+  },
+  {
+    "text": "small thing, the beslutsbrev template still says 2025 in the footer",
+    "ts": "1788249900.000137",
+    "type": "message",
+    "user": "U08NDAHL2"
+  },
+  {
+    "text": "no question, just flagging that the september disbursements go out on the 4th",
+    "ts": "1788185100.000137",
+    "type": "message",
+    "user": "U08NDAHL2"
+  },
+  {
+    "text": "got it. it would help if these things didn't need two reminders 😕",
+    "ts": "1787750520.000411",
+    "type": "message",
+    "user": "U08GEBBE1"
+  },
+  {
+    "text": "sorry gustav, it went to nina yesterday afternoon. copying you on it now",
+    "ts": "1787750280.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "did the auditor list get sent? our revisor is asking me directly now",
+    "ts": "1787728200.000137",
+    "type": "message",
+    "user": "U08GEBBE1"
+  },
+  {
+    "text": "reminder about the auditor list, we need it before the 28th",
+    "ts": "1787121300.000137",
+    "type": "message",
+    "user": "U08NDAHL2"
+  },
+  {
+    "text": "i'll ask her. honestly it's probably our own pdf export, it produces quite heavy files and we've never really tuned it",
+    "ts": "1786545000.000411",
+    "type": "message",
+    "user": "U08GEBBE1"
+  },
+  {
+    "text": "not that i know of. do you have the application number?",
+    "ts": "1786538400.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "one of our applicants says the portal lost their attachments when they sent the application in. have you seen that before?",
+    "ts": "1786533720.000137",
+    "type": "message",
+    "user": "U08GEBBE1"
+  },
+  {
+    "text": "ok, thanks for looking at it so fast",
+    "thread_ts": "1785917640.000137",
+    "ts": "1785920580.000411",
+    "type": "message",
+    "user": "U08NDAHL2"
+  },
+  {
+    "text": "i see it, the job seems to have run twice on the 1st. i'm temporarily disabling the nightly bookkeeping export job while i debug this, otherwise we keep writing duplicates into your ledger",
+    "thread_ts": "1785917640.000137",
+    "ts": "1785919920.000274",
+    "type": "message",
+    "user": "U04JFRID2"
+  },
+  {
+    "reply_count": 2,
+    "text": "the bookkeeping file for july looks odd, there are two rows for the same disbursement",
+    "thread_ts": "1785917640.000137",
+    "ts": "1785917640.000137",
+    "type": "message",
+    "user": "U08NDAHL2"
+  },
+  {
+    "text": "thanks. no rush, but not too slow either 🙂",
+    "ts": "1785419220.000411",
+    "type": "message",
+    "user": "U08GEBBE1"
+  },
+  {
+    "text": "there's a report for it. i'll send you the steps, the year range might need a filter tweak",
+    "ts": "1785404100.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "our auditor wants a list of all approved grants 2024-2026 in august. can grantly produce that or do we do it by hand?",
+    "ts": "1785403200.000137",
+    "type": "message",
+    "user": "U08GEBBE1"
+  },
+  {
+    "text": "of course. shout if you need anything",
+    "ts": "1784879880.000274",
+    "type": "message",
+    "user": "U04MBERG3"
+  },
+  {
+    "text": "the july disbursement list is ready, is it ok if i send it over monday instead? we're two people short today",
+    "ts": "1784878860.000137",
+    "type": "message",
+    "user": "U08NDAHL2"
+  }
+]

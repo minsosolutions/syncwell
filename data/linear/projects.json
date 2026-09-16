@@ -1,0 +1,29 @@
+[
+  {
+    "id": "prj_0001",
+    "name": "Nordstad kommun — Grantly rollout",
+    "description": "Rollout and migration tracking for Nordstad kommun.\n\n<!-- syncwell:run=2026-09-09T06:00:00Z customer=nordstad item=project -->",
+    "state": "started",
+    "targetDate": "2026-10-01",
+    "createdAt": "2026-09-09T06:00:00Z",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "id": "prj_0002",
+    "name": "Ebbahus Stiftelse — operations",
+    "description": "Ongoing operational follow-up for Ebbahus Stiftelse.\n\n<!-- syncwell:run=2026-09-09T06:00:00Z customer=ebbahus item=project -->",
+    "state": "started",
+    "targetDate": null,
+    "createdAt": "2026-09-09T06:00:00Z",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "id": "prj_0003",
+    "name": "Regionalt Utvecklingsverket — migration",
+    "description": "Platform migration and compliance workstream.\n\n<!-- syncwell:run=2026-09-09T06:00:00Z customer=utvecklingsverket item=project -->",
+    "state": "started",
+    "targetDate": "2026-12-01",
+    "createdAt": "2026-09-09T06:00:00Z",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  }
+]

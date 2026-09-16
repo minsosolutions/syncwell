@@ -1,0 +1,44 @@
+{
+  "customer": "ebbahus",
+  "run_at": "2026-09-09T06:00:00Z",
+  "outputs": [
+    {
+      "kind": "linear_project",
+      "id": "prj_0002",
+      "identifier": null,
+      "name": "Ebbahus Stiftelse \u2014 operations"
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0021",
+      "identifier": "SYN-21",
+      "title": "Bookkeeping export \u2014 verify nightly job",
+      "priority": 3
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0022",
+      "identifier": "SYN-22",
+      "title": "Document the custom PDF export behaviour",
+      "priority": 3
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0023",
+      "identifier": "SYN-23",
+      "title": "Schedule quarterly review with Gustav Ebbe",
+      "priority": 4
+    },
+    {
+      "kind": "linear_issue",
+      "id": "iss_0024",
+      "identifier": "SYN-24",
+      "title": "Response time complaints \u2014 review SLA",
+      "priority": 2
+    },
+    {
+      "kind": "file",
+      "path": "outputs/report.md"
+    }
+  ]
+}

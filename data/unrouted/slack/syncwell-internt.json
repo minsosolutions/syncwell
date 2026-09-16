@@ -1,0 +1,55 @@
+{
+  "channel": "syncwell-internt",
+  "messages": [
+    {
+      "text": "reminder, q4 planning input due friday",
+      "ts": "1789484520.000137",
+      "type": "message",
+      "user": "U04MBERG3"
+    },
+    {
+      "text": "does anyone know if the retention doc in references was updated after the july release? elin at uv is asking and i don't trust what's in there",
+      "ts": "1789125900.000137",
+      "type": "message",
+      "user": "U04JFRID2"
+    },
+    {
+      "text": "run is done, issues are in linear. check your customer's project before the next steering meeting",
+      "ts": "1788941400.000137",
+      "type": "message",
+      "user": "U04RBAUHN"
+    },
+    {
+      "text": "friday admission: we're behind on two ebbahus threads. picking them up monday",
+      "ts": "1788529200.000137",
+      "type": "message",
+      "user": "U04SHOLM1"
+    },
+    {
+      "text": "ebbahus styrelse meets in october and gustav has asked me for a year summary. worth prepping properly rather than throwing something together",
+      "ts": "1788334200.000137",
+      "type": "message",
+      "user": "U04MBERG3"
+    },
+    {
+      "text": "comparing the two migrations since people keep asking: nordstad is a big bang over one weekend with a full freeze of the old case system, utvecklingsverket wants two waves, closed cases first then open ones. the wave approach is less scary but it means we run dual lookup for weeks, and uv has an open question about whether legacy ids survive that nordstad simply doesn't have because they're not keeping their old ids at all. if nordstad's weekend slips we have no fallback, with uv we can just pause between waves",
+      "ts": "1787303100.000137",
+      "type": "message",
+      "user": "U04JFRID2"
+    },
+    {
+      "text": "support queue is at 31 open, most of it nordstad. a lot of it is the same kind of report over and over",
+      "ts": "1786371600.000137",
+      "type": "message",
+      "user": "U04SHOLM1"
+    },
+    {
+      "text": "week plan: nordstad delivery call tuesday, ebbahus check in, uv first test load. i'm off thursday",
+      "ts": "1785134700.000137",
+      "type": "message",
+      "user": "U04RBAUHN"
+    }
+  ],
+  "reason": "channel \"syncwell-internt\" has no customer prefix",
+  "source": "slack"
+}

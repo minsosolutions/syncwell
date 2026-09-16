@@ -1,0 +1,145 @@
+[
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Export of the full application register is slow for large programmes. Track follow-up with 2nd Level.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=nordstad item=N2 --\u003e",
+    "id": "iss_0011",
+    "identifier": "SYN-11",
+    "priority": 2,
+    "projectId": "prj_0001",
+    "state": "Todo",
+    "title": "Bulk export performance for Nordstad kommun",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Migration window needs written confirmation from Per Ek before it is locked.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=nordstad item=N1 --\u003e",
+    "id": "iss_0012",
+    "identifier": "SYN-12",
+    "priority": 2,
+    "projectId": "prj_0001",
+    "state": "Todo",
+    "title": "Confirm data migration window with Nordstad IT",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Recurring reports that uploaded budget documents are not present after submission.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=nordstad item=theme --\u003e",
+    "id": "iss_0013",
+    "identifier": "SYN-13",
+    "priority": 1,
+    "projectId": "prj_0001",
+    "state": "Todo",
+    "title": "Applicant reports of missing budget attachments",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Second onboarding session for caseworkers not yet scheduled.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=nordstad item=ops --\u003e",
+    "id": "iss_0015",
+    "identifier": "SYN-15",
+    "priority": 4,
+    "projectId": "prj_0001",
+    "state": "Todo",
+    "title": "Follow up on caseworker onboarding sessions",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Nightly bookkeeping export needs verification against the foundation's ledger.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=ebbahus item=E1 --\u003e",
+    "id": "iss_0021",
+    "identifier": "SYN-21",
+    "priority": 1,
+    "projectId": "prj_0002",
+    "state": "Todo",
+    "title": "URGENT: September disbursements missing from ledger",
+    "updatedAt": "2026-09-12T09:41:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "The bespoke PDF export path is undocumented; Ebbahus assume defects originate there.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=ebbahus item=theme --\u003e",
+    "id": "iss_0022",
+    "identifier": "SYN-22",
+    "priority": 3,
+    "projectId": "prj_0002",
+    "state": "Todo",
+    "title": "Document the custom PDF export behaviour",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Quarterly review not yet in the calendar.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=ebbahus item=ops --\u003e",
+    "id": "iss_0023",
+    "identifier": "SYN-23",
+    "priority": 4,
+    "projectId": "prj_0002",
+    "state": "Todo",
+    "title": "Schedule quarterly review with Gustav Ebbe",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Ebbahus have raised first-response times more than once this quarter.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=ebbahus item=E2 --\u003e",
+    "id": "iss_0024",
+    "identifier": "SYN-24",
+    "priority": 2,
+    "projectId": "prj_0002",
+    "state": "Todo",
+    "title": "Response time complaints — review SLA",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Decision needed on whether legacy case IDs are preserved through the migration. Edited by HN 2026-09-12: adding context from the steering group.",
+    "id": "iss_0031",
+    "identifier": "SYN-31",
+    "priority": 2,
+    "projectId": "prj_0003",
+    "state": "Todo",
+    "title": "Legacy case ID mapping decision",
+    "updatedAt": "2026-09-12T14:05:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Updated DPA required before the stated deadline or processing must be suspended.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=utvecklingsverket item=U2 --\u003e",
+    "id": "iss_0032",
+    "identifier": "SYN-32",
+    "priority": 1,
+    "projectId": "prj_0003",
+    "state": "Todo",
+    "title": "Data processing agreement renewal before 1 October",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "createdAt": "2026-09-11T08:20:00Z",
+    "description": "Tobias asked for a half-day session on the migration cutover. Created manually.",
+    "id": "iss_0033",
+    "identifier": "SYN-33",
+    "priority": 3,
+    "projectId": "prj_0003",
+    "state": "Todo",
+    "title": "Book workshop with RUV architecture team",
+    "updatedAt": "2026-09-11T08:20:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Agency needs to evidence that an applicant submitted before the programme deadline.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=utvecklingsverket item=theme --\u003e",
+    "id": "iss_0034",
+    "identifier": "SYN-34",
+    "priority": 2,
+    "projectId": "prj_0003",
+    "state": "Todo",
+    "title": "Audit trail for applicant submission timestamps",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  },
+  {
+    "createdAt": "2026-09-09T06:00:00Z",
+    "description": "Dry-run date not agreed.\n\n\u003c!-- syncwell:run=2026-09-09T06:00:00Z customer=utvecklingsverket item=ops --\u003e",
+    "id": "iss_0035",
+    "identifier": "SYN-35",
+    "priority": 3,
+    "projectId": "prj_0003",
+    "state": "Todo",
+    "title": "Migration dry-run scheduling",
+    "updatedAt": "2026-09-09T06:00:00Z"
+  }
+]

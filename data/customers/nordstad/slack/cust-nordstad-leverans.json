@@ -1,0 +1,62 @@
+[
+  {
+    "text": "yes. give me until monday, i want to run it against a copy first",
+    "ts": "1789033920.000274",
+    "type": "message",
+    "user": "U04JFRID2"
+  },
+  {
+    "text": "can we get the migration dry run scheduled? our ops people need two weeks notice for a weekend",
+    "ts": "1789032300.000137",
+    "type": "message",
+    "user": "U07PEREK2"
+  },
+  {
+    "text": "no stress, as long as the dates in it are the ones we agreed 🙂",
+    "ts": "1788422520.000274",
+    "type": "message",
+    "user": "U07ALIND1"
+  },
+  {
+    "text": "i still owe you an updated plan document after the steering meeting, sorry. it's on my list this week",
+    "ts": "1788421680.000137",
+    "type": "message",
+    "user": "U04RBAUHN"
+  },
+  {
+    "text": "noted, we'll hold the plan until you've heard",
+    "ts": "1787235060.000274",
+    "type": "message",
+    "user": "U04RBAUHN"
+  },
+  {
+    "text": "heads up, kommunstyrelsen meets on the 24th and the launch is on the agenda. i'll know more after that",
+    "ts": "1787234520.000137",
+    "type": "message",
+    "user": "U07ALIND1"
+  },
+  {
+    "text": "ok. the migration window has to be a weekend though, we can't have the case system down on a weekday",
+    "ts": "1786005000.000274",
+    "type": "message",
+    "user": "U07PEREK2"
+  },
+  {
+    "text": "delivery plan updated after yesterday's call. public launch 1 october, data migration the week after",
+    "ts": "1786003920.000137",
+    "type": "message",
+    "user": "U04RBAUHN"
+  },
+  {
+    "text": "ser bra ut. one thing, we need the content for the public launch page by mid september at the latest, kommunikation needs time",
+    "ts": "1784720640.000274",
+    "type": "message",
+    "user": "U07ALIND1"
+  },
+  {
+    "text": "kickoff notes from monday are in \u003chttps://drive.minso.se/d/nordstad-kickoff|the shared folder\u003e. shout if something is missing",
+    "ts": "1784718300.000137",
+    "type": "message",
+    "user": "U04MBERG3"
+  }
+]

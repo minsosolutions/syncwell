@@ -1,0 +1,118 @@
+[
+  {
+    "text": "my list of applicants who lost their budget file is at 19 now since midsommar. i'm keeping it in a spreadsheet if anyone wants it",
+    "ts": "1789392000.000137",
+    "type": "message",
+    "user": "U07KSJO33"
+  },
+  {
+    "text": "two more calls about budget files that disappeared today, both large kulturbidrag applications",
+    "ts": "1788869520.000411",
+    "type": "message",
+    "user": "U07ALIND1"
+  },
+  {
+    "text": "not blocking, i just wanted you to know it isn't really fixed",
+    "ts": "1788851100.000274",
+    "type": "message",
+    "user": "U07KSJO33"
+  },
+  {
+    "text": "the bulk export still times out for us. we've stopped trying during the day and just run it at night now, that usually gets through",
+    "ts": "1788850620.000137",
+    "type": "message",
+    "user": "U07KSJO33"
+  },
+  {
+    "text": "thanks. ping here if logins start failing after that, we'll have someone around",
+    "ts": "1788248460.000274",
+    "type": "message",
+    "user": "U04JFRID2"
+  },
+  {
+    "text": "sso cert renewal is scheduled for 9 sep at 20:00. should be transparent but flagging it",
+    "ts": "1788247980.000137",
+    "type": "message",
+    "user": "U07PEREK2"
+  },
+  {
+    "text": "noted. one of them redid it while anna was on the phone and it worked the second time, so i suspect something on the applicant side, big file on a bad connection. keep collecting the numbers",
+    "ts": "1787037300.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "busy morning. four calls before 10 about budget files that are gone, all four insist they uploaded them",
+    "ts": "1787035260.000137",
+    "type": "message",
+    "user": "U07ALIND1"
+  },
+  {
+    "text": "2026-0417 and 2026-0431. both are sure they uploaded the budget, we only see the cover letter",
+    "thread_ts": "1786439880.000137",
+    "ts": "1786449300.000411",
+    "type": "message",
+    "user": "U07KSJO33"
+  },
+  {
+    "text": "can you get me the application numbers? then we can see what the application actually has on it",
+    "thread_ts": "1786439880.000137",
+    "ts": "1786441200.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "reply_count": 2,
+    "text": "two applicants called today saying the budget file disappeared. they upload it, and when they come back to the application it isn't there",
+    "thread_ts": "1786439880.000137",
+    "ts": "1786439880.000137",
+    "type": "message",
+    "user": "U07KSJO33"
+  },
+  {
+    "text": "edge is fine. just don't block third party cookies for our domain in the policy, the file upload widget stops working if you do",
+    "ts": "1785828000.000274",
+    "type": "message",
+    "user": "U04JFRID2"
+  },
+  {
+    "text": "we're rolling out new laptops next week, anything grantly needs on the browser side? we're standardising on edge",
+    "ts": "1785826320.000137",
+    "type": "message",
+    "user": "U07PEREK2"
+  },
+  {
+    "text": "not directly today. you can sort by assignee and use the search box on top of that. i'll write it down as a wish",
+    "ts": "1785330120.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "is there a way to filter the application list by handläggare? i keep scrolling past everyone else's cases",
+    "ts": "1785329220.000137",
+    "type": "message",
+    "user": "U07KSJO33"
+  },
+  {
+    "text": "the form. it went through after a reload so nobody bothered to make a ticket",
+    "thread_ts": "1784790720.000137",
+    "ts": "1784793840.000411",
+    "type": "message",
+    "user": "U07ALIND1"
+  },
+  {
+    "text": "nothing in the monitoring i'm afraid. was it the login step or the form itself?",
+    "thread_ts": "1784790720.000137",
+    "ts": "1784791860.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "reply_count": 2,
+    "text": "two caseworkers say the applicant portal was slow around 8 this morning, anything on your side?",
+    "thread_ts": "1784790720.000137",
+    "ts": "1784790720.000137",
+    "type": "message",
+    "user": "U07ALIND1"
+  }
+]

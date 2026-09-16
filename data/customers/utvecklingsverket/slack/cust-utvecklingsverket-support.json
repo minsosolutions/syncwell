@@ -1,0 +1,84 @@
+[
+  {
+    "text": "another one. applicant says they sent it in before the deadline, we have no record of it at all. third time now",
+    "ts": "1789454400.000137",
+    "type": "message",
+    "user": "U09HNYB01"
+  },
+  {
+    "text": "still waiting on that retention number. i do have a deadline on this one",
+    "ts": "1788956700.000137",
+    "type": "message",
+    "user": "U09ESUND2"
+  },
+  {
+    "text": "sounds like they got the wrong role on import. send me their emails and i'll fix it",
+    "ts": "1788340800.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "three of the new handläggare can't see the 2025 archive. rights issue?",
+    "ts": "1788339900.000137",
+    "type": "message",
+    "user": "U09HNYB01"
+  },
+  {
+    "text": "i'll get you the exact number. the policy doc is \u003chttps://docs.minso.se/legal/data-retention|here\u003e in the meantime",
+    "ts": "1787819400.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "how long do you keep application data for rejected applicants? our retention policy has to match yours exactly, not approximately",
+    "ts": "1787817300.000137",
+    "type": "message",
+    "user": "U09ESUND2"
+  },
+  {
+    "text": "the problem for us is evidentiary. if we can't show when an application was received we can't defend a rejection if it goes to förvaltningsrätten",
+    "thread_ts": "1786707600.000137",
+    "ts": "1786713600.000411",
+    "type": "message",
+    "user": "U09HNYB01"
+  },
+  {
+    "text": "we can check the logs for those users, send me the org numbers",
+    "thread_ts": "1786707600.000137",
+    "ts": "1786709100.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "reply_count": 2,
+    "text": "the deadline for the innovationsutlysning was yesterday 23:59. two applicants claim they submitted in time, we have nothing registered on our side",
+    "thread_ts": "1786707600.000137",
+    "ts": "1786707600.000137",
+    "type": "message",
+    "user": "U09HNYB01"
+  },
+  {
+    "text": "that's me. send it over and i'll get it signed",
+    "ts": "1786093920.000274",
+    "type": "message",
+    "user": "U04RBAUHN"
+  },
+  {
+    "text": "who at minso signs the personuppgiftsbiträdesavtal? i need a name for our register",
+    "ts": "1786087800.000137",
+    "type": "message",
+    "user": "U09ESUND2"
+  },
+  {
+    "text": "csv import under admin. i'll send you the template. roles have to be set after the import unfortunately, that part is manual",
+    "ts": "1785228480.000274",
+    "type": "message",
+    "user": "U04SHOLM1"
+  },
+  {
+    "text": "we have around 40 new handläggare starting in august. what's the smoothest way to create accounts in bulk?",
+    "ts": "1785226500.000137",
+    "type": "message",
+    "user": "U09HNYB01"
+  }
+]
