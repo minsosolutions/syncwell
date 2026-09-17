@@ -19,6 +19,7 @@ type Customer struct {
 	Domains            []string `json:"domains"`
 	SlackChannelPrefix string   `json:"slack_channel_prefix"`
 	ZammadOrganization string   `json:"zammad_organization"`
+	LinearProjectID    string   `json:"linear_project_id"`
 }
 
 type Config struct {
@@ -28,6 +29,25 @@ type Config struct {
 		Product string `json:"product"`
 	} `json:"vendor"`
 	Customers []Customer `json:"customers"`
+	Linear    struct {
+		URL   string `json:"url"`
+		Token string `json:"token"`
+	} `json:"linear"`
+	SMTP struct {
+		Addr string `json:"addr"`
+		From string `json:"from"`
+	} `json:"smtp"`
+}
+
+// Customer returns the configured Customer with this slug. A slug that is not configured is
+// not a Customer: nothing downstream may invent a directory for it.
+func (c *Config) Customer(slug string) *Customer {
+	for i := range c.Customers {
+		if c.Customers[i].Slug == slug {
+			return &c.Customers[i]
+		}
+	}
+	return nil
 }
 
 func Load(path string) (*Config, error) {
