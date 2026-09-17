@@ -1,0 +1,13 @@
+# Authorship and Stewardship are separate signals
+
+A Run leaves two traces of the Outputs it creates: the Manifest in the Customer Directory, and a Provenance Marker stamped into each Output in the external system. Between Runs a human edits those Outputs, and the two traces disagree. The seeded 2026-09-09 Run gives one case of each disagreement: `SYN-14` is in the Manifest and gone from Linear, `SYN-21` carries its Marker under a title a human rewrote, `SYN-31` is in the Manifest with its Marker stripped out, and `SYN-33` exists in our project with neither.
+
+Asking which signal wins has no answer because "ours" is two claims wearing one word. **Authorship** is a fact about the past — a Run created this artifact — and nothing a human does afterwards makes it untrue. **Stewardship** is a fact about the present — we still maintain it — and a human is entitled to revoke it. `SYN-31` is the case that forces the split: we authored it, and a human then removed our Marker.
+
+So the signals are read twice, with different rules. Authorship is the **union**: either trace saying yes is enough, because neither is forgeable by accident. Stewardship is the **Marker alone**, because stripping a Marker inside the Output itself is the only human edit addressed to us — an explicit hands-off, made in the place where the work lives, needing no opt-out mechanism a human has to be taught. Stewardship is per-Output and reversible: restore the Marker and we are stewards again, and withdrawing it on one issue says nothing about the others or about the Linear project that holds them.
+
+We considered making the Manifest authoritative for both, which is simpler and tamper-proof against edits made in Linear — and which makes `SYN-31` unrepresentable, leaving the Run to keep writing to an Output a human has explicitly taken. The accepted cost of the Marker rule runs the other way: a Marker lost to an innocent rewrite of a description reads as withdrawal. That is reported rather than silently resolved, and re-stamping is one edit away.
+
+Two consequences follow. The Manifest becomes a cross-Run record — every Maintained Output we have authored, its stewardship, and a Written Snapshot of what we last wrote — rather than a log of the latest Run; without the snapshot, `SYN-21`'s retitle cannot be distinguished from our own last write. And reconciliation is scoped to the Customer's project rather than to our own records, so an Output we did not author, like `SYN-33`, is seen and named an Unmanaged Output instead of being invisible until we file a duplicate beside it.
+
+Reconciliation is deterministic Go comparing records we own, and its results never enter the Agent's context. The model has nothing to add to it and every opportunity to hallucinate about it.

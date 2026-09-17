@@ -70,9 +70,31 @@ A machine-readable stamp carried by an Output identifying the Run that created i
 _Avoid_: tag, fingerprint
 
 **Manifest**:
-The record a Run leaves of the Outputs it created, held in the Customer Directory.
-_Avoid_: state file, ledger
+The Customer's cross-Run record of its Maintained Outputs: which ones a Run authored, whether we still steward them, and the Written Snapshot of each. Held in the Customer Directory.
+_Avoid_: state file
+
+**Written Snapshot**:
+What a Run last wrote to a Maintained Output, recorded in the Manifest so a later Run can tell a human's edit from its own previous write.
+_Avoid_: cached copy, last known state
+
+**Authorship**:
+The claim that a Run created an Output. A fact about the past: nothing done to the Output afterwards makes it untrue. Carried by the Manifest and the Provenance Marker alike.
+_Avoid_: ownership
+
+**Stewardship**:
+The claim that Syncwell still maintains an Output. A fact about the present, revocable by a human, held per Output and carried by the Provenance Marker alone: removing the Marker withdraws it, restoring the Marker returns it.
+_Avoid_: ownership, control
+
+**Maintained Output**:
+An Output with an identity that persists across Runs, reconciled rather than rewritten — a Linear issue or project.
+
+**Snapshot Output**:
+An Output that renders one Run and is regenerated whole by the next, holding no identity across Runs — a report, an email.
+
+**Unmanaged Output**:
+An artifact in a Customer's Output system that no Run authored. Seen during reconciliation and never written to, so that Syncwell does not file a duplicate beside a human's work.
+_Avoid_: foreign issue, external
 
 **Drift**:
-Divergence between what a Manifest claims exists and what the Output system actually contains — a human deleted, edited, or hand-created an Output between Runs.
+Divergence between what a Manifest claims and what the Output system actually contains — a human deleted, edited, or hand-created an Output between Runs. Detected by deterministic reconciliation, never by an Agent.
 _Avoid_: conflict, staleness
