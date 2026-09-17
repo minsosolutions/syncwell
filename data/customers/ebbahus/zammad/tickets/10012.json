@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eThe disbursement plan view shows 25000000 where it should show 250 000 kr. The case itself and the decision letter are correct, it is only this view. It looks like a factor of 100.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eNina Dahl\u003cbr\u003eProgram officer, Ebbahus Stiftelse\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-03T10:10:00+02:00",
+      "from": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "id": 28,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Disbursement plan shows amounts in öre",
+      "ticket_id": 10012,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Nina,\u003c/p\u003e\u003cp\u003eYou are right, the plan view was missing the minor-unit conversion that the rest of the application does. Amounts are stored correctly, so nothing is wrong in your data or in the payments, only the display.\u003c/p\u003e\u003cp\u003eFix goes out with Thursday's release.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-04T11:30:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 29,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Disbursement plan shows amounts in öre",
+      "ticket_id": 10012,
+      "to": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "Confirmed fixed after the release. Closing from my side.",
+      "content_type": "text/plain",
+      "created_at": "2026-08-07T14:20:00+02:00",
+      "from": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "id": 30,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Disbursement plan shows amounts in öre",
+      "ticket_id": 10012,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-08-07T14:20:00+02:00",
+  "created_at": "2026-08-03T10:10:00+02:00",
+  "customer_id": 21,
+  "group_id": 2,
+  "id": 10012,
+  "number": "10012",
+  "organization_id": 2,
+  "priority": "2 normal",
+  "state": "closed",
+  "title": "Disbursement plan shows amounts in öre",
+  "updated_at": "2026-08-07T14:20:00+02:00"
+}

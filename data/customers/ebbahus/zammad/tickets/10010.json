@@ -1,0 +1,80 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eDear Minso,\u003c/p\u003e\u003cp\u003eThree of our grantees have sent their annual accounts twice now because the documents are not in the case afterwards. I suspect it is our own doing, we export from our old Acrobat plugin and the resulting files are enormous, often scans of signed pages.\u003c/p\u003e\u003cp\u003eBefore I go and buy a new PDF tool for the foundation, could you confirm whether the portal has a size ceiling we are running into? I would rather fix it on our side than bother you.\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eGustav Ebbe\u003cbr\u003eDirector, Ebbahus Stiftelse\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-24T09:30:00+02:00",
+      "from": "Gustav Ebbe \u003cgustav.ebbe@ebbahus.se\u003e",
+      "id": 5,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "The portal loses documents on submit",
+      "ticket_id": 10010,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eDear Gustav,\u003c/p\u003e\u003cp\u003eThere is a documented ceiling of 25 MB per document, and files above it are rejected with a visible message. If your grantees see no message at all then this is something else.\u003c/p\u003e\u003cp\u003eDo the grantees remember roughly how long they had the form open before sending? And could you ask one of them to try again immediately after reloading the page?\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eSara Holm\u003cbr\u003eSupport lead, Minso\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-24T15:10:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 6,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: The portal loses documents on submit",
+      "ticket_id": 10010,
+      "to": "Gustav Ebbe \u003cgustav.ebbe@ebbahus.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "I asked two of them. Both said they had been working in the form \"most of the morning\" before sending. One tried again after reloading and it worked on the first attempt.\n\nI still think our scans are heavier than they should be, we are 40 MB for a set of accounts sometimes. But that does not explain the silence.\n\nGustav",
+      "content_type": "text/plain",
+      "created_at": "2026-07-27T11:20:00+02:00",
+      "from": "Gustav Ebbe \u003cgustav.ebbe@ebbahus.se\u003e",
+      "id": 7,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: The portal loses documents on submit",
+      "ticket_id": 10010,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eSame pattern as the case we have open with the municipality: long-idle form, large document, no error surfaced. Gustav is convinced it is his own PDF tooling, I have not argued because we do not have a confirmed root cause yet.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-28T10:00:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 8,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "The portal loses documents on submit",
+      "ticket_id": 10010,
+      "to": "",
+      "type": "note"
+    },
+    {
+      "body": "\u003cp\u003eDear Gustav,\u003c/p\u003e\u003cp\u003ePlease hold off on buying anything. Reloading before sending is a workaround that seems to work, and the pattern you describe (long time in the form, then a large document, then silence) is something we are actively looking into on our side.\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eSara\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-28T10:25:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 9,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: The portal loses documents on submit",
+      "ticket_id": 10010,
+      "to": "Gustav Ebbe \u003cgustav.ebbe@ebbahus.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-07-24T09:30:00+02:00",
+  "customer_id": 20,
+  "group_id": 1,
+  "id": 10010,
+  "number": "10010",
+  "organization_id": 2,
+  "priority": "3 high",
+  "state": "open",
+  "title": "The portal loses documents on submit",
+  "updated_at": "2026-07-28T10:25:00+02:00"
+}

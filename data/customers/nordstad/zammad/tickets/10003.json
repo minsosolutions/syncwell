@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "Hi,\n\nThe decision letters we generate still have the old coat of arms in the header. We changed our graphic profile in May and communications is on my back about it.\n\nI have attached the new logo files in the formats our comms unit delivered.\n\nBest,\nKarin",
+      "content_type": "text/plain",
+      "created_at": "2026-07-30T13:12:00+02:00",
+      "from": "Karin Sjö \u003ckarin.sjo@nordstad.se\u003e",
+      "id": 25,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Decision letter PDF uses the old municipal logo",
+      "ticket_id": 10003,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Karin,\u003c/p\u003e\u003cp\u003eNew logo is in place in your letter template in production since this morning. I generated a test decision letter on a draft case and it looks correct, but please have your comms unit confirm the placement before you send a real batch.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eMia Berg\u003cbr\u003eCustomer success, Minso\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-03T09:40:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 26,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Decision letter PDF uses the old municipal logo",
+      "ticket_id": 10003,
+      "to": "Karin Sjö \u003ckarin.sjo@nordstad.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "Comms approved it. Thank you!",
+      "content_type": "text/plain",
+      "created_at": "2026-08-04T10:30:00+02:00",
+      "from": "Karin Sjö \u003ckarin.sjo@nordstad.se\u003e",
+      "id": 27,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Decision letter PDF uses the old municipal logo",
+      "ticket_id": 10003,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-08-04T10:30:00+02:00",
+  "created_at": "2026-07-30T13:12:00+02:00",
+  "customer_id": 12,
+  "group_id": 1,
+  "id": 10003,
+  "number": "10003",
+  "organization_id": 1,
+  "priority": "1 low",
+  "state": "solved",
+  "title": "Decision letter PDF uses the old municipal logo",
+  "updated_at": "2026-08-04T10:30:00+02:00"
+}

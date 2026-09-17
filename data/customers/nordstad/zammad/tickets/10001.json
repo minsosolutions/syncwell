@@ -1,0 +1,67 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eWe added four new caseworkers to the grants unit yesterday. Three of them get \"No matching account\" when they sign in through our ADFS, the fourth works fine. All four were created the same way in our directory.\u003c/p\u003e\u003cp\u003eCould you check what Grantly receives for them?\u003c/p\u003e\u003cp\u003e--\u003cbr\u003ePer Ek\u003cbr\u003eIT, Nordstad kommun\u003cbr\u003eper.ek@nordstad.se | 070-555 21 08\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-22T08:41:00+02:00",
+      "from": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "id": 1,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "SSO login fails for newly created caseworkers",
+      "ticket_id": 10001,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Per,\u003c/p\u003e\u003cp\u003eThanks for the details. In the SAML assertions we receive for the three failing users the \u003ccode\u003email\u003c/code\u003e attribute is empty, only \u003ccode\u003euserPrincipalName\u003c/code\u003e is set. We match on \u003ccode\u003email\u003c/code\u003e, which is why the fourth one works.\u003c/p\u003e\u003cp\u003eCould you check whether the mailbox had been provisioned at the time the accounts were synced?\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas Frid\u003cbr\u003eMinso\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-22T10:05:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 2,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: SSO login fails for newly created caseworkers",
+      "ticket_id": 10001,
+      "to": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "You were right. The mailboxes were provisioned about an hour after the accounts. I forced a resync this morning and all three can log in now.\n\nThanks for the quick look.\n\n/Per",
+      "content_type": "text/plain",
+      "created_at": "2026-07-24T13:20:00+02:00",
+      "from": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "id": 3,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: SSO login fails for newly created caseworkers",
+      "ticket_id": 10001,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eGood to hear. I am closing this one.\u003c/p\u003e\u003cp\u003eFor the future: if you provision in bulk, wait for the mailbox before syncing, or we can switch the matching attribute to UPN. Just say the word.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-27T09:12:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 4,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: SSO login fails for newly created caseworkers",
+      "ticket_id": 10001,
+      "to": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-07-27T09:12:00+02:00",
+  "created_at": "2026-07-22T08:41:00+02:00",
+  "customer_id": 11,
+  "group_id": 2,
+  "id": 10001,
+  "number": "10001",
+  "organization_id": 1,
+  "priority": "2 normal",
+  "state": "closed",
+  "title": "SSO login fails for newly created caseworkers",
+  "updated_at": "2026-07-27T09:12:00+02:00"
+}

@@ -1,0 +1,80 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHello,\u003c/p\u003e\u003cp\u003eThis is a compliance matter rather than a bug report, or at least it has become one.\u003c/p\u003e\u003cp\u003eIn four cases from the June call our register shows an application received before the closing time, but the enclosures the applicant refers to are not in the case and there is no trace of them anywhere in the audit trail. Two of the applicants have now written to us formally and one has said the word \"överklagande\".\u003c/p\u003e\u003cp\u003eWe are a public authority. If an applicant asserts they filed something before the closing time and our system holds no record either way, we cannot demonstrate that the decision was taken on a complete basis. I need to know what your audit trail records at the moment a document is offered to the system, even if the document itself never lands.\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eHåkan Nyberg\u003cbr\u003eProgramme director, Regionalt Utvecklingsverket\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-06T11:00:00+02:00",
+      "from": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "id": 40,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "We cannot prove when an applicant filed their enclosures",
+      "ticket_id": 10022,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eDear Håkan,\u003c/p\u003e\u003cp\u003eThank you for framing it so precisely, it helps.\u003c/p\u003e\u003cp\u003eToday the audit trail records a document when it has been stored. There is no entry for an attempt that did not complete, which is exactly the gap you are describing. I will not defend that design, it is a fair criticism and I am taking it to our engineers.\u003c/p\u003e\u003cp\u003eOn the four cases: if you give me the case numbers and approximate times we can look in the request logs, which do keep more than the audit trail does. That may let you establish what happened in those specific cases even though the audit trail is silent.\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eSara Holm\u003cbr\u003eSupport lead, Minso\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-06T16:30:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 41,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: We cannot prove when an applicant filed their enclosures",
+      "ticket_id": 10022,
+      "to": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u0026gt; if you give me the case numbers and approximate times\n\nCase numbers: RUV-2026-1180, RUV-2026-1194, RUV-2026-1207, RUV-2026-1233. All in the last week before the closing time on 15 June, all late afternoon. The applicants describe sitting with the form for a long time before sending, which I mention in case it matters.\n\nThree of the four concern the same kind of enclosure, the financial annex, which tends to be the heaviest document in the set.\n\nHåkan Nyberg",
+      "content_type": "text/plain",
+      "created_at": "2026-08-10T09:25:00+02:00",
+      "from": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "id": 42,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: We cannot prove when an applicant filed their enclosures",
+      "ticket_id": 10022,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eRequest logs show a 401 on the document endpoint for three of the four case numbers, all late afternoon, all after long sessions. Same signature as the other two customers. This one has a legal dimension the others do not, so it should drive the priority.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-11T14:15:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 43,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "We cannot prove when an applicant filed their enclosures",
+      "ticket_id": 10022,
+      "to": "",
+      "type": "note"
+    },
+    {
+      "body": "\u003cp\u003eDear Håkan,\u003c/p\u003e\u003cp\u003eWe found request log entries for three of the four cases showing a rejected request at the times the applicants describe. I can produce a written extract for those three, which should let you show that something was in fact offered to the system.\u003c/p\u003e\u003cp\u003eFor the fourth case we have nothing in the window given.\u003c/p\u003e\u003cp\u003eSeparately, we are treating the missing audit trail entry as a defect and not as expected behaviour.\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eSara\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-12T10:40:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 44,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: We cannot prove when an applicant filed their enclosures",
+      "ticket_id": 10022,
+      "to": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-08-06T11:00:00+02:00",
+  "customer_id": 30,
+  "group_id": 2,
+  "id": 10022,
+  "number": "10022",
+  "organization_id": 3,
+  "priority": "3 high",
+  "state": "open",
+  "title": "We cannot prove when an applicant filed their enclosures",
+  "updated_at": "2026-08-12T10:40:00+02:00"
+}

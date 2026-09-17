@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	source := flag.String("source", "slack", "source to collect: slack, transcripts, email")
+	source := flag.String("source", "slack", "source to collect: slack, zammad, transcripts, email")
 	api := flag.String("api", "http://localhost:8099", "mock API base URL")
 	token := flag.String("token", "dev-token", "bearer token; any non-empty value works")
 	configPath := flag.String("config", "config/syncwell.json", "routing config")
@@ -29,6 +29,9 @@ func main() {
 	case "slack":
 		client := &collect.Client{BaseURL: *api, Token: *token, HTTP: &http.Client{Timeout: 10 * time.Second}}
 		rep, err = collect.Slack(client, cfg, *dataDir)
+	case "zammad":
+		client := &collect.Client{BaseURL: *api, Token: *token, HTTP: &http.Client{Timeout: 10 * time.Second}}
+		rep, err = collect.Zammad(client, cfg, *dataDir)
 	case "transcripts":
 		// A file drop, not an API: no client, no token.
 		rep, err = collect.Transcripts(cfg, *dataDir)

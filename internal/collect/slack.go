@@ -1,8 +1,8 @@
 // Package collect holds the reference Collectors.
 //
-// Slack (an HTTP API), transcripts and email (file drops, sharing collectDrop) are
-// implemented. Zammad is documented in data/sources/zammad/README.md and left for you to
-// write — that is the exercise.
+// All four Sources are implemented: Slack and Zammad over HTTP, transcripts and email as file
+// drops sharing collectDrop. Each Source's README in data/sources/<source>/ documents the real
+// vendor's API and the routing rule this one stands in for.
 package collect
 
 import (

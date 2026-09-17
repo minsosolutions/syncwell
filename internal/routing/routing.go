@@ -120,3 +120,33 @@ func (c *Config) byDomain(domain string) *Customer {
 	}
 	return nil
 }
+
+// ByOrganizationThenDomain routes a support ticket. Zammad carries its own organization and
+// that is the better key: the desk set it deliberately, where a domain is an inference about a
+// person. But Zammad holds one domain per organization and a Customer may use two, so a ticket
+// the desk never assigned falls back to the requester's domain.
+//
+// An organization Zammad knows and the config does not is a configuration gap, not a case for
+// the fallback: the desk has already said this ticket belongs elsewhere, and routing it on the
+// requester's domain would overrule that. Quarantine and let a human fix the config.
+func (c *Config) ByOrganizationThenDomain(organization, requester string) (*Customer, error) {
+	if organization = strings.TrimSpace(organization); organization != "" {
+		var found *Customer
+		for i := range c.Customers {
+			if strings.EqualFold(c.Customers[i].ZammadOrganization, organization) {
+				if found != nil {
+					return nil, &Unroutable{fmt.Sprintf("organization %q is configured on both %s and %s", organization, found.Slug, c.Customers[i].Slug)}
+				}
+				found = &c.Customers[i]
+			}
+		}
+		if found == nil {
+			return nil, &Unroutable{fmt.Sprintf("organization %q is not a configured customer", organization)}
+		}
+		return found, nil
+	}
+	if strings.TrimSpace(requester) == "" {
+		return nil, &Unroutable{"ticket has neither an organization nor a requester"}
+	}
+	return c.byNonVendorDomains([]string{requester}, "requester is the vendor; no customer on the ticket")
+}

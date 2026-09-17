@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eThe council decided in June that cultural associations will apply through Grantly from the autumn round instead of by paper. We need a new category with its own form, its own decision template and its own budget ceiling.\u003c/p\u003e\u003cp\u003eWho do we talk to about the form design? Our unit for culture and leisure wants three extra questions on the form.\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eAnna Lind\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-03T11:05:00+02:00",
+      "from": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "id": 31,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "New grant category for Kultur och fritid",
+      "ticket_id": 10004,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Anna,\u003c/p\u003e\u003cp\u003eHappy to hear it. The category itself is configuration and I can set it up in a day once we have the form fields. The three extra questions are fine as long as they are of the standard field types.\u003c/p\u003e\u003cp\u003eCould you send the field list with type and whether each is mandatory? Then we do it in your test environment first and you review it there.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eMia\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-04T15:30:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 32,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: New grant category for Kultur och fritid",
+      "ticket_id": 10004,
+      "to": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eWaiting on the field list from the culture unit. Anna says it is with them. Reminder set for the 26th; if nothing by then this will not make the autumn round and someone needs to say that out loud.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-12T09:10:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 33,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "New grant category for Kultur och fritid",
+      "ticket_id": 10004,
+      "to": "",
+      "type": "note"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-08-03T11:05:00+02:00",
+  "customer_id": 10,
+  "group_id": 2,
+  "id": 10004,
+  "number": "10004",
+  "organization_id": 1,
+  "priority": "2 normal",
+  "state": "pending reminder",
+  "title": "New grant category for Kultur och fritid",
+  "updated_at": "2026-08-12T09:10:00+02:00"
+}

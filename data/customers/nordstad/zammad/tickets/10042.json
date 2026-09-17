@@ -1,0 +1,93 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eOur monthly export of all applications in the spring round fails. I pick the round, choose Excel, and after about two minutes the browser shows the Grantly error page. Tried four times yesterday and twice this morning.\u003c/p\u003e\u003cp\u003eWe need this for the council reporting, so it is fairly urgent.\u003c/p\u003e\u003cp\u003e--\u003cbr\u003ePer Ek\u003cbr\u003eIT, Nordstad kommun\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-04T08:20:00+02:00",
+      "from": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "id": 34,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Bulk export of applications times out",
+      "ticket_id": 10042,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Per,\u003c/p\u003e\u003cp\u003eI can see the failures in the logs, the request is cut off at 120 seconds by the gateway. Your spring round has just over 9 300 applications, which is by some margin the largest export we run for any customer.\u003c/p\u003e\u003cp\u003eI am looking at where the time goes. Will come back this week.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas Frid\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-05T10:35:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 35,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Bulk export of applications times out",
+      "ticket_id": 10042,
+      "to": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eProfiled it. The attachment count subquery ran once per application row. Rewrote it as a single aggregate and added an index on \u003ccode\u003eapplication_id\u003c/code\u003e. Export of the full spring round now runs in 38 s locally against a copy of their data, down from well over three minutes.\u003c/p\u003e\u003cp\u003eGoes out with the release on the 18th.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-12T17:05:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 36,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "Bulk export of applications times out",
+      "ticket_id": 10042,
+      "to": "",
+      "type": "note"
+    },
+    {
+      "body": "\u003cp\u003eHi Per,\u003c/p\u003e\u003cp\u003eThe fix is in production as of this morning. The export query was doing one extra lookup per application row; that is now a single aggregate with a new index behind it.\u003c/p\u003e\u003cp\u003eCould you run your export once and confirm?\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-18T09:00:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 37,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Bulk export of applications times out",
+      "ticket_id": 10042,
+      "to": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "Ran it just now and got the file. Much better, thanks.\n\n/Per",
+      "content_type": "text/plain",
+      "created_at": "2026-08-19T14:10:00+02:00",
+      "from": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "id": 38,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Bulk export of applications times out",
+      "ticket_id": 10042,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eGreat. Root cause was an N+1 query in the export job, fixed and verified with the full spring round on your production data. The export is comfortably inside the gateway timeout now, so this should not come back.\u003c/p\u003e\u003cp\u003eClosing as solved.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas Frid\u003cbr\u003eMinso\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-19T15:45:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 39,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Bulk export of applications times out",
+      "ticket_id": 10042,
+      "to": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-08-19T15:45:00+02:00",
+  "created_at": "2026-08-04T08:20:00+02:00",
+  "customer_id": 11,
+  "group_id": 2,
+  "id": 10042,
+  "number": "10042",
+  "organization_id": 1,
+  "priority": "3 high",
+  "state": "solved",
+  "title": "Bulk export of applications times out",
+  "updated_at": "2026-08-19T15:45:00+02:00"
+}

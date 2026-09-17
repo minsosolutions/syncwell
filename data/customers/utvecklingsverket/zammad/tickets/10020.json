@@ -1,0 +1,67 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHello,\u003c/p\u003e\u003cp\u003eAs part of preparing our updated processing agreement I need a written statement of how long personal data in \u003cem\u003erejected\u003c/em\u003e applications is retained in Grantly before it is erased.\u003c/p\u003e\u003cp\u003eOur own documentation, which we took from your platform documentation last autumn, says 24 months. A colleague claims it is longer now. I need the correct figure and what it is based on, since it goes into an annex that our lawyers will read.\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eElin Sund\u003cbr\u003eData protection officer, Regionalt Utvecklingsverket\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-12T09:40:00+02:00",
+      "from": "Elin Sund \u003celin.sund@utvecklingsverket.se\u003e",
+      "id": 53,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Retention period for rejected applications",
+      "ticket_id": 10020,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eChecking with Jonas before answering. The default changed in the July release and I want the release note reference in the reply, not just my memory.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-12T14:05:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 54,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "Retention period for rejected applications",
+      "ticket_id": 10020,
+      "to": "",
+      "type": "note"
+    },
+    {
+      "body": "\u003cp\u003eHello Elin,\u003c/p\u003e\u003cp\u003eYour colleague is right. The platform default retention for rejected applications is \u003cstrong\u003e36 months\u003c/strong\u003e from the decision date, counted from when the decision is registered.\u003c/p\u003e\u003cp\u003eIt was 24 months until the \u003cstrong\u003eJuly 2026 release (2026.7, released 14 July)\u003c/strong\u003e, where the default was raised to 36 months following the review of archival obligations for public-sector customers. The change is listed in the release notes for 2026.7 under \"Retention defaults\". Existing tenants, including yours, were migrated to the new default at the same time, so your environment is on 36 months today.\u003c/p\u003e\u003cp\u003eTwo things worth putting in your annex:\u003c/p\u003e\u003cp\u003e1. The 36 months is a tenant-level setting and can be lowered for your tenant on request, with a documented decision from you.\u003cbr\u003e2. Attachments follow the application record, they are not kept longer.\u003c/p\u003e\u003cp\u003eNote that any documentation of ours that still states 24 months predates the July release and is out of date. Please use this reply as the reference.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas Frid\u003cbr\u003eBackend engineer, Minso\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-13T11:20:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 55,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Retention period for rejected applications",
+      "ticket_id": 10020,
+      "to": "Elin Sund \u003celin.sund@utvecklingsverket.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u0026gt; The platform default retention for rejected applications is 36 months from the decision date\n\nThank you, that is exactly what I needed, and good that you gave the release reference. I will cite 2026.7 in the annex.\n\nI will come back separately about the processing agreement itself.\n\nElin Sund\nData protection officer",
+      "content_type": "text/plain",
+      "created_at": "2026-08-14T15:20:00+02:00",
+      "from": "Elin Sund \u003celin.sund@utvecklingsverket.se\u003e",
+      "id": 56,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Retention period for rejected applications",
+      "ticket_id": 10020,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-08-14T15:20:00+02:00",
+  "created_at": "2026-08-12T09:40:00+02:00",
+  "customer_id": 31,
+  "group_id": 2,
+  "id": 10020,
+  "number": "10020",
+  "organization_id": 3,
+  "priority": "2 normal",
+  "state": "solved",
+  "title": "Retention period for rejected applications",
+  "updated_at": "2026-08-14T15:20:00+02:00"
+}

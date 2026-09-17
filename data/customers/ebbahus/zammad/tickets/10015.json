@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "Hi,\n\nI tick \"remember this device\" but the code is requested again the next morning. My colleague on Chrome is not asked for weeks. I am on a Mac with Safari, nothing unusual in the settings as far as I can tell.\n\n/Nina",
+      "content_type": "text/plain",
+      "created_at": "2026-08-21T11:15:00+02:00",
+      "from": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "id": 68,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Two-factor prompt returns on every login in Safari",
+      "ticket_id": 10015,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Nina,\u003c/p\u003e\u003cp\u003eThe device is remembered with a cookie that we set for 30 days. Safari's tracking prevention caps cookies set in certain ways at seven days, and ours was set from a script rather than by the server, which puts it in that category.\u003c/p\u003e\u003cp\u003eWe are moving it to a server-set cookie in the next release. After that Safari will keep it the full 30 days.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-22T13:50:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 69,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Two-factor prompt returns on every login in Safari",
+      "ticket_id": 10015,
+      "to": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "Released version behaves. Not asked for a code since Monday. Thanks.",
+      "content_type": "text/plain",
+      "created_at": "2026-08-26T10:15:00+02:00",
+      "from": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "id": 70,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Two-factor prompt returns on every login in Safari",
+      "ticket_id": 10015,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-08-26T10:15:00+02:00",
+  "created_at": "2026-08-21T11:15:00+02:00",
+  "customer_id": 21,
+  "group_id": 2,
+  "id": 10015,
+  "number": "10015",
+  "organization_id": 2,
+  "priority": "2 normal",
+  "state": "solved",
+  "title": "Two-factor prompt returns on every login in Safari",
+  "updated_at": "2026-08-26T10:15:00+02:00"
+}

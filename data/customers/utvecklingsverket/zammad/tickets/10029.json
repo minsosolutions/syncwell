@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHello,\u003c/p\u003e\u003cp\u003eWe are training the regional offices in week 40 and the training environment still holds data from February. We would like a refreshed copy, with personal data replaced, so that the exercises use realistic case types.\u003c/p\u003e\u003cp\u003eIs that something you can prepare before the end of September?\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eHåkan Nyberg\u003cbr\u003eProgramme director, Regionalt Utvecklingsverket\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-15T15:40:00+02:00",
+      "from": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "id": 99,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Refreshed data set for the training environment",
+      "ticket_id": 10029,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-09-15T15:40:00+02:00",
+  "customer_id": 30,
+  "group_id": 1,
+  "id": 10029,
+  "number": "10029",
+  "organization_id": 3,
+  "priority": "1 low",
+  "state": "new",
+  "title": "Refreshed data set for the training environment",
+  "updated_at": "2026-09-15T15:40:00+02:00"
+}

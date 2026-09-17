@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHello,\u003c/p\u003e\u003cp\u003eOur internal audit unit will sample decisions from the spring call. They want the audit log for a set of cases as a file they can keep, not a screen they scroll.\u003c/p\u003e\u003cp\u003eIs there an export, and what does it contain? They will ask whether the export itself is logged.\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eElin Sund\u003cbr\u003eData protection officer\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-18T13:20:00+02:00",
+      "from": "Elin Sund \u003celin.sund@utvecklingsverket.se\u003e",
+      "id": 60,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Audit log export for the internal audit unit",
+      "ticket_id": 10024,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Elin,\u003c/p\u003e\u003cp\u003eThere is an export per case from the audit tab, as CSV, containing timestamp, actor, action and the affected field. There is no bulk export across a selection of cases today, which I suspect is what your audit unit actually wants.\u003c/p\u003e\u003cp\u003eAnd yes, the export action is itself written to the log.\u003c/p\u003e\u003cp\u003eLet me check with our developers what a selection-based export would take, and come back to you.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eMia Berg\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-19T11:05:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 61,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Audit log export for the internal audit unit",
+      "ticket_id": 10024,
+      "to": "Elin Sund \u003celin.sund@utvecklingsverket.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eNo estimate yet on the bulk export. Reminder moved to 18 Sep. Elin's audit unit starts sampling in October, so this has a real deadline even if nobody has said so.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-01T08:40:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 62,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "Audit log export for the internal audit unit",
+      "ticket_id": 10024,
+      "to": "",
+      "type": "note"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-08-18T13:20:00+02:00",
+  "customer_id": 31,
+  "group_id": 2,
+  "id": 10024,
+  "number": "10024",
+  "organization_id": 3,
+  "priority": "2 normal",
+  "state": "pending reminder",
+  "title": "Audit log export for the internal audit unit",
+  "updated_at": "2026-09-01T08:40:00+02:00"
+}

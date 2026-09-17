@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eOur elected auditors will review the spring grant round in October. They need to read cases and decisions but must not be able to change anything, and it should be visible in the log that they only read.\u003c/p\u003e\u003cp\u003eIs there a ready-made role for that, or do we build one? Three named people, access needed from 1 October.\u003c/p\u003e\u003cp\u003e--\u003cbr\u003ePer Ek\u003cbr\u003eIT, Nordstad kommun\u003cbr\u003eper.ek@nordstad.se | 070-555 21 08\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-14T16:05:00+02:00",
+      "from": "Per Ek \u003cper.ek@nordstad.se\u003e",
+      "id": 97,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Read-only access for the council auditors",
+      "ticket_id": 10009,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-09-14T16:05:00+02:00",
+  "customer_id": 11,
+  "group_id": 2,
+  "id": 10009,
+  "number": "10009",
+  "organization_id": 1,
+  "priority": "2 normal",
+  "state": "new",
+  "title": "Read-only access for the council auditors",
+  "updated_at": "2026-09-14T16:05:00+02:00"
+}

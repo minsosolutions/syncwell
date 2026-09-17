@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHello,\u003c/p\u003e\u003cp\u003eThe grantee list exported to Excel turns åäö into strange character pairs. \"Bröderna Öberg\" becomes something unreadable. It looked fine last spring.\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eGustav Ebbe\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-07T15:20:00+02:00",
+      "from": "Gustav Ebbe \u003cgustav.ebbe@ebbahus.se\u003e",
+      "id": 88,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Excel export of grantees mangles Swedish characters",
+      "ticket_id": 10018,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Gustav,\u003c/p\u003e\u003cp\u003eAre you opening the file directly in Excel, or importing it? We send UTF-8 CSV, and Excel on Windows assumes the old Windows encoding unless the file carries a byte order mark.\u003c/p\u003e\u003cp\u003eWe can add the byte order mark to the export, which makes Excel open it correctly on double-click. I have asked for it to be added.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eMia\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-08T10:05:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 89,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Excel export of grantees mangles Swedish characters",
+      "ticket_id": 10018,
+      "to": "Gustav Ebbe \u003cgustav.ebbe@ebbahus.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "The new export opens correctly, names look right. Thank you for the quick turn.\n\nGustav Ebbe\nDirector, Ebbahus Stiftelse",
+      "content_type": "text/plain",
+      "created_at": "2026-09-10T11:40:00+02:00",
+      "from": "Gustav Ebbe \u003cgustav.ebbe@ebbahus.se\u003e",
+      "id": 90,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Excel export of grantees mangles Swedish characters",
+      "ticket_id": 10018,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-09-10T11:40:00+02:00",
+  "created_at": "2026-09-07T15:20:00+02:00",
+  "customer_id": 20,
+  "group_id": 1,
+  "id": 10018,
+  "number": "10018",
+  "organization_id": 2,
+  "priority": "2 normal",
+  "state": "solved",
+  "title": "Excel export of grantees mangles Swedish characters",
+  "updated_at": "2026-09-10T11:40:00+02:00"
+}

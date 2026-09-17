@@ -1,0 +1,80 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHello,\u003c/p\u003e\u003cp\u003eOur switchboard has taken eleven calls in two weeks from applicants who say the budget file they picked is simply not there when they come back to the form. Applicant 2026-0412 called twice about it. They are quite upset, several of them think we lost it on purpose.\u003c/p\u003e\u003cp\u003eThe caseworkers see nothing in the case, so we have to ask people to redo the work. It is the bigger files, the ones with the multi-year budget sheets, that people mention.\u003c/p\u003e\u003cp\u003eCan you look at this? The volume is getting hard to handle.\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eAnna Lind\u003cbr\u003eGrants manager, Nordstad kommun\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-28T09:15:00+02:00",
+      "from": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "id": 17,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Applicants call in saying their budget file disappeared",
+      "ticket_id": 10002,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Anna,\u003c/p\u003e\u003cp\u003eSorry about that, and thanks for the call volume figure, it helps us prioritise.\u003c/p\u003e\u003cp\u003eTo narrow it down: do the applicants get any error message on screen, or does the form simply continue as if nothing happened? And do you have a rough time of day for a couple of the cases so we can find them in the logs?\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eSara Holm\u003cbr\u003eSupport lead, Minso\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-28T11:40:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 18,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Applicants call in saying their budget file disappeared",
+      "ticket_id": 10002,
+      "to": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u0026gt; do the applicants get any error message on screen\n\nNo message at all, that is what makes them so sure it went through. One of them described it as the page just scrolling back to the top.\n\nTimes: applicant 2026-0412 says around 16:30 on 23 July, and applicant 2026-0387 says late afternoon on 25 July. Both worked on the form over a long period, they said they had it open most of the afternoon.\n\n/Anna",
+      "content_type": "text/plain",
+      "created_at": "2026-07-29T14:02:00+02:00",
+      "from": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "id": 19,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Applicants call in saying their budget file disappeared",
+      "ticket_id": 10002,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eReproduced once in staging: leave the form idle for a long stretch, then pick a large file and the POST comes back 401 but the front end swallows it. Both reported cases were people who had the form open all afternoon.\u003c/p\u003e\u003cp\u003eHanding to Jonas. Not telling the customer a root cause until we have it confirmed in production logs.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-30T08:55:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 20,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "Applicants call in saying their budget file disappeared",
+      "ticket_id": 10002,
+      "to": "",
+      "type": "note"
+    },
+    {
+      "body": "\u003cp\u003eHi Anna,\u003c/p\u003e\u003cp\u003eUpdate: we can reproduce the behaviour when the form has been open for a long time before the file is picked. We are investigating on our side and will come back with a fix plan.\u003c/p\u003e\u003cp\u003eIn the meantime, if a caseworker tells the applicant to reload the page before adding the file, it should go through.\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eSara\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-31T16:20:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 21,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Applicants call in saying their budget file disappeared",
+      "ticket_id": 10002,
+      "to": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-07-28T09:15:00+02:00",
+  "customer_id": 10,
+  "group_id": 1,
+  "id": 10002,
+  "number": "10002",
+  "organization_id": 1,
+  "priority": "3 high",
+  "state": "open",
+  "title": "Applicants call in saying their budget file disappeared",
+  "updated_at": "2026-07-31T16:20:00+02:00"
+}

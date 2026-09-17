@@ -1,0 +1,67 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi Jonas,\u003c/p\u003e\u003cp\u003eSecond dry run finished last night. Source system reports 128 440 cases, Grantly ended up with 127 902. That is 538 missing and I cannot see a pattern by year or by region.\u003c/p\u003e\u003cp\u003eI have the run id and the reject log if you want them.\u003c/p\u003e\u003cp\u003e--\u003cbr\u003eTobias Ahl\u003cbr\u003eArchitect, Regionalt Utvecklingsverket\u003cbr\u003etobias.ahl@ruv.se\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-25T10:20:00+02:00",
+      "from": "Tobias Ahl \u003ctobias.ahl@ruv.se\u003e",
+      "id": 10,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Migration dry run 2: record counts do not match",
+      "ticket_id": 10021,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Tobias,\u003c/p\u003e\u003cp\u003eYes please, send the reject log. My first guess is the cases that have no decision date at all; our importer requires one and the loader would have pushed those to the reject file rather than failing the run.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-25T16:45:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 11,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Migration dry run 2: record counts do not match",
+      "ticket_id": 10021,
+      "to": "Tobias Ahl \u003ctobias.ahl@ruv.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u0026gt; My first guess is the cases that have no decision date at all\n\nGood guess. 511 of the 538 have an empty decision date, all from 2019-2020 when that field was optional in the old system. The remaining 27 are duplicates on our side that we should not migrate anyway.\n\nWe need a rule for the 511. Options as I see them: import with the registration date as decision date, or import them as not decided. That is a business decision, not mine.\n\n/Tobias",
+      "content_type": "text/plain",
+      "created_at": "2026-07-28T08:30:00+02:00",
+      "from": "Tobias Ahl \u003ctobias.ahl@ruv.se\u003e",
+      "id": 12,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Migration dry run 2: record counts do not match",
+      "ticket_id": 10021,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eTechnically we can do either. Waiting on the agency to decide. Flagged in the migration channel as well.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-07-29T09:15:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 13,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "Migration dry run 2: record counts do not match",
+      "ticket_id": 10021,
+      "to": "",
+      "type": "note"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-07-25T10:20:00+02:00",
+  "customer_id": 32,
+  "group_id": 2,
+  "id": 10021,
+  "number": "10021",
+  "organization_id": 3,
+  "priority": "3 high",
+  "state": "open",
+  "title": "Migration dry run 2: record counts do not match",
+  "updated_at": "2026-07-29T09:15:00+02:00"
+}

@@ -1,0 +1,41 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eOur finance department bounced invoice 2026-0731 because the reference says \u003cem\u003eA. Lind\u003c/em\u003e and it must be our cost centre code \u003cem\u003eNK-4412\u003c/em\u003e. Otherwise it cannot be routed in our e-invoicing system.\u003c/p\u003e\u003cp\u003eCould you issue a credit and a corrected invoice, and use NK-4412 from now on?\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eAnna Lind\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-21T10:40:00+02:00",
+      "from": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "id": 66,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Invoice 2026-0731 has the wrong reference",
+      "ticket_id": 10007,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Anna,\u003c/p\u003e\u003cp\u003eCredit note and corrected invoice were sent this morning, and NK-4412 is now stored as the standing reference on your account so future invoices carry it automatically.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eMia Berg\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-25T13:15:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 67,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Invoice 2026-0731 has the wrong reference",
+      "ticket_id": 10007,
+      "to": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-08-25T13:15:00+02:00",
+  "created_at": "2026-08-21T10:40:00+02:00",
+  "customer_id": 10,
+  "group_id": 3,
+  "id": 10007,
+  "number": "10007",
+  "organization_id": 1,
+  "priority": "1 low",
+  "state": "solved",
+  "title": "Invoice 2026-0731 has the wrong reference",
+  "updated_at": "2026-08-25T13:15:00+02:00"
+}

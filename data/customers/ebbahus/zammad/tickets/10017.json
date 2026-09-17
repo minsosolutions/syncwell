@@ -1,0 +1,41 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eThe confirmation mail our applicants receive says the decision will be communicated \"by 15 November 2025\". The date is written into the template text rather than pulled from the round.\u003c/p\u003e\u003cp\u003eCan it be made dynamic? Otherwise we will forget it again next year.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eNina Dahl\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-03T10:45:00+02:00",
+      "from": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "id": 86,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Applicant mail templates still show last year's deadline",
+      "ticket_id": 10017,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Nina,\u003c/p\u003e\u003cp\u003eIt can. There is a placeholder for the round's decision date; I have corrected your confirmation template to use it and sent a test to your address.\u003c/p\u003e\u003cp\u003eYour three other templates have the same hard-coded date. I would like to go through them with you on a short call rather than guess which field each should use.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eMia\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-04T09:30:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 87,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Applicant mail templates still show last year's deadline",
+      "ticket_id": 10017,
+      "to": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-09-03T10:45:00+02:00",
+  "customer_id": 21,
+  "group_id": 1,
+  "id": 10017,
+  "number": "10017",
+  "organization_id": 2,
+  "priority": "2 normal",
+  "state": "open",
+  "title": "Applicant mail templates still show last year's deadline",
+  "updated_at": "2026-09-04T09:30:00+02:00"
+}

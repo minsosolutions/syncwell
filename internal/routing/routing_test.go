@@ -42,9 +42,9 @@ func TestBySlackChannel(t *testing.T) {
 
 func transcriptConfig() *Config {
 	c := &Config{Customers: []Customer{
-		{Slug: "nordstad", Domains: []string{"nordstad.se"}},
-		{Slug: "ebbahus", Domains: []string{"ebbahus.se"}},
-		{Slug: "utvecklingsverket", Domains: []string{"utvecklingsverket.se", "ruv.se"}},
+		{Slug: "nordstad", Domains: []string{"nordstad.se"}, ZammadOrganization: "Nordstad kommun"},
+		{Slug: "ebbahus", Domains: []string{"ebbahus.se"}, ZammadOrganization: "Ebbahus Stiftelse"},
+		{Slug: "utvecklingsverket", Domains: []string{"utvecklingsverket.se", "ruv.se"}, ZammadOrganization: "Regionalt Utvecklingsverket"},
 	}}
 	c.Vendor.Domain = "minso.se"
 	return c
@@ -123,5 +123,54 @@ func TestByPeerDomains(t *testing.T) {
 	// Vendor talking to itself about a Customer.
 	if _, err := c.ByPeerDomains([]string{"robin@minso.se", "sara.holm@minso.se"}); err == nil {
 		t.Fatal("internal mail routed to a customer")
+	}
+}
+
+// Zammad's own organization is the right thing to route on when the desk has set it. The
+// fallback exists because Zammad holds one domain per organization and a Customer may use two.
+func TestByOrganizationThenDomain(t *testing.T) {
+	c := transcriptConfig()
+
+	got, err := c.ByOrganizationThenDomain("Nordstad kommun", "per.ek@nordstad.se")
+	if err != nil {
+		t.Fatalf("organization set: %v", err)
+	}
+	if got.Slug != "nordstad" {
+		t.Fatalf("routed to %s, want nordstad", got.Slug)
+	}
+
+	// The organization wins even when it disagrees with the requester's domain: the desk
+	// assigned it deliberately, a domain is a guess about a person.
+	got, err = c.ByOrganizationThenDomain("Regionalt Utvecklingsverket", "tobias.ahl@ruv.se")
+	if err != nil {
+		t.Fatalf("second domain under one organization: %v", err)
+	}
+	if got.Slug != "utvecklingsverket" {
+		t.Fatalf("routed to %s, want utvecklingsverket", got.Slug)
+	}
+
+	// No organization: fall back to the requester's domain.
+	got, err = c.ByOrganizationThenDomain("", "elin.sund@utvecklingsverket.se")
+	if err != nil {
+		t.Fatalf("fallback: %v", err)
+	}
+	if got.Slug != "utvecklingsverket" {
+		t.Fatalf("fallback routed to %s, want utvecklingsverket", got.Slug)
+	}
+
+	// Q2: no organization and a personal address. The text of that ticket names the customer;
+	// the rule cannot see it and must not pretend otherwise.
+	if _, err := c.ByOrganizationThenDomain("", "karin.sjo@hotmail.com"); err == nil {
+		t.Fatal("personal address with no organization routed to a customer")
+	}
+
+	// An organization Zammad knows and the config does not is a configuration gap, not a guess
+	// to be papered over by the domain fallback.
+	if _, err := c.ByOrganizationThenDomain("Okänd Kommun", "someone@nordstad.se"); err == nil {
+		t.Fatal("unknown organization fell through to the domain fallback")
+	}
+
+	if _, err := c.ByOrganizationThenDomain("", ""); err == nil {
+		t.Fatal("ticket with neither organization nor requester routed anyway")
 	}
 }

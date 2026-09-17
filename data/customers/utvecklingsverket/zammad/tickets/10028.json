@@ -1,0 +1,67 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eGenerated decision letters for 1 800 cases at 17:00 on Friday. The job is still shown as queued this morning, three days later. No error, no progress. We cancelled and retried once with the same result.\u003c/p\u003e\u003cp\u003eThe regional offices are waiting to send these out.\u003c/p\u003e\u003cp\u003e--\u003cbr\u003eTobias Ahl\u003cbr\u003eArchitect, Regionalt Utvecklingsverket\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-08T08:15:00+02:00",
+      "from": "Tobias Ahl \u003ctobias.ahl@ruv.se\u003e",
+      "id": 91,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Bulk letter generation queues but never finishes",
+      "ticket_id": 10028,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Tobias,\u003c/p\u003e\u003cp\u003eFound it. One case in the batch has a decision template that references a field removed in your last configuration change. The worker throws on that case and the retry loop keeps putting the whole batch back in the queue.\u003c/p\u003e\u003cp\u003eI have taken the offending case out of the batch and restarted the job, letters are generating now. The real fix is that one bad case should not stall the batch; we are logging that.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-08T10:30:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 92,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Bulk letter generation queues but never finishes",
+      "ticket_id": 10028,
+      "to": "Tobias Ahl \u003ctobias.ahl@ruv.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "All 1 799 letters are out. The remaining case is RUV-2026-0904, we will handle it manually.\n\nLeave the ticket open until the batch handling is fixed, please.\n\n/Tobias",
+      "content_type": "text/plain",
+      "created_at": "2026-09-08T16:45:00+02:00",
+      "from": "Tobias Ahl \u003ctobias.ahl@ruv.se\u003e",
+      "id": 93,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Bulk letter generation queues but never finishes",
+      "ticket_id": 10028,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eKeeping open per customer request, pending the worker fix. Reminder 22 Sep.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-09T09:20:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 94,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "Bulk letter generation queues but never finishes",
+      "ticket_id": 10028,
+      "to": "",
+      "type": "note"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-09-08T08:15:00+02:00",
+  "customer_id": 32,
+  "group_id": 2,
+  "id": 10028,
+  "number": "10028",
+  "organization_id": 3,
+  "priority": "3 high",
+  "state": "pending reminder",
+  "title": "Bulk letter generation queues but never finishes",
+  "updated_at": "2026-09-09T09:20:00+02:00"
+}

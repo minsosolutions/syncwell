@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHello Mia,\u003c/p\u003e\u003cp\u003eA small wish. The board report we generate before each meeting lists grantee names only. Our treasurer wants the organisation number next to each name so he can match against the ledger without looking each one up.\u003c/p\u003e\u003cp\u003eNot urgent, but it would save him an evening every quarter.\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eGustav\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-18T14:20:00+02:00",
+      "from": "Gustav Ebbe \u003cgustav.ebbe@ebbahus.se\u003e",
+      "id": 63,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Board report should include the grantee organisation number",
+      "ticket_id": 10014,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Gustav,\u003c/p\u003e\u003cp\u003eThat is a template change and I can do it, but the report template is shared with two other customers so I need to add the column as optional rather than by default. I have asked our developers what that takes.\u003c/p\u003e\u003cp\u003eI will come back to you within two weeks.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eMia\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-19T10:35:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 64,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Board report should include the grantee organisation number",
+      "ticket_id": 10014,
+      "to": "Gustav Ebbe \u003cgustav.ebbe@ebbahus.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eReminder pushed to 16 Sep. Still waiting for an estimate on making report columns configurable. Low value on its own but it is the kind of small ask that makes Gustav feel heard.\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-02T09:00:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 65,
+      "internal": true,
+      "sender": "Agent",
+      "subject": "Board report should include the grantee organisation number",
+      "ticket_id": 10014,
+      "to": "",
+      "type": "note"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-08-18T14:20:00+02:00",
+  "customer_id": 20,
+  "group_id": 1,
+  "id": 10014,
+  "number": "10014",
+  "organization_id": 2,
+  "priority": "1 low",
+  "state": "pending reminder",
+  "title": "Board report should include the grantee organisation number",
+  "updated_at": "2026-09-02T09:00:00+02:00"
+}

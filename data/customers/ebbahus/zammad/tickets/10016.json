@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eOur board sets a yearly ceiling per programme. Today we keep track in a spreadsheet and it is easy to approve past the ceiling by mistake. Is there a setting where Grantly warns or blocks when the sum of approved decisions in a programme passes a number we set?\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eNina\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-27T09:25:00+02:00",
+      "from": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "id": 74,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Can we cap the total awarded amount per programme?",
+      "ticket_id": 10016,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Nina,\u003c/p\u003e\u003cp\u003eYes. Under \u003cem\u003eProgramme \u0026gt; Budget\u003c/em\u003e you set an annual frame, and you choose whether passing it gives a warning at decision time or blocks the decision entirely. The counter includes approved decisions in the current year, not drafts.\u003c/p\u003e\u003cp\u003eI have set the frame for your two programmes to warning mode in your test environment so you can see how it looks before deciding.\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eMia\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-28T14:05:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 75,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Can we cap the total awarded amount per programme?",
+      "ticket_id": 10016,
+      "to": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "Tested it, warning mode is exactly what we want. Please switch it on in production for both programmes.\n\nAnd thank you for setting it up in test first, that made the decision easy.\n\n/Nina",
+      "content_type": "text/plain",
+      "created_at": "2026-08-31T15:30:00+02:00",
+      "from": "Nina Dahl \u003cnina.dahl@ebbahus.se\u003e",
+      "id": 76,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Can we cap the total awarded amount per programme?",
+      "ticket_id": 10016,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-08-31T15:30:00+02:00",
+  "created_at": "2026-08-27T09:25:00+02:00",
+  "customer_id": 21,
+  "group_id": 1,
+  "id": 10016,
+  "number": "10016",
+  "organization_id": 2,
+  "priority": "1 low",
+  "state": "closed",
+  "title": "Can we cap the total awarded amount per programme?",
+  "updated_at": "2026-08-31T15:30:00+02:00"
+}

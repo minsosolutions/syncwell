@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eWe sent the deadline reminder to 780 applicants on Friday. Several have replied asking if it is spam, because the subject line is blank. In the template preview the subject looks correct.\u003c/p\u003e\u003cp\u003eIt seems to only affect the batch send, a single reminder from inside a case looks fine.\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eAnna\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-01T08:50:00+02:00",
+      "from": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "id": 80,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Reminder mails to applicants arrive with an empty subject",
+      "ticket_id": 10008,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Anna,\u003c/p\u003e\u003cp\u003eConfirmed on our side: the batch sender does not resolve the subject template when the round has no short name set. Your autumn round has the short name field empty, which is why the single sends are fine.\u003c/p\u003e\u003cp\u003eShort term, if you fill in a short name on the round the subject will render. We have logged the underlying bug.\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eSara\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-01T13:30:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 81,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Reminder mails to applicants arrive with an empty subject",
+      "ticket_id": 10008,
+      "to": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "Filled in the short name and sent a test to myself, subject is there now. Please keep this ticket open until the bug itself is fixed, we would rather not depend on remembering that field.\n\n/Anna",
+      "content_type": "text/plain",
+      "created_at": "2026-09-02T09:20:00+02:00",
+      "from": "Anna Lind \u003canna.lind@nordstad.se\u003e",
+      "id": 82,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Reminder mails to applicants arrive with an empty subject",
+      "ticket_id": 10008,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-09-01T08:50:00+02:00",
+  "customer_id": 10,
+  "group_id": 1,
+  "id": 10008,
+  "number": "10008",
+  "organization_id": 1,
+  "priority": "2 normal",
+  "state": "open",
+  "title": "Reminder mails to applicants arrive with an empty subject",
+  "updated_at": "2026-09-02T09:20:00+02:00"
+}

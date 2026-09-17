@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "Hi,\n\nI am covering for a colleague who is on leave until September. I can find her cases in the search but when I open one I get \"You do not have access to this case\". Applicant 2026-0455 has called twice asking for a decision and I cannot even read the file.\n\nCan you give me access to her cases for the rest of August?\n\nKarin",
+      "content_type": "text/plain",
+      "created_at": "2026-08-17T15:25:00+02:00",
+      "from": "Karin Sjö \u003ckarin.sjo@nordstad.se\u003e",
+      "id": 57,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Caseworker cannot see cases assigned to a colleague",
+      "ticket_id": 10006,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Karin,\u003c/p\u003e\u003cp\u003eAccess to another caseworker's cases is granted by a unit administrator in Grantly, we cannot do it from our side without an approval from you. Anna Lind is an administrator for your unit, she can add you as a deputy under \u003cem\u003eUnit \u0026gt; Deputies\u003c/em\u003e.\u003c/p\u003e\u003cp\u003eI have written a short note on how to do it below, feel free to forward it to her.\u003c/p\u003e\u003cp\u003eKind regards,\u003cbr\u003eSara Holm\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-18T09:15:00+02:00",
+      "from": "Sara Holm \u003csara.holm@minso.se\u003e",
+      "id": 58,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Caseworker cannot see cases assigned to a colleague",
+      "ticket_id": 10006,
+      "to": "Karin Sjö \u003ckarin.sjo@nordstad.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "Anna added me as deputy this morning and I can open them now. Thanks.",
+      "content_type": "text/plain",
+      "created_at": "2026-08-20T11:00:00+02:00",
+      "from": "Karin Sjö \u003ckarin.sjo@nordstad.se\u003e",
+      "id": 59,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Caseworker cannot see cases assigned to a colleague",
+      "ticket_id": 10006,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-08-20T11:00:00+02:00",
+  "created_at": "2026-08-17T15:25:00+02:00",
+  "customer_id": 12,
+  "group_id": 1,
+  "id": 10006,
+  "number": "10006",
+  "organization_id": 1,
+  "priority": "2 normal",
+  "state": "closed",
+  "title": "Caseworker cannot see cases assigned to a colleague",
+  "updated_at": "2026-08-20T11:00:00+02:00"
+}

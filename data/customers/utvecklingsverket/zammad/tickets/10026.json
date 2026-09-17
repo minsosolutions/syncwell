@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHello,\u003c/p\u003e\u003cp\u003eOur six regional offices handle their own cases but need to see what the other regions have decided, for consistency. Today they either see everything with full rights or only their own region.\u003c/p\u003e\u003cp\u003eIs a read-only view across regions possible without giving edit rights?\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eHåkan Nyberg\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-27T11:35:00+02:00",
+      "from": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "id": 77,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Role for regional offices with read-only on other regions",
+      "ticket_id": 10026,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Håkan,\u003c/p\u003e\u003cp\u003eYes, that is the \u003cem\u003eRegional handler\u003c/em\u003e role combined with the \u003cem\u003eCross-region read\u003c/em\u003e permission. The combination gives edit rights inside the user's own region and read-only everywhere else. Decisions and attachments are visible, internal notes from other regions are not.\u003c/p\u003e\u003cp\u003eDo you want me to set it up for one office first so you can look at it?\u003c/p\u003e\u003cp\u003eBest,\u003cbr\u003eMia\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-28T10:20:00+02:00",
+      "from": "Mia Berg \u003cmia.berg@minso.se\u003e",
+      "id": 78,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Role for regional offices with read-only on other regions",
+      "ticket_id": 10026,
+      "to": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "We tried it in the north office and it is exactly right. Please apply it to the remaining five.\n\nHåkan Nyberg\nProgramme director",
+      "content_type": "text/plain",
+      "created_at": "2026-09-02T14:00:00+02:00",
+      "from": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "id": 79,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Role for regional offices with read-only on other regions",
+      "ticket_id": 10026,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-09-02T14:00:00+02:00",
+  "created_at": "2026-08-27T11:35:00+02:00",
+  "customer_id": 30,
+  "group_id": 1,
+  "id": 10026,
+  "number": "10026",
+  "organization_id": 3,
+  "priority": "1 low",
+  "state": "closed",
+  "title": "Role for regional offices with read-only on other regions",
+  "updated_at": "2026-09-02T14:00:00+02:00"
+}

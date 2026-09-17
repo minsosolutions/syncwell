@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHi,\u003c/p\u003e\u003cp\u003eOur registry numbers have the form \u003ccode\u003eRUV-2026-001180-01\u003c/code\u003e, eighteen characters. In Grantly the field stores twelve and cuts the rest silently, so the sub-case suffix is lost. It shows up when we return data to the registry and the numbers no longer match.\u003c/p\u003e\u003cp\u003eCan the field be widened? There is no way for us to shorten the numbers, they come from the national registry standard.\u003c/p\u003e\u003cp\u003e--\u003cbr\u003eTobias Ahl\u003cbr\u003eArchitect, Regionalt Utvecklingsverket\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-24T09:50:00+02:00",
+      "from": "Tobias Ahl \u003ctobias.ahl@ruv.se\u003e",
+      "id": 71,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Diarium reference numbers are truncated to 12 characters",
+      "ticket_id": 10025,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHi Tobias,\u003c/p\u003e\u003cp\u003eWidening the column is straightforward. The part that needs care is that the field is also used as an external key in the export to your registry, so we need to migrate the already truncated values rather than just widen the column, otherwise you get a mix.\u003c/p\u003e\u003cp\u003eHow many cases have a truncated value today? If it is a few hundred we can correct them from your side of the registry.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-08-25T15:30:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 72,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Diarium reference numbers are truncated to 12 characters",
+      "ticket_id": 10025,
+      "to": "Tobias Ahl \u003ctobias.ahl@ruv.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u0026gt; How many cases have a truncated value today?\n\nRan the comparison: 2 340 cases where the Grantly value is shorter than the registry value. All of them are recoverable from our side, the registry is authoritative.\n\nSo: widen the field, then we deliver a correction file. Fine by us. When can you do the widening?\n\n/Tobias",
+      "content_type": "text/plain",
+      "created_at": "2026-09-04T10:15:00+02:00",
+      "from": "Tobias Ahl \u003ctobias.ahl@ruv.se\u003e",
+      "id": 73,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Diarium reference numbers are truncated to 12 characters",
+      "ticket_id": 10025,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": null,
+  "created_at": "2026-08-24T09:50:00+02:00",
+  "customer_id": 32,
+  "group_id": 2,
+  "id": 10025,
+  "number": "10025",
+  "organization_id": 3,
+  "priority": "2 normal",
+  "state": "open",
+  "title": "Diarium reference numbers are truncated to 12 characters",
+  "updated_at": "2026-09-04T10:15:00+02:00"
+}

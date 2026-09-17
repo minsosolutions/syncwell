@@ -45,6 +45,7 @@ Disagree with the shape below? Build it differently and tell us why.
 ```bash
 docker compose up                    # mock API :8099, Mailpit :8025
 go run ./cmd/collect -source slack        # Slack API -> per-customer directories
+go run ./cmd/collect -source zammad       # support desk, same
 go run ./cmd/collect -source transcripts  # transcript file drop, same
 go run ./cmd/collect -source email        # mail file drop, same
 ```
@@ -80,7 +81,7 @@ internal, some a customer sees.
 |            | Ships                                                                     | You write                  |
 | ---------- | ------------------------------------------------------------------------- | -------------------------- |
 | Sources    | Slack, Zammad (HTTP), transcripts, email (file drops)                     | —                          |
-| Collectors | Slack, transcripts, email — [`internal/collect/`](./internal/collect/)    | Zammad                     |
+| Collectors | All four — [`internal/collect/`](./internal/collect/)                     | —                          |
 | References | 15 documents                                                              | —                          |
 | Outputs    | Markdown — [`internal/output/markdown.go`](./internal/output/markdown.go) | Spreadsheet, Linear, email |
 | The Agent  | nothing                                                                   | all of it                  |

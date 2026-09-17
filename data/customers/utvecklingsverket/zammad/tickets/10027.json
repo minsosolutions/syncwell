@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "body": "\u003cp\u003eHello,\u003c/p\u003e\u003cp\u003eOur approval rate in the dashboard is 4 percentage points lower than what we report to the ministry. The difference is the withdrawn applications, which the dashboard counts in the rejected bucket.\u003c/p\u003e\u003cp\u003eThis number is published, so it needs to be right.\u003c/p\u003e\u003cp\u003eBest regards,\u003cbr\u003eHåkan Nyberg\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-01T09:05:00+02:00",
+      "from": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "id": 83,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Statistics dashboard counts withdrawn applications as rejected",
+      "ticket_id": 10027,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "\u003cp\u003eHello,\u003c/p\u003e\u003cp\u003eConfirmed. The dashboard groups everything that is not approved as rejected, which is wrong for withdrawn and for expired. We are separating the three.\u003c/p\u003e\u003cp\u003eThe underlying data is correct, so once the grouping is fixed your historical figures will change to match what you report, without any data correction.\u003c/p\u003e\u003cp\u003eRegards,\u003cbr\u003eJonas Frid\u003c/p\u003e",
+      "content_type": "text/html",
+      "created_at": "2026-09-02T11:40:00+02:00",
+      "from": "Jonas Frid \u003cjonas.frid@minso.se\u003e",
+      "id": 84,
+      "internal": false,
+      "sender": "Agent",
+      "subject": "Re: Statistics dashboard counts withdrawn applications as rejected",
+      "ticket_id": 10027,
+      "to": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "type": "email"
+    },
+    {
+      "body": "Numbers now match our own. Thank you.\n\nHåkan",
+      "content_type": "text/plain",
+      "created_at": "2026-09-05T13:10:00+02:00",
+      "from": "Håkan Nyberg \u003chakan.nyberg@utvecklingsverket.se\u003e",
+      "id": 85,
+      "internal": false,
+      "sender": "Customer",
+      "subject": "Re: Statistics dashboard counts withdrawn applications as rejected",
+      "ticket_id": 10027,
+      "to": "Grantly Support \u003csupport@minso.se\u003e",
+      "type": "email"
+    }
+  ],
+  "close_at": "2026-09-05T13:10:00+02:00",
+  "created_at": "2026-09-01T09:05:00+02:00",
+  "customer_id": 30,
+  "group_id": 1,
+  "id": 10027,
+  "number": "10027",
+  "organization_id": 3,
+  "priority": "2 normal",
+  "state": "solved",
+  "title": "Statistics dashboard counts withdrawn applications as rejected",
+  "updated_at": "2026-09-05T13:10:00+02:00"
+}
