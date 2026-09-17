@@ -61,6 +61,14 @@ _Avoid_: bot, assistant, LLM
 One execution of an Agent on behalf of one Customer.
 _Avoid_: job, sync, pass
 
+**Finding**:
+One thing needing a project manager's attention, held by an Agent's judgement and standing on its Evidence. Carries a key that identifies it across Runs.
+_Avoid_: issue, item, insight, alert
+
+**Evidence**:
+What a Finding stands on: either a Source Record cited by path, locator and verbatim quote, or a stated absence — the thing that is not there, with where it was looked for and since when. An absence is verified in code, never taken on an Agent's word.
+_Avoid_: citation, reference, source
+
 **Output**:
 An artifact an Agent creates or maintains, either on disk (report, spreadsheet) or in an external system (Linear issue, email).
 _Avoid_: artifact, deliverable, target

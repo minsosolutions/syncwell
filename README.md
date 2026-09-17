@@ -89,7 +89,9 @@ keeps the Agent's judgement separate from the rendering:
 
 ```bash
 echo '{"customer":"nordstad","run_at":"2026-09-16T09:00:00Z","items":[
-  {"title":"Launch date moved","severity":"high","sources":["transcript:2026-08-26"]}]}' \
+  {"key":"launch-date-moved","title":"Launch date moved","severity":"high","evidence":[
+    {"kind":"record","source":"transcript","path":"transcripts/2026-08-26-nordstad-styrgrupp.md",
+     "locator":"L31","at":"2026-08-26","quote":"we are moving the public launch to 22 September"}]}]}' \
   | go run ./cmd/report
 ```
 
