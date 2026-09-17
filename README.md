@@ -8,9 +8,10 @@ nobody writes it down. A ticket is closed as solved, and three weeks later Slack
 happens. An email asks a direct question and no answer is ever sent. Each source looks fine on
 its own — the problem only exists **between** them.
 
-Build something that reads across sources and surfaces what needs attention. This repo gives
-you the data, a mock of every external system, and one worked example of each half. The rest
-is yours.
+Build something that reads across sources and surfaces what needs attention — **in whatever
+stack your organization actually uses**. This repo gives you the data, a mock of every external
+system, the vocabulary, and a complete Go implementation to read, copy or argue with. It is a
+reference, not a skeleton with gaps to fill: Minso runs this one, yours will look different.
 
 ## What "done" looks like in 2.5 hours
 
@@ -18,7 +19,8 @@ Something that genuinely works across **two or three** sources, not a sketch cov
 By the end you can run it in front of the room and it:
 
 1. **Collects** two or three sources, every record either routed to exactly one customer or
-   quarantined with a reason.
+   quarantined with a reason. The Go kit already does this for all four; if you are building
+   elsewhere, collecting two is enough — spend the afternoon on what comes after.
 2. **Surfaces three things needing attention** for one customer, each citing the records it
    came from — and **at least one resting on two or more sources**. Single-source findings
    don't count; that's the part that doesn't need you.
@@ -78,13 +80,13 @@ flowchart LR
 are shared docs owned by no customer. **Outputs** are what the Agent maintains — some
 internal, some a customer sees.
 
-|            | Ships                                                                     | You write                  |
-| ---------- | ------------------------------------------------------------------------- | -------------------------- |
-| Sources    | Slack, Zammad (HTTP), transcripts, email (file drops)                     | —                          |
-| Collectors | All four — [`internal/collect/`](./internal/collect/)                     | —                          |
-| References | 15 documents                                                              | —                          |
-| Outputs    | Markdown — [`internal/output/markdown.go`](./internal/output/markdown.go) | Spreadsheet, Linear, email |
-| The Agent  | nothing                                                                   | all of it                  |
+|            | The kit hands you                                                         | Your group decides                 |
+| ---------- | ------------------------------------------------------------------------- | ---------------------------------- |
+| Sources    | Slack, Zammad (HTTP), transcripts, email (file drops)                     | which two or three you cross       |
+| Collectors | All four — [`internal/collect/`](./internal/collect/)                     | what quarantine means in your shop |
+| References | 15 documents                                                              | how much an Agent should read      |
+| Outputs    | Markdown — [`internal/output/markdown.go`](./internal/output/markdown.go) | Linear, email, what a customer sees |
+| The Agent  | the contract it must answer in                                            | all of it                          |
 
 Each source directory has a README with the real vendor's API docs and its routing rule. The
 Slack collector is ~150 lines; copy its shape. The Output writer takes JSON on stdin, which
@@ -100,7 +102,9 @@ echo '{"customer":"nordstad","run_at":"2026-09-16T09:00:00Z","items":[
 
 ## Deliberately undecided
 
-We have opinions, not answers. The data is arranged so you hit all of these.
+We now have answers to some of these — written down in [`docs/adr/`](./docs/adr/) — and they
+are the most arguable thing in the repo. Read them *after* you have hit the problem yourself,
+and tell us where we got it wrong. The data is arranged so you hit all of these.
 
 1. **How does the Agent know what it created?** There's a run from 2026-09-09 in here — its
    Linear issues carry a marker, and `state/manifest.json` lists what it made. A human has
