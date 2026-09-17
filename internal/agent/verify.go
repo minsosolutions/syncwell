@@ -4,6 +4,7 @@
 package agent
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -49,7 +50,7 @@ func verifyFinding(f output.Finding, customerDir string) string {
 		if err != nil {
 			return fmt.Sprintf("evidence cites %s, which cannot be read: %v", e.Path, err)
 		}
-		if e.Quote != "" && !strings.Contains(normalise(string(b)), normalise(e.Quote)) {
+		if e.Quote != "" && !quoted(string(b), e.Quote) {
 			return fmt.Sprintf("quote is not in %s: %q", e.Path, e.Quote)
 		}
 	}
@@ -74,6 +75,43 @@ func resolve(customerDir, rel string) (string, error) {
 		return "", fmt.Errorf("evidence cites %s, which is outside the Customer Directory", rel)
 	}
 	return full, nil
+}
+
+// quoted reports whether the record says these words. A JSON record — Slack, Zammad — holds
+// its text escaped, so the words an Agent read are not the bytes on disk; the decoded strings
+// are searched too rather than punishing an Agent for the file's encoding.
+func quoted(record, quote string) bool {
+	want := normalise(quote)
+	if strings.Contains(normalise(record), want) {
+		return true
+	}
+	var v any
+	if json.Unmarshal([]byte(record), &v) != nil {
+		return false
+	}
+	for _, s := range strings.Split(strings.Join(texts(v, nil), "\n"), "\n") {
+		if strings.Contains(normalise(s), want) {
+			return true
+		}
+	}
+	return false
+}
+
+// texts collects every string in a decoded JSON document, at any depth.
+func texts(v any, acc []string) []string {
+	switch t := v.(type) {
+	case string:
+		acc = append(acc, t)
+	case []any:
+		for _, x := range t {
+			acc = texts(x, acc)
+		}
+	case map[string]any:
+		for _, x := range t {
+			acc = texts(x, acc)
+		}
+	}
+	return acc
 }
 
 // normalise collapses whitespace so a quote survives being re-wrapped, without letting any

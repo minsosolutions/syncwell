@@ -12,7 +12,7 @@ func argsOf(t *testing.T) (args []string, settings string) {
 	cmd := Command(t.Context(), Options{
 		CustomerDir:   "/data/customers/ebbahus",
 		ReferencesDir: "/data/references",
-		Prompt:        "find what needs attention",
+		Prompt:        Prompt("ebbahus", "2026-09-17T09:00:00Z", []string{"email/x.md"}, []string{"product/y.md"}),
 	})
 	if cmd.Dir != "/data/customers/ebbahus" {
 		t.Fatalf("the Run does not start in the Customer Directory: %q", cmd.Dir)
@@ -32,7 +32,7 @@ func TestCommandConfinesTheAgent(t *testing.T) {
 	joined := strings.Join(args, " ")
 
 	for _, want := range []string{
-		"--tools Read,Grep,Glob",    // no Bash: no arbitrary subprocess, no network
+		"--tools Read",              // the whole tool list: no Bash, so no subprocess and no network
 		"--permission-mode dontAsk", // nothing that would prompt can run
 		"--permission-prompts none", // and nothing waits on a human to allow it
 		"--bare",                    // a Customer Directory cannot configure the Agent reading it
@@ -68,6 +68,14 @@ func TestCommandConfinesTheAgent(t *testing.T) {
 	}
 	if !slices.Contains(s.Permissions.Deny, "Edit(//data/references/**)") {
 		t.Errorf("References are writable: %v — the // prefix is required for an absolute path", s.Permissions.Deny)
+	}
+}
+
+func TestCommandCarriesTheWorkingSetInThePrompt(t *testing.T) {
+	args, _ := argsOf(t)
+	joined := strings.Join(args, " ")
+	if !strings.Contains(joined, "email/x.md") || !strings.Contains(joined, "product/y.md") {
+		t.Error("the Agent was given no file list; with Read as its only tool it cannot find anything")
 	}
 }
 

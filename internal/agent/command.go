@@ -21,7 +21,10 @@ type Options struct {
 // isolation a property of the tool list rather than of the model's behaviour.
 func Command(ctx context.Context, o Options) *exec.Cmd {
 	if o.MaxTurns == 0 {
-		o.MaxTurns = 20
+		// A Customer Directory is ~25 files and the References another ~15. The Agent
+		// reads a few per turn, so this is sized for the sweep plus room to think; 20
+		// exhausted itself before producing anything.
+		o.MaxTurns = 60
 	}
 	if o.MaxBudgetUSD == "" {
 		o.MaxBudgetUSD = "1.00"
@@ -29,7 +32,10 @@ func Command(ctx context.Context, o Options) *exec.Cmd {
 	cmd := exec.CommandContext(ctx, "claude", "-p", o.Prompt,
 		"--output-format", "json",
 		"--json-schema", FindingsSchema,
-		"--tools", "Read,Grep,Glob",
+		// Read is the whole tool list. 2.1.274 ships Bash, Edit and Read; Grep and Glob do
+		// not exist and are dropped silently, so discovery is done in Go and handed over in
+		// the prompt. See Files.
+		"--tools", "Read",
 		"--permission-mode", "dontAsk",
 		"--permission-prompts", "none",
 		"--strict-mcp-config",

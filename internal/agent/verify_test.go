@@ -66,3 +66,21 @@ func TestVerifyDropsEvidenceEscapingTheCustomerDirectory(t *testing.T) {
 		}
 	}
 }
+
+// A Zammad record is JSON, so its text is escaped on disk. An Agent quoting the words it
+// read must not be punished for the file's encoding.
+func TestVerifyKeepsAQuoteFromInsideAJSONRecord(t *testing.T) {
+	r := output.Report{Customer: "ebbahus", Items: []output.Finding{{
+		Key: "templates",
+		Evidence: []output.Evidence{{
+			Kind: "record", Source: "zammad",
+			Path:  "zammad/tickets/10017.json",
+			Quote: `the decision will be communicated "by 15 November 2025". The date is written into the template text`,
+		}},
+	}}}
+
+	kept, dropped := Verify(r, customerDir(t))
+	if len(kept.Items) != 1 {
+		t.Fatalf("a real quote was dropped over JSON escaping: %v", dropped)
+	}
+}

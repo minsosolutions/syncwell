@@ -24,7 +24,9 @@ import (
 func main() {
 	dataDir := flag.String("data", "data", "data directory")
 	customer := flag.String("customer", "", "customer slug")
-	timeout := flag.Duration("timeout", 10*time.Minute, "how long one Run may take")
+	timeout := flag.Duration("timeout", 15*time.Minute, "how long one Run may take")
+	maxTurns := flag.Int("max-turns", 0, "cap on the Agent's turns; 0 uses the default")
+	budget := flag.String("budget", "", "cap on spend in USD; empty uses the default")
 	flag.Parse()
 	if *customer == "" {
 		log.Fatal("-customer is required")
@@ -42,13 +44,27 @@ func main() {
 		log.Fatalf("no Customer Directory for %q: %v", *customer, err)
 	}
 
+	working, err := agent.Files(customerDir)
+	if err != nil {
+		log.Fatalf("listing the Customer Directory: %v", err)
+	}
+	references, err := agent.Files(referencesDir)
+	if err != nil {
+		log.Fatalf("listing the References: %v", err)
+	}
+	for i, r := range references {
+		references[i] = filepath.Join(referencesDir, r)
+	}
+
 	ctx, cancel := context.WithTimeout(context.Background(), *timeout)
 	defer cancel()
 
 	cmd := agent.Command(ctx, agent.Options{
 		CustomerDir:   customerDir,
 		ReferencesDir: referencesDir,
-		Prompt:        agent.Prompt,
+		Prompt:        agent.Prompt(*customer, time.Now().Format(time.RFC3339), working, references),
+		MaxTurns:      *maxTurns,
+		MaxBudgetUSD:  *budget,
 	})
 	cmd.Stderr = os.Stderr
 	stdout, err := cmd.Output()
