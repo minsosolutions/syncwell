@@ -1,0 +1,1 @@
+domain "gmail.com" belongs to no customer

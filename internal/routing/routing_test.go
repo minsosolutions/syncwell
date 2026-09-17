@@ -1,6 +1,9 @@
 package routing
 
-import "testing"
+import (
+	"strings"
+	"testing"
+)
 
 func testConfig() *Config {
 	return &Config{Customers: []Customer{
@@ -86,5 +89,39 @@ func TestByAttendeeDomains(t *testing.T) {
 	// Malformed frontmatter must not be read as "no customer" and quietly quarantined as internal.
 	if _, err := c.ByAttendeeDomains([]string{"anna.lind"}); err == nil {
 		t.Fatal("address without a domain routed anyway")
+	}
+}
+
+// Email routes on the same property as a meeting — which Customers are in the room — but the
+// room is from/to/cc and the failure that matters is different: a personal address.
+func TestByPeerDomains(t *testing.T) {
+	c := transcriptConfig()
+
+	got, err := c.ByPeerDomains([]string{"anna.lind@nordstad.se", "robin@minso.se", "per.ek@nordstad.se"})
+	if err != nil {
+		t.Fatalf("nordstad thread: %v", err)
+	}
+	if got.Slug != "nordstad" {
+		t.Fatalf("routed to %s, want nordstad", got.Slug)
+	}
+
+	// Q1: a Customer contact writing from a personal address. We know who Gustav is; the rule
+	// does not, and must not guess him into ebbahus.
+	_, err = c.ByPeerDomains([]string{"g.ebbe.privat@gmail.com", "robin@minso.se"})
+	if err == nil {
+		t.Fatal("personal address routed to a customer")
+	}
+	if !strings.Contains(err.Error(), "gmail.com") {
+		t.Fatalf("reason does not name the domain a human must act on: %v", err)
+	}
+
+	// cc is what pulls two Customers into one thread.
+	if _, err := c.ByPeerDomains([]string{"anna.lind@nordstad.se", "robin@minso.se", "nina.dahl@ebbahus.se"}); err == nil {
+		t.Fatal("cc across two customers routed to one; that is a leak")
+	}
+
+	// Vendor talking to itself about a Customer.
+	if _, err := c.ByPeerDomains([]string{"robin@minso.se", "sara.holm@minso.se"}); err == nil {
+		t.Fatal("internal mail routed to a customer")
 	}
 }

@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	source := flag.String("source", "slack", "source to collect: slack, transcripts")
+	source := flag.String("source", "slack", "source to collect: slack, transcripts, email")
 	api := flag.String("api", "http://localhost:8099", "mock API base URL")
 	token := flag.String("token", "dev-token", "bearer token; any non-empty value works")
 	configPath := flag.String("config", "config/syncwell.json", "routing config")
@@ -32,6 +32,8 @@ func main() {
 	case "transcripts":
 		// A file drop, not an API: no client, no token.
 		rep, err = collect.Transcripts(cfg, *dataDir)
+	case "email":
+		rep, err = collect.Email(cfg, *dataDir)
 	default:
 		log.Fatalf("source %q is not implemented — see data/sources/%s/README.md and write it", *source, *source)
 	}
