@@ -112,8 +112,8 @@ A Gated Action a Run has prepared and not taken: the exact artifact awaiting a h
 _Avoid_: draft, pending action, request
 
 **Suppression**:
-A rejected Proposal, remembered so that later Runs do not re-propose the same action for the same finding. Revocable by the human who made it.
-_Avoid_: mute, ignore list
+A human gesture telling later Runs not to do something again — rejecting a Proposal, or deleting an Output a Run created — remembered against the Finding and action it concerned. Revocable by the human who made it.
+_Avoid_: mute, ignore list, tombstone
 
 **Drift**:
 Divergence between what a Manifest claims and what the Output system actually contains — a human deleted, edited, or hand-created an Output between Runs. Detected by deterministic reconciliation, never by an Agent.
