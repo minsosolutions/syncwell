@@ -21,7 +21,7 @@ func Transcripts(cfg *routing.Config, dataDir string) (Report, error) {
 // attendees splits the frontmatter's comma-separated attendee list.
 func attendees(body string) []string {
 	var out []string
-	for _, a := range strings.Split(frontmatter(body, "attendees"), ",") {
+	for _, a := range strings.Split(Frontmatter(body, "attendees"), ",") {
 		if a = strings.TrimSpace(a); a != "" {
 			out = append(out, a)
 		}

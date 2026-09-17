@@ -27,7 +27,7 @@ func Email(cfg *routing.Config, dataDir string) (Report, error) {
 func peers(body string) ([]string, error) {
 	var out []string
 	for _, key := range []string{"from", "to", "cc"} {
-		raw := frontmatter(body, key)
+		raw := Frontmatter(body, key)
 		if raw == "" {
 			continue
 		}

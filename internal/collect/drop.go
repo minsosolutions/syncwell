@@ -72,10 +72,10 @@ func quarantine(dataDir, source, name string, body []byte, reason string) error 
 	return writeFile(filepath.Join(dir, name+".reason.txt"), []byte(reason+"\n"))
 }
 
-// frontmatter reads one key out of the flat key/value header. The format is deliberately not
+// Frontmatter reads one key out of the flat key/value header. The format is deliberately not
 // YAML (see the source READMEs), so neither is the parser. The scan stops at the closing ---
 // so nothing in the body — a line someone said, a quoted reply — can be read as a header.
-func frontmatter(body, key string) string {
+func Frontmatter(body, key string) string {
 	lines := strings.Split(body, "\n")
 	if len(lines) == 0 || strings.TrimSpace(lines[0]) != "---" {
 		return ""
