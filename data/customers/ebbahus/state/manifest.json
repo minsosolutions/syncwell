@@ -1,44 +1,80 @@
 {
   "customer": "ebbahus",
-  "run_at": "2026-09-09T06:00:00Z",
+  "updated_at": "2026-09-09T06:00:00Z",
   "outputs": [
     {
       "kind": "linear_project",
+      "key": "project",
       "id": "prj_0002",
-      "identifier": null,
-      "name": "Ebbahus Stiftelse \u2014 operations"
+      "authored_run": "2026-09-09T06:00:00Z",
+      "last_run": "2026-09-09T06:00:00Z",
+      "snapshot": {
+        "title": "Ebbahus Stiftelse — operations"
+      }
     },
     {
       "kind": "linear_issue",
+      "key": "E1",
       "id": "iss_0021",
       "identifier": "SYN-21",
-      "title": "Bookkeeping export \u2014 verify nightly job",
-      "priority": 3
+      "authored_run": "2026-09-09T06:00:00Z",
+      "last_run": "2026-09-09T06:00:00Z",
+      "records": [],
+      "snapshot": {
+        "title": "Bookkeeping export — verify nightly job",
+        "description": "Nightly bookkeeping export needs verification against the foundation's ledger.",
+        "priority": 3
+      }
     },
     {
       "kind": "linear_issue",
+      "key": "theme",
       "id": "iss_0022",
       "identifier": "SYN-22",
-      "title": "Document the custom PDF export behaviour",
-      "priority": 3
+      "authored_run": "2026-09-09T06:00:00Z",
+      "last_run": "2026-09-09T06:00:00Z",
+      "records": [],
+      "snapshot": {
+        "title": "Document the custom PDF export behaviour",
+        "description": "The bespoke PDF export path is undocumented; Ebbahus assume defects originate there.",
+        "priority": 3
+      }
     },
     {
       "kind": "linear_issue",
+      "key": "ops",
       "id": "iss_0023",
       "identifier": "SYN-23",
-      "title": "Schedule quarterly review with Gustav Ebbe",
-      "priority": 4
+      "authored_run": "2026-09-09T06:00:00Z",
+      "last_run": "2026-09-09T06:00:00Z",
+      "records": [],
+      "snapshot": {
+        "title": "Schedule quarterly review with Gustav Ebbe",
+        "description": "Quarterly review not yet in the calendar.",
+        "priority": 4
+      }
     },
     {
       "kind": "linear_issue",
+      "key": "E2",
       "id": "iss_0024",
       "identifier": "SYN-24",
-      "title": "Response time complaints \u2014 review SLA",
-      "priority": 2
+      "authored_run": "2026-09-09T06:00:00Z",
+      "last_run": "2026-09-09T06:00:00Z",
+      "records": [],
+      "snapshot": {
+        "title": "Response time complaints — review SLA",
+        "description": "Ebbahus have raised first-response times more than once this quarter.",
+        "priority": 2
+      }
     },
     {
       "kind": "file",
-      "path": "outputs/report.md"
+      "key": "report",
+      "path": "outputs/report.md",
+      "authored_run": "2026-09-09T06:00:00Z",
+      "last_run": "2026-09-09T06:00:00Z"
     }
-  ]
+  ],
+  "actions": []
 }
