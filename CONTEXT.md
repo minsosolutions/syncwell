@@ -95,6 +95,18 @@ An Output that renders one Run and is regenerated whole by the next, holding no 
 An artifact in a Customer's Output system that no Run authored. Seen during reconciliation and never written to, so that Syncwell does not file a duplicate beside a human's work.
 _Avoid_: foreign issue, external
 
+**Gated Action**:
+An action a Run may not take unattended, because it crosses the boundary to the Customer or destroys work. Everything else is written by the Run itself.
+_Avoid_: dangerous action, human-in-the-loop step
+
+**Proposal**:
+A Gated Action a Run has prepared and not taken: the exact artifact awaiting a human's approval, held in the Customer Directory. Approved, it is applied through the same writer path a Run uses; rejected, it becomes a Suppression.
+_Avoid_: draft, pending action, request
+
+**Suppression**:
+A rejected Proposal, remembered so that later Runs do not re-propose the same action for the same finding. Revocable by the human who made it.
+_Avoid_: mute, ignore list
+
 **Drift**:
 Divergence between what a Manifest claims and what the Output system actually contains — a human deleted, edited, or hand-created an Output between Runs. Detected by deterministic reconciliation, never by an Agent.
 _Avoid_: conflict, staleness
