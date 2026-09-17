@@ -1,0 +1,606 @@
+{
+  "customer": "ebbahus",
+  "run_at": "2026-09-17T13:43:25Z",
+  "items": [
+    {
+      "key": "bookkeeping-export-disabled-since-5-august",
+      "title": "The ledger gap starts the night the nightly job was switched off in Slack, and every reply since has blamed the staging-table rework instead",
+      "summary": "Nina reports the last export file her accountant has is dated 4 August. In Slack on 5 August, the day after that file, Jonas wrote that he was temporarily disabling the nightly bookkeeping export job while debugging duplicate rows. Nothing in the 9-10 September email thread or the 15 September call mentions that disable: Nina guesses the staging-table rework, Sara agrees it is the obvious suspect, and six days after switching the job off Jonas told the 11 August session that in the meantime it 'runs as it is'. integrations/bookkeeping-export.md says a disabled job 'produces no file and no alert, because nothing has failed', that re-enabling is a manual step, and that missing files mean the job did not run rather than that there was nothing to export — which matches a 33-night silence with no error and no failed transfer, exactly the anomaly Nina noticed in her own second guess. The 2026.9 changelog (8 September) lists no bookkeeping export change at all, so the rework cannot be the cause. First action is Administration -> Jobs to read the job state, not the rework diff; and the re-run has to cover 5 August onward, because the doc is explicit that failed or missed windows are not picked up automatically. Ulrika needs September in the ledger before the end of the month.",
+      "action": "Check Administration -> Jobs for the tenant's bookkeeping export job state, re-enable it, and re-run from 5 August onward rather than September only; then reply on the existing email thread correcting the staging-table theory.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1785919920.000274",
+          "at": "2026-08-05T10:52:00+02:00",
+          "quote": "i see it, the job seems to have run twice on the 1st. i'm temporarily disabling the nightly bookkeeping export job while i debug this, otherwise we keep writing duplicates into your ledger"
+        },
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-09-09-ebbahus-saknade-utbetalningar.md",
+          "locator": "message_id=<20260909114700.9964@ebbahus.se>",
+          "at": "2026-09-09T11:47:00+02:00",
+          "quote": "Ulrika (our accountant) came to me this morning. There is nothing from September in the bookkeeping. Not \"some rows are wrong\" — nothing at all. The last export file she has is dated **4 August**."
+        },
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-09-09-ebbahus-saknade-utbetalningar.md",
+          "locator": "message_id=<20260909114700.9964@ebbahus.se>",
+          "at": "2026-09-09T11:47:00+02:00",
+          "quote": "My second guess is our own SFTP. The host was rebooted at some point in August, I am told. But then I would expect failed transfers, not no transfers, and I would expect somebody to have got an error."
+        },
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-09-10-ebbahus-svar-saknade-utbetalningar.md",
+          "locator": "message_id=<20260910083300.2214@minso.se>",
+          "at": "2026-09-10T08:33:00+02:00",
+          "quote": "Your first guess is the one I would check too. The staging table rework touches the file writing, so if it shipped and the destination path moved, the symptom would look like this. I do not know off the top of my head whether it has actually shipped yet — Jonas will know."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-08-11-ebbahus-integration.md",
+          "locator": "line 51",
+          "at": "2026-08-11T00:00:00+02:00",
+          "quote": "In the meantime it runs as it is. It works most nights."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-15-ebbahus-kort-avstamning.md",
+          "locator": "lines 53-55",
+          "at": "2026-09-15T00:00:00+02:00",
+          "quote": "**Nina Dahl:** Is it connected to the rework? The staging table thing?\n\n**Sara Holm:** It might be. That's the obvious suspect."
+        }
+      ],
+      "proposal": {
+        "kind": "email",
+        "subject": "Re: September disbursements missing from our ledger",
+        "body": "Hej,\n\nWe have found the cause and it is not the staging-table rework, so I want to correct what we told you last week.\n\nThe nightly bookkeeping export job was switched off on the evening of 5 August, while we were debugging the duplicate rows in the July file. It was never switched back on. That is why your last file is dated 4 August and why nothing has failed and nobody has had an error: a disabled job writes no file and raises no alert, because from the platform's point of view nothing went wrong. Your own observation — no transfers rather than failed transfers — was the right clue.\n\nWhat we are doing:\n\n1. Re-enabling the job and confirming in the job log that it shows as enabled.\n2. Re-running the export for the whole missing window, 5 August to date, not just September. Missed nights are not picked up automatically, so this has to be an explicit re-run. Re-runs arrive with an _r2 suffix in the file name so your accountant can tell them apart from the originals.\n3. Confirming to you, with the run log, that there is a file for every night in the window before we consider this closed.\n\nWe will have the back-run in place in time for the quarter close. The duplicate-row defect and the blank cost centres on split-year rows are separate items and I am following those up separately, with ticket references, so you have something written down.\n\nWe also owe you the safeguard we discussed on 11 August: you are told if the job is off for more than two nights. That did not exist, which is the reason a switched-off job could go unnoticed for five weeks. I will confirm when it does.\n\nApologies for the detour via the rework."
+      },
+      "severity": "high"
+    },
+    {
+      "key": "bookkeeping-commitments-not-in-any-ticket",
+      "title": "Every bookkeeping commitment from the 11 August session lives only in the transcript — including the ticket Nina asked for to show her director, and the case Sara said she had logged",
+      "summary": "In the 11 August working session Jonas confirmed the blank cost centre cause on split-year rows as a 'one-line fix', described the retry/duplicate defect, proposed the staging-table rework and committed to having it done before the November payment run. Nina asked for that in the ticket specifically so she could show Gustav, and Mia said she would update the ticket. The three also agreed a rule that Nina is notified if the job is off for more than two nights. None of this exists in any of the ten collected tickets: there is no ticket for the cost centre defect, the duplicates, the rework or the notification rule, and none for the September gap that Sara told Nina on 10 September she had logged as a case and assigned to Jonas. The only bookkeeping export ticket in the set, 10011, is a field-mapping question closed on 30 July. Nina's own 27 August email records a 5 August case for the cost centre rows that is likewise not in the collected tickets. On 2 September Mia said the rework was in review and would go out with the next release, 'the fifteenth'; releases ship on the second Tuesday, 2026.9 shipped 8 September, and its changelog lists no bookkeeping export change — and Mia's 'I'll confirm' never came back. The November payment run is the customer's deadline, and this is the evidence Gustav is being shown that the bespoke integration is maintained.",
+      "action": "Create the missing tickets (split-year cost centre fix, retry/duplicate defect, staging-table rework with the November deadline, the two-night notification rule, and the September ledger gap), link them to the 11 August session, and send Nina the references she asked for.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-08-11-ebbahus-integration.md",
+          "locator": "line 21",
+          "at": "2026-08-11T00:00:00+02:00",
+          "quote": "So — first, the cost centre thing you described. You were right. It is the split-year grants. When a grant is booked across two fiscal years the second row is generated from the schedule and not from the decision, and the schedule rows don't carry the cost centre. That's a one-line fix, honestly."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-08-11-ebbahus-integration.md",
+          "locator": "lines 65-73",
+          "at": "2026-08-11T00:00:00+02:00",
+          "quote": "**Nina Dahl:** As long as it's before the November payment run.\n\n**Jonas Frid:** It will be.\n\n**Nina Dahl:** Can I have that in the ticket? So I can show Gustav.\n\n**Mia Berg:** I'll update the ticket.\n\n**Nina Dahl:** Thank you."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-08-11-ebbahus-integration.md",
+          "locator": "lines 85-91",
+          "at": "2026-08-11T00:00:00+02:00",
+          "quote": "**Mia Berg:** Should we write that down as a — like, a rule? Notify Nina if the job is off for more than two nights?\n\n**Nina Dahl:** That would be sensible.\n\n**Jonas Frid:** Fine by me.\n\n**Mia Berg:** Okay."
+        },
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-09-10-ebbahus-svar-saknade-utbetalningar.md",
+          "locator": "message_id=<20260910083300.2214@minso.se>",
+          "at": "2026-09-10T08:33:00+02:00",
+          "quote": "I have logged this as a case and assigned it to Jonas. He is in the migration work for another customer this week, so realistically he looks at it Thursday or Friday."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-02-ebbahus-avstamning.md",
+          "locator": "lines 63-69",
+          "at": "2026-09-02T00:00:00+02:00",
+          "quote": "**Robin Bauhn:** Okay. The bookkeeping export — Jonas said he'd have the rework done.\n\n**Mia Berg:** He started it. It's in review. I think it goes out with the next release.\n\n**Nina Dahl:** Which is when?\n\n**Mia Berg:** The — I want to say the fifteenth. I'll confirm."
+        },
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-08-27-ebbahus-svarstider.md",
+          "locator": "message_id=<20260827160500.3345@ebbahus.se>",
+          "at": "2026-08-27T16:05:00+02:00",
+          "quote": "| 5 Aug | Export file missing cost centre on split-year rows | Same day |"
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10011.json",
+          "locator": "article 15",
+          "at": "2026-07-28T09:05:00+02:00",
+          "quote": "For bookkeeping she should use <code>party_ref</code>."
+        }
+      ],
+      "severity": "high"
+    },
+    {
+      "key": "portal-attachment-loss-unresolved",
+      "title": "Attachments lost on submit is now four cases, ticket 10010 has been silent since 28 July, and support is still waiting for an application number that two different instructions asked for differently",
+      "summary": "Ticket 10010 has been open at high priority since 24 July with no customer-facing reply since 28 July. Sara's internal note there says the pattern matches an open case with another customer — long-idle form, large document, no error surfaced — and that she has not argued with Gustav's belief that his own PDF tooling is at fault; her customer-facing reply the same morning said it was 'something we are actively looking into on our side'. Two weeks later, in Slack, she answered Gustav's report of the identical symptom with 'not that i know of' — hours after Robin had emailed him that the upload path does not convert or re-render and that a bad template alone does not explain it. The result is a customer who has built his account on self-blame: Gustav has told applicants to email their files straight to Nina. The investigation is also deadlocked on which identifier is needed: on 2 September Mia asked Nina to forward a case with the applicant's name, while Sara asked in Slack for 'one single application number' and on 11 September was still waiting for one. Nina forwarded a named case on 15 September. The count is now four this year, 'four that told us', against product/attachments-and-file-uploads.md, which states flatly that there is no path in which an attachment is accepted by the browser and then silently dropped — so if the applicants are right, something is happening the documentation does not describe. The call closes on the 30th with half the applications expected in the last 48 hours.",
+      "action": "Pull the server-side upload records for the case Nina forwarded on 15 September, reply on ticket 10010 with what the server actually saw, and tell Gustav and Nina in one message which identifier support needs and what the reload workaround is, before the 30 September spike.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10010.json",
+          "locator": "article 8",
+          "at": "2026-07-28T10:00:00+02:00",
+          "quote": "Same pattern as the case we have open with the municipality: long-idle form, large document, no error surfaced. Gustav is convinced it is his own PDF tooling, I have not argued because we do not have a confirmed root cause yet."
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10010.json",
+          "locator": "article 9",
+          "at": "2026-07-28T10:25:00+02:00",
+          "quote": "Please hold off on buying anything. Reloading before sending is a workaround that seems to work, and the pattern you describe (long time in the form, then a large document, then silence) is something we are actively looking into on our side."
+        },
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1786538400.000274",
+          "at": "2026-08-12T14:40:00+02:00",
+          "quote": "not that i know of. do you have the application number?"
+        },
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-08-12-ebbahus-svar-forlorade-dokument.md",
+          "locator": "message_id=<20260812100700.5521@minso.se>",
+          "at": "2026-08-12T10:07:00+02:00",
+          "quote": "A malformed PDF that still declares itself as a PDF would pass all three. So I do not think a bad template alone explains it, though I would not rule it out."
+        },
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1788438900.000274",
+          "at": "2026-09-03T14:35:00+02:00",
+          "quote": "i've told them to send their files straight to nina for now, we'll work around it. but our pdf export is on my list to look at"
+        },
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1789115400.000137",
+          "at": "2026-09-11T10:30:00+02:00",
+          "quote": "any news on the documents thing? our applicants keep asking and i don't have an answer for them"
+        },
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1789127700.000274",
+          "at": "2026-09-11T13:55:00+02:00",
+          "quote": "still waiting on an application number i'm afraid"
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-15-ebbahus-kort-avstamning.md",
+          "locator": "lines 91-99",
+          "at": "2026-09-15T00:00:00+02:00",
+          "quote": "**Nina Dahl:** Two applicants said the portal lost their attachments again. I forwarded one to support like you asked, with the applicant name.\n\n**Sara Holm:** I'll find it.\n\n**Nina Dahl:** Gustav still thinks it's our own template. He may be right. I only mention it because it's now four this year.\n\n**Sara Holm:** Four is more than I thought.\n\n**Nina Dahl:** Four that told us."
+        },
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1789455000.000137",
+          "at": "2026-09-15T08:43:00+02:00",
+          "quote": "we close the autumn call on the 30th, expect a spike the last two days. last year it was half the applications in 48 hours"
+        }
+      ],
+      "proposal": {
+        "kind": "email",
+        "subject": "Re: The portal loses documents on submit — where we actually are",
+        "body": "Hej,\n\nA straight update on the lost documents, because our answers to you have not been consistent and you should know that.\n\nWhere we are: this is not confirmed as your PDF template. The upload path does a size check, a MIME type check and a virus scan, and it does not convert or re-render, so a file that opens differently in different readers would still pass. Our documentation also states that an upload is never discarded without the applicant being told — there is supposed to be no path where a file is accepted by the browser and then silently disappears. Your applicants describe exactly that path, four times this year, which means either something is happening we cannot yet account for, or the error is being shown and not understood. Either way it is ours to explain, not yours to fix by buying a new PDF tool.\n\nWhat we are doing now: we are pulling the server-side upload records for the case forwarded to support on 15 September — the applicant name is enough for us to find the record, and we will take it from there. We will come back with what the server actually saw for that submission: whether an upload ticket was issued, whether chunks arrived, and whether an error was returned.\n\nWhat would help, if it happens again during the closing days: the application reference and roughly what time it was submitted. Either the applicant name or the reference is fine — you should not have to chase applicants for a number.\n\nTwo practical things before the 30th:\n\n- The reload workaround still holds. If an applicant has had the form open for a long time, reloading the page before attaching and submitting has worked in every case we have seen.\n- Please keep the current arrangement of accepting files by email as a fallback, but let us know each time it is used, so the count is ours to carry rather than yours.\n\nWe know half the applications arrive in the last 48 hours. We will watch the queue across the 29th and 30th and respond to anything from you on those two days as priority.\n\nApologies that this has been open since July with the assumption pointed at your side of it."
+      },
+      "severity": "high"
+    },
+    {
+      "key": "batch-invite-defect-before-22-september",
+      "title": "Batch invite is still reported broken for one user, the demonstration was never given, and stage-two invitations go out five days from now",
+      "summary": "Batch invite is the mechanism Nina depends on to invite stage-two applicants once the expression-of-interest deadline passes on 22 September; without it she is back to the sixty clicks she flagged in July. Mia confirmed in July that the function exists but chose to demonstrate it on the next call rather than write instructions, and no transcript since — 11 August, 2 September or 15 September — records that demonstration happening. Nina's 27 August email lists a case opened 24 August, 'Batch invite button greyed out for one user', as still open, and that email has had no reply in any source. None of the ten collected tickets covers it. Neither the 2 September nor the 15 September meeting returns to it: the 15 September agenda was the nine-day ticket, the ledger gap, the roadmap note and the attachments. At 41 expressions of interest on 15 September and 'sixty-something' expected by the deadline, this is five days from mattering, and a greyed-out button for the one user who does the inviting is indistinguishable from the function not existing.",
+      "action": "Reproduce the greyed-out button for Nina's user before 22 September, confirm which permission or role controls 'Bjud in valda', and send written step-by-step instructions rather than waiting for another call.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-08-27-ebbahus-svarstider.md",
+          "locator": "message_id=<20260827160500.3345@ebbahus.se>",
+          "at": "2026-08-27T16:05:00+02:00",
+          "quote": "| 24 Aug | Batch invite button greyed out for one user | Still open |",
+          "awaiting_reply": true
+        },
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-07-31-ebbahus-svar-hostutlysning.md",
+          "locator": "message_id=<20260731144800.1092@minso.se>",
+          "at": "2026-07-31T14:48:00+02:00",
+          "quote": "**Batch invite** — exists. Select in the list view, \"Bjud in valda\". It is not obvious and I will admit the button is hidden in a menu. I will show you on the next call rather than write instructions"
+        },
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-07-24-ebbahus-hostutlysning.md",
+          "locator": "message_id=<20260724091500.8813@ebbahus.se>",
+          "at": "2026-07-24T09:15:00+02:00",
+          "quote": "The last one is a nice-to-have. The batch invite is not — if that does not exist I would rather know now and plan an afternoon of clicking."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-15-ebbahus-kort-avstamning.md",
+          "locator": "line 19",
+          "at": "2026-09-15T00:00:00+02:00",
+          "quote": "Forty-one expressions of interest. Deadline is the twenty-second so it'll be sixty-something by then, it always comes at the end."
+        },
+        {
+          "kind": "absence",
+          "claim": "nothing replies to <20260827160500.3345@ebbahus.se>",
+          "searched": [
+            "email"
+          ],
+          "since": "2026-08-27T16:05:00+02:00"
+        }
+      ],
+      "proposal": {
+        "kind": "email",
+        "subject": "Batch invite before the 22nd — written steps and the greyed-out button",
+        "body": "Hej,\n\nThe expression-of-interest deadline is on Tuesday, so I want the batch invite settled before then rather than on a call afterwards.\n\nThe steps, in writing:\n\n1. Open the list view for the round and filter to the expressions of interest you want to invite.\n2. Tick the rows, or use the header checkbox to select all filtered rows.\n3. Open the actions menu at the top right of the list — this is the part that is not obvious — and choose \"Bjud in valda\".\n4. Confirm the invitation template and send. Invitations go out as one batch and each invited applicant gets their own stage-two link.\n\nOn the case from 24 August, where the button is greyed out for one user: that is almost certainly a permission on the role rather than a fault in the function, and it is exactly the user who needs it. We are reproducing it today and will correct the role. If for any reason it is not fixed before the deadline, we will run the batch from our side on your instruction so that nobody has to click through sixty invitations.\n\nApologies that this was left to a demonstration that never happened, and that the August case sat without an answer.\n\nIf you would like, we can also do a five-minute dry run on a couple of test rows before Tuesday so you have seen it work with your own login."
+      },
+      "severity": "high"
+    },
+    {
+      "key": "board-pack-before-14-october-renewal-decision",
+      "title": "The board decides on continuing on 14 October, papers are due 2 October, and the email asking for the material has had no reply — nor has the one-pager offered in July ever appeared",
+      "summary": "Gustav told the 2 September check-in that the board will review whether to continue at the October meeting on the fourteenth, and Nina repeated the date in Slack on 7 September. His 4 September email sets a hard date of 2 October for the material, preferably a week earlier, and names three items: the integration one-pager Robin offered on 23 July, a short statement on where the platform is going, and something on support response times that is not an apology. There is no reply to that email in any source and no record anywhere of the one-pager existing. Item two is partly covered — the roadmap note has been sent and Nina has read it — but the caveats are hers to carry alone: on 15 September she was told the two-way sync is on the plan but not committed, and that it will probably cost extra with no figure available, which is precisely what Gustav will ask. Item three is answerable today from Sara's account of the nine-day ticket and the new two-day flagging rule, but neither has been put in writing. The only scheduling commitment is Mia's Slack line about booking time in early October, which falls on the wrong side of the paper deadline. Two weeks to the papers, with a renewal decision behind them, and the integration that is meant to be the value story has had no ledger file since 4 August.",
+      "action": "Reply to the 4 September email this week with a date for the pack, write the integration one-pager including hours saved, and move the October meeting to before 2 October so the material can be discussed before the papers go out.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-09-04-ebbahus-underlag-styrelsen.md",
+          "locator": "message_id=<20260904082200.7781@ebbahus.se>",
+          "at": "2026-09-04T08:22:00+02:00",
+          "quote": "The board papers have to go out ten days before the meeting, so I need whatever you are sending me by **2 October** at the very latest, and preferably a week earlier so I can read it properly.",
+          "awaiting_reply": true
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-07-23-ebbahus-avstamning.md",
+          "locator": "lines 83-87",
+          "at": "2026-07-23T00:00:00+02:00",
+          "quote": "**Robin Bauhn:** If it's useful I can put together a one-pager on what the integration does and what it saves you in hours.\n\n**Gustav Ebbe:** That would be useful.\n\n**Robin Bauhn:** I'll do that."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-02-ebbahus-avstamning.md",
+          "locator": "lines 95-97",
+          "at": "2026-09-02T00:00:00+02:00",
+          "quote": "And while we are on the subject of the relationship — the board will review whether to continue at the October meeting. Which is the — Nina, the fourteenth?"
+        },
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1788767040.000274",
+          "at": "2026-09-07T09:44:00+02:00",
+          "quote": "noted. i'll book time with you in early october"
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-15-ebbahus-kort-avstamning.md",
+          "locator": "lines 73-85",
+          "at": "2026-09-15T00:00:00+02:00",
+          "quote": "**Nina Dahl:** The bit about the two-way sync — is that a real thing or is it a \"we would like to\" thing?\n\n**Mia Berg:** It's on the plan for next year. It's not committed.\n\n**Nina Dahl:** That's what I thought it said. I'll present it as that.\n\n**Mia Berg:** Present it as that.\n\n**Nina Dahl:** Gustav will ask whether it costs extra.\n\n**Mia Berg:** It probably will and I can't tell you how much."
+        },
+        {
+          "kind": "absence",
+          "claim": "nothing replies to <20260904082200.7781@ebbahus.se>",
+          "searched": [
+            "email"
+          ],
+          "since": "2026-09-04T08:22:00+02:00"
+        }
+      ],
+      "proposal": {
+        "kind": "email",
+        "subject": "Re: Material before the October board meeting",
+        "body": "Hej,\n\nApologies for the delay in answering this. Here is what you will have and when.\n\nYou will have the complete pack by Friday 25 September, a week before your 2 October deadline, as three pages:\n\n1. The integration one-pager. What the nightly bookkeeping export does, which transaction types it writes, what it replaces in manual work, and an honest estimate of hours saved per payment run, with the assumptions shown so your board can argue with them. It will also state plainly that the integration is bespoke code maintained by us and therefore does not carry the same automated test coverage as the standard product — that was the question asked in July and the answer has not changed.\n\n2. Where the platform is going. The roadmap note already sent, with the two points that matter written down rather than relayed verbally: the two-way accounting sync is on next year's plan and is not a commitment, and if it is built it will likely carry an additional cost that we cannot quantify yet. We would rather your board hear that from us than have it softened in the retelling.\n\n3. Support response times, with numbers and not an apology. First-response times on each case opened since June, the agreed target of one business day, which cases missed it and by how much, the specific reason the nine-day case sat as long as it did, and the two changes now in place: a named contact for your account and an automatic flag to the support lead for any unassigned case older than two days.\n\nWe will also include, unprompted, a short note on the bookkeeping export gap since 4 August: what caused it, what we have done, and what we have put in place so a disabled job cannot go unnoticed again. It belongs in the pack. Leaving it out would make the rest less credible.\n\nOne request: could we move our October check-in to the week of 28 September rather than early October? That way we can walk through the pack together while there is still time to change it, instead of after the papers have gone out. Any slot that week works for us."
+      },
+      "severity": "high"
+    },
+    {
+      "key": "response-time-answer-never-given-to-gustav",
+      "title": "The honest explanation of the nine-day ticket reached Nina verbally and Gustav not at all, ticket 10013 is still open, and the per-ticket status promised for 17 August never came",
+      "summary": "Gustav raised the nine-day ticket on 2 September and Robin promised to come back with what actually happened, 'properly, not a platitude'. Nina had asked the same question in writing on 27 August, explicitly so she could tell Gustav something true before the board meeting, and that email has had no reply. Sara produced the answer on 15 September — Friday afternoon arrival, picked up by someone who then went on leave without reassigning — but gave it verbally, to Nina, with Gustav not in the room, leaving Nina to relay it to the person who asked. Ticket 10013 has had no customer-facing article since 14 August and remains open at high priority. In that same 14 August reply Sara also promised to go through the open tickets and give a status on each by Monday; no such status exists in any record, and ticket 10010 has been silent since 28 July, which is why Gustav was still asking in Slack on 11 September whether there was news. The pattern Gustav will draw on is broader than one ticket: the auditor list in August needed two reminders and he noted it. Mia's internal note records this as the second responsiveness complaint this year, and he has asked for exactly this material for the board pack.",
+      "action": "Reply in writing on ticket 10013 with the account of the nine-day case, the status of each open ticket that was promised on 14 August, and what has changed since; then close or re-state the ticket rather than leaving it open unanswered.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-08-27-ebbahus-svarstider.md",
+          "locator": "message_id=<20260827160500.3345@ebbahus.se>",
+          "at": "2026-08-27T16:05:00+02:00",
+          "quote": "I would like to know what happened in that particular case, so that when Gustav asks me — and he will, before the board meeting — I can tell him something true.",
+          "awaiting_reply": true
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-02-ebbahus-avstamning.md",
+          "locator": "line 93",
+          "at": "2026-09-02T00:00:00+02:00",
+          "quote": "I'll look at the three tickets and come back to you with what actually happened. Properly, not a platitude."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-15-ebbahus-kort-avstamning.md",
+          "locator": "lines 25-31",
+          "at": "2026-09-15T00:00:00+02:00",
+          "quote": "So — Robin asked me to go through the three August tickets. I've done that. The nine-day one: you asked about the report footer, it came in on a Friday afternoon, it got picked up by someone who then went on holiday without reassigning, and it sat."
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10013.json",
+          "locator": "article 46",
+          "at": "2026-08-14T16:40:00+02:00",
+          "quote": "From this week Mia Berg is the named contact for Ebbahus and will pick up anything that has not been answered by lunchtime the following day. I will also go through your open tickets and give you a status on each by Monday."
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10013.json",
+          "locator": "article 48",
+          "at": "2026-08-17T09:55:00+02:00",
+          "quote": "Taking over as named contact. Gustav is polite but this is the second time he has raised responsiveness this year. Worth watching, small account but a vocal one."
+        },
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1787750520.000411",
+          "at": "2026-08-26T15:22:00+02:00",
+          "quote": "got it. it would help if these things didn't need two reminders 😕"
+        },
+        {
+          "kind": "absence",
+          "claim": "nothing replies to <20260827160500.3345@ebbahus.se>",
+          "searched": [
+            "email"
+          ],
+          "since": "2026-08-27T16:05:00+02:00"
+        }
+      ],
+      "proposal": {
+        "kind": "email",
+        "subject": "Re: Response times on our tickets — what happened, and where each case stands",
+        "body": "Hej,\n\nThis is the written answer promised on 2 September, and it is late. It was given verbally at a catch-up on 15 September, which meant the person who asked the question was not in the room. That was our mistake and this puts it right.\n\nThe nine-day case, the report footer showing the wrong organisation name: it arrived on a Friday afternoon. It was picked up the same day by a colleague who then went on leave without reassigning it, and the case sat in a personal queue where nobody else saw it. It was not triaged as low priority and it was not a difficult question. Nothing was decided about it — it was simply invisible. The fix has since shipped and has been confirmed at your end.\n\nWhat has changed, concretely:\n\n- Any case that is unassigned or untouched for more than two days is now flagged automatically to the support lead. This is live.\n- Your account has a named contact who picks up anything unanswered by lunchtime the following day.\n\nThe agreed target is one business day for a first response. We did not meet it in August and we will include the actual figures in the board material rather than a general statement.\n\nA status on each open case, which was promised for 17 August and not delivered:\n\n- Documents lost on submit (open since 24 July): being worked on now against a specific case, with a written update to follow separately. This one has been open too long.\n- Board report with grantee organisation number: an estimate was promised within two weeks on 19 August and has not arrived. We are giving you a date this week.\n- Applicant mail templates with last year's hard-coded dates: one template corrected, three still to do, and we will book the short call needed to finish them.\n- September invoice missing the VAT line: being corrected, see the separate reply on that case.\n- Bookkeeping export gap since 4 August: cause found, correction in progress, written update sent separately.\n\nYou said in August that you would see how September went. This is September's account of itself, including the parts that do not favour us."
+      },
+      "severity": "medium"
+    },
+    {
+      "key": "vat-invoice-ticket-unanswered",
+      "title": "Invoice ticket 10019 has sat in 'new' for two days, past the two-day flagging rule described as already live the day it arrived",
+      "summary": "Ticket 10019 was opened on 15 September at 13:10 asking for a corrected invoice with a VAT specification, and remains in state 'new' with no agent article of any kind. Sara conceded on ticket 10013 that the agreement is one business day for a first response, and Gustav closed that exchange with 'Let us see how September goes'. On 15 September — the same day this ticket arrived — Nina was told that a rule flagging unassigned tickets older than two days to the support lead is already live. This ticket has now reached that threshold without being picked up, which either means the rule did not catch it or the flag was not acted on; both are worth knowing before the rule is cited in the board pack as evidence of improvement. It is also the easiest kind of request to answer, it comes from the person deciding on renewal, and it touches the auditor who is already closing the quarter.",
+      "action": "Answer ticket 10019 today with a corrected invoice showing VAT amount and rate, and check whether the two-day flagging rule fired on it, since it is about to be presented to the board as a fix.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10019.json",
+          "locator": "article 98",
+          "at": "2026-09-15T13:10:00+02:00",
+          "quote": "The invoice we received this morning shows a total but no VAT specification. Our auditor requires the VAT amount and rate to be stated separately.",
+          "awaiting_reply": true
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10013.json",
+          "locator": "article 46",
+          "at": "2026-08-14T16:40:00+02:00",
+          "quote": "Your agreement says one business day for a first response and we have not held that in August. Two of the three people who normally handle your account were on leave in the same weeks and we did not cover properly."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-15-ebbahus-kort-avstamning.md",
+          "locator": "line 33",
+          "at": "2026-09-15T00:00:00+02:00",
+          "quote": "We've also changed the — there's now a rule that unassigned tickets older than two days get flagged to me. That's already live."
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10013.json",
+          "locator": "article 47",
+          "at": "2026-08-17T09:10:00+02:00",
+          "quote": "Thank you for a straight answer. Let us see how September goes."
+        }
+      ],
+      "proposal": {
+        "kind": "email",
+        "subject": "Re: September invoice is missing the VAT line",
+        "body": "Hej,\n\nA corrected invoice is attached. It states the net amount, the VAT rate and the VAT amount separately, and it replaces the version sent on 15 September — same invoice number, marked as a replacement, so your auditor has a clean document for the quarter.\n\nWe have also corrected the template so that future invoices for your account carry the VAT specification without anyone having to ask.\n\nThis request waited two days for a first answer against an agreed one business day, which we are not going to pass over in silence given the conversation we have been having about response times. It is noted and included in the figures we are preparing.\n\nIf your auditor needs anything else in a particular format for the quarter close, tell us and we will produce it this week."
+      },
+      "severity": "medium"
+    },
+    {
+      "key": "board-report-orgnr-estimate-overdue",
+      "title": "Ticket 10014 promised an answer within two weeks on 19 August; the internal reminder fell yesterday with no estimate and no word to the customer",
+      "summary": "Gustav asked on 18 August for the grantee organisation number in the board report so his treasurer can match against the ledger without looking each one up. Mia replied on 19 August that the column has to be optional because the template is shared with other customers, that she had asked development what it takes, and that she would come back within two weeks. Four weeks have passed. Her own internal note pushed the reminder to 16 September, which was yesterday, and the ticket is still in pending reminder with no estimate recorded. The note itself explains why the size of the request is not the point — it is the kind of small ask that makes Gustav feel heard — and the report in question is the one feeding the 14 October meeting where renewal is decided. A request that quietly outlives two promised deadlines is the same pattern Gustav has already complained about twice this year.",
+      "action": "Get a yes/no and a rough estimate from development on making report columns optional, and reply on ticket 10014 this week with either a delivery date or a plain statement that it will not happen before the October report.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10014.json",
+          "locator": "article 64",
+          "at": "2026-08-19T10:35:00+02:00",
+          "quote": "That is a template change and I can do it, but the report template is shared with two other customers so I need to add the column as optional rather than by default. I have asked our developers what that takes.</p><p>I will come back to you within two weeks."
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10014.json",
+          "locator": "article 65",
+          "at": "2026-09-02T09:00:00+02:00",
+          "quote": "Reminder pushed to 16 Sep. Still waiting for an estimate on making report columns configurable. Low value on its own but it is the kind of small ask that makes Gustav feel heard."
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10014.json",
+          "locator": "article 63",
+          "at": "2026-08-18T14:20:00+02:00",
+          "quote": "Our treasurer wants the organisation number next to each name so he can match against the ledger without looking each one up."
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-02-ebbahus-avstamning.md",
+          "locator": "lines 121",
+          "at": "2026-09-02T00:00:00+02:00",
+          "quote": "Yes. Before the fourteenth, if you can."
+        }
+      ],
+      "severity": "medium"
+    },
+    {
+      "key": "applicant-templates-hardcoded-dates",
+      "title": "Three applicant mail templates still carry last year's hard-coded date, the call needed to fix them was never booked, and the 'footer' confirmed as done on 15 September was a different footer",
+      "summary": "Ticket 10017 is open since 3 September. Nina reported that the applicant confirmation mail promises a decision 'by 15 November 2025' because the date is written into the template text; Mia corrected that one template and said the other three have the same hard-coded date and that she would rather go through them on a short call than guess which field each should use. There is no reply and no record of that call in any source, and the round now running communicates its decisions in November. Separately, on 1 September in Slack, Nina reported that the beslutsbrev template still says 2025 in the footer and Mia answered 'easy fix, i'll put it in' — that promise appears in no ticket. On 15 September Mia asked 'And the footer one, is it done?' and was told it was done and confirmed by Nina, but that exchange is about the report footer showing the wrong organisation name, which is the nine-day August ticket named in Nina's 27 August email, not the beslutsbrev footer from Slack. Two different footers with one confirmation between them, so the 2025 beslutsbrev footer is most likely still live and will print on this autumn's decision letters.",
+      "action": "Book the short template call before the 22 September deadline, replace the hard-coded dates in the three remaining applicant templates, and separately confirm whether the beslutsbrev footer year was actually changed rather than conflated with the report footer ticket.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10017.json",
+          "locator": "article 87",
+          "at": "2026-09-04T09:30:00+02:00",
+          "quote": "Your three other templates have the same hard-coded date. I would like to go through them with you on a short call rather than guess which field each should use.",
+          "awaiting_reply": true
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10017.json",
+          "locator": "article 86",
+          "at": "2026-09-03T10:45:00+02:00",
+          "quote": "The confirmation mail our applicants receive says the decision will be communicated \"by 15 November 2025\". The date is written into the template text rather than pulled from the round.</p><p>Can it be made dynamic? Otherwise we will forget it again next year."
+        },
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1788249900.000137",
+          "at": "2026-09-01T10:05:00+02:00",
+          "quote": "small thing, the beslutsbrev template still says 2025 in the footer"
+        },
+        {
+          "kind": "record",
+          "source": "slack",
+          "path": "slack/cust-ebbahus-support.json",
+          "locator": "ts=1788250740.000274",
+          "at": "2026-09-01T10:19:00+02:00",
+          "quote": "easy fix, i'll put it in"
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-15-ebbahus-kort-avstamning.md",
+          "locator": "lines 37-41",
+          "at": "2026-09-15T00:00:00+02:00",
+          "quote": "**Mia Berg:** And the footer one, is it done?\n\n**Sara Holm:** It's done. It shipped on the — it's done.\n\n**Nina Dahl:** It is, I saw it."
+        },
+        {
+          "kind": "record",
+          "source": "email",
+          "path": "email/2026-08-27-ebbahus-svarstider.md",
+          "locator": "message_id=<20260827160500.3345@ebbahus.se>",
+          "at": "2026-08-27T16:05:00+02:00",
+          "quote": "| 11 Aug | Report footer shows wrong organisation name | 20 Aug (9 days) |"
+        }
+      ],
+      "proposal": {
+        "kind": "email",
+        "subject": "Re: Applicant mail templates still show last year's deadline",
+        "body": "Hej,\n\nPicking this up before the deadline on the 22nd, since the templates affected are the ones your applicants will receive next.\n\nStatus: the confirmation template now pulls the decision date from the round instead of a fixed date, and a test was sent to you. Three other applicant templates still contain the same hard-coded date. Rather than wait for a call, here is what we propose to do — tell us if any of it is wrong and we will adjust:\n\n- Decision letter (beslutsbrev): decision date from the round, and the year in the footer taken from the round rather than typed in.\n- Invitation to the full application: the stage-two submission deadline from the round.\n- Reminder before deadline: the same stage-two deadline from the round.\n\nOne thing we want to check rather than assume. The footer year on the decision letter was raised separately in chat on 1 September, and in a later catch-up a \"footer\" was confirmed as fixed — but that confirmation was about the report footer showing the wrong organisation name, which is a different item. So we are treating the 2025 in the decision letter footer as still present and fixing it now. If you have already seen it corrected, say so and we will stop.\n\nWe would rather make these changes and show you the result than book a call that delays them. If you would prefer to go through them together, fifteen minutes any day this week works.\n\nAfter this round, none of your applicant templates should contain a typed-in date."
+      },
+      "severity": "medium"
+    },
+    {
+      "key": "programme-budget-cap-production-switch-unconfirmed",
+      "title": "Ticket 10016 was closed on the message asking for the budget cap to be switched on in production, with nothing anywhere confirming it was",
+      "summary": "Nina asked whether Grantly can warn or block when approved decisions in a programme pass a board-set ceiling, because today the ceiling is tracked in a spreadsheet and it is easy to approve past it by mistake. Mia answered that it exists under Programme > Budget and that she had set the frame for both programmes to warning mode in the test environment. Nina tested it, asked for it to be switched on in production for both programmes, and the ticket was closed at the moment of that message — close_at is the timestamp of the customer's request, with no agent article after it. Nothing in any other source mentions the production switch: not the 2 September check-in, not the 15 September catch-up, not Slack. So the last thing anyone actually recorded doing is a change in test, while the customer believes the guard is live. The autumn round had 41 expressions of interest at 15 September and decisions follow in November, which is exactly when an unset ceiling turns into an over-commitment the board discovers afterwards.",
+      "action": "Check Programme > Budget in production for both programmes, set the annual frame to warning mode if it is not set, and confirm to Nina in writing what is now live in production as opposed to test.",
+      "evidence": [
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10016.json",
+          "locator": "article 76",
+          "at": "2026-08-31T15:30:00+02:00",
+          "quote": "Tested it, warning mode is exactly what we want. Please switch it on in production for both programmes.",
+          "awaiting_reply": true
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10016.json",
+          "locator": "article 75",
+          "at": "2026-08-28T14:05:00+02:00",
+          "quote": "I have set the frame for your two programmes to warning mode in your test environment so you can see how it looks before deciding."
+        },
+        {
+          "kind": "record",
+          "source": "zammad",
+          "path": "zammad/tickets/10016.json",
+          "locator": "article 74",
+          "at": "2026-08-27T09:25:00+02:00",
+          "quote": "Our board sets a yearly ceiling per programme. Today we keep track in a spreadsheet and it is easy to approve past the ceiling by mistake. Is there a setting where Grantly warns or blocks when the sum of approved decisions in a programme passes a number we set?"
+        },
+        {
+          "kind": "record",
+          "source": "transcript",
+          "path": "transcripts/2026-09-15-ebbahus-kort-avstamning.md",
+          "locator": "line 19",
+          "at": "2026-09-15T00:00:00+02:00",
+          "quote": "Forty-one expressions of interest. Deadline is the twenty-second so it'll be sixty-something by then, it always comes at the end."
+        }
+      ],
+      "proposal": {
+        "kind": "email",
+        "subject": "Programme budget frame — confirming what is live in production",
+        "body": "Hej,\n\nOne loose end we want to close properly before decisions start in this round.\n\nThe annual budget frame with warning mode was set up in your test environment in August, and you asked for it to be switched on in production for both programmes. That case was closed on your message, and we cannot see a record of anyone confirming the production change — so rather than assume, we have checked it and are confirming it directly.\n\nWhat is now set in production, for both programmes:\n\n- Annual frame: the ceiling figure your board has set for each programme. Please confirm the amounts are the ones you want us to hold.\n- Behaviour when the frame is passed: warning at decision time, not a block. The caseworker sees the warning and can still proceed deliberately.\n- Counter basis: approved decisions in the current year. Drafts are not counted.\n\nIf you would rather have a hard block for one of the programmes, that is a single setting and we can change it before the decision meetings.\n\nGoing forward we will not close a case on a request to change something in production until the change has been made and confirmed back to you. That is on us."
+      },
+      "severity": "medium"
+    }
+  ]
+}

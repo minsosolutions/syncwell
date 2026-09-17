@@ -50,7 +50,19 @@ go run ./cmd/collect -source slack        # Slack API -> per-customer directorie
 go run ./cmd/collect -source zammad       # support desk, same
 go run ./cmd/collect -source transcripts  # transcript file drop, same
 go run ./cmd/collect -source email        # mail file drop, same
+
+go run ./cmd/run -customer ebbahus        # one Run: Agent judges, Go writes report + Linear
+go run ./cmd/admin                        # approval queue, findings, run trigger :8100
 ```
+
+`cmd/run` needs the `claude` CLI on your PATH. To exercise the Output side without spending a
+token, hand it a findings JSON instead and it skips the Agent:
+
+```bash
+go run ./cmd/run -customer ebbahus -findings findings.json
+```
+
+Run it twice. The second run is where the interesting behaviour is.
 
 ```
 routed      cust-nordstad-support -> nordstad (18 messages)
@@ -73,7 +85,9 @@ flowchart LR
     C -->|"zero, or more than one"| Q["data/unrouted/<br/>quarantined, with a reason"]
     R["References<br/>shared, owned by no customer"] --> A
     D --> A["Agent<br/>sees one customer only"]
-    A --> O["Outputs<br/>report.md · Linear issue · email"]
+    A --> O["Outputs<br/>report.md · Linear issue"]
+    A --> P["Proposals<br/>anything crossing to the customer"]
+    P --> H["cmd/admin<br/>a human approves, then it is sent"]
 ```
 
 **Collectors** are plain scripts; no model runs in one. **References** (`data/references/`)
@@ -85,7 +99,7 @@ internal, some a customer sees.
 | Sources    | Slack, Zammad (HTTP), transcripts, email (file drops)                     | which two or three you cross       |
 | Collectors | All four — [`internal/collect/`](./internal/collect/)                     | what quarantine means in your shop |
 | References | 15 documents                                                              | how much an Agent should read      |
-| Outputs    | Markdown — [`internal/output/markdown.go`](./internal/output/markdown.go) | Linear, email, what a customer sees |
+| Outputs    | Markdown, Linear with drift reconcile, email behind an approval gate      | what a customer actually sees      |
 | The Agent  | the contract it must answer in                                            | all of it                          |
 
 Each source directory has a README with the real vendor's API docs and its routing rule. The
@@ -102,9 +116,9 @@ echo '{"customer":"nordstad","run_at":"2026-09-16T09:00:00Z","items":[
 
 ## Deliberately undecided
 
-We now have answers to some of these — written down in [`docs/adr/`](./docs/adr/) — and they
-are the most arguable thing in the repo. Read them *after* you have hit the problem yourself,
-and tell us where we got it wrong. The data is arranged so you hit all of these.
+We now have answers to all but the last of these — written down in [`docs/adr/`](./docs/adr/)
+— and they are the most arguable thing in the repo. Read them *after* you have hit the problem
+yourself, and tell us where we got it wrong. The data is arranged so you hit all of these.
 
 1. **How does the Agent know what it created?** There's a run from 2026-09-09 in here — its
    Linear issues carry a marker, and `state/manifest.json` lists what it made. A human has
@@ -121,19 +135,26 @@ flowchart TD
     MAN -.->|"'SYN-31 is ours'"| E4
     MRK -.->|"'SYN-31 is not ours'"| E4
 ```
+   ([ADR-0002](./docs/adr/0002-authorship-and-stewardship-are-separate-signals.md))
 2. **What happens to a human's edits?** Respect them, revert them, or notice and ask?
+   ([ADR-0002](./docs/adr/0002-authorship-and-stewardship-are-separate-signals.md))
 3. **Where must a human approve?** Some actions are safe to take. Emailing a customer isn't.
-4. **How much config is real?** Per-source and per-customer prompts — we suspect they're
-   needed, haven't built them, might be wrong.
+   ([ADR-0003](./docs/adr/0003-approval-gates-on-blast-radius.md))
+4. **How much config is real?** Per-source and per-customer prompts — we suspected they were
+   needed. They were not.
+   ([ADR-0004](./docs/adr/0004-one-prompt-and-config-only-for-what-varies.md))
 5. **Cross-customer themes.** A stretch goal, and a second Agent — not a flag on this one.
 
 ## Layout
 
 ```
 cmd/mockapi         mock Slack, Zammad and Linear APIs
-cmd/collect         reference Slack collector
+cmd/collect         the four collectors
+cmd/agent           one Agent run, validated findings on stdout, no Outputs written
+cmd/run             one Run end to end: findings -> report.md, Linear, proposals
+cmd/admin           approval queue, findings browser, run trigger
 cmd/report          reference markdown output writer
-config/             customers, domains, routing rules
+config/             customers, domains, routing rules, Linear and SMTP endpoints
 data/sources/       what the vendor sees: all customers, mixed together
 data/references/    shared product documentation
 data/customers/     collector output, one per customer, plus state/ and outputs/
