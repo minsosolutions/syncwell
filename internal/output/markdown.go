@@ -12,19 +12,25 @@ import (
 )
 
 // Evidence is one leg a Finding stands on. Kind "record" cites a Source Record in the
-// Customer Directory; kind "absence" states what is *not* there, which is the only claim
-// that cannot be cited — see the absence search that verifies it before it reaches here.
+// Customer Directory; kind "absence" states what is *not* there.
+//
+// An Agent writes only "record" evidence. Absence is computed in Go from the thread
+// relation of a record the Agent flagged AwaitingReply, so a claim about everything is
+// never a claim a model can make.
 type Evidence struct {
 	Kind string `json:"kind"` // record | absence
 
-	// record
+	// record, written by an Agent
 	Source  string `json:"source,omitempty"`  // slack | email | transcript | zammad
 	Path    string `json:"path,omitempty"`    // relative to the Customer Directory
 	Locator string `json:"locator,omitempty"` // slack ts, message_id, line number, article id
 	At      string `json:"at,omitempty"`
 	Quote   string `json:"quote,omitempty"`
+	// AwaitingReply marks a record the Agent believes went unanswered. It is a request for
+	// Go to check, not a claim: a reply found here drops the whole Finding.
+	AwaitingReply bool `json:"awaiting_reply,omitempty"`
 
-	// absence
+	// absence, written by Go
 	Claim    string   `json:"claim,omitempty"`
 	Searched []string `json:"searched,omitempty"`
 	Since    string   `json:"since,omitempty"`

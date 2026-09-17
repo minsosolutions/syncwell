@@ -70,7 +70,7 @@ A Finding's identity across Runs: proposed by an Agent as a readable slug, and h
 _Avoid_: id, slug, fingerprint
 
 **Evidence**:
-What a Finding stands on: either a Source Record cited by path, locator and verbatim quote, or a stated absence — the thing that is not there, with where it was looked for and since when. An absence is verified in code, never taken on an Agent's word.
+What a Finding stands on: either a Source Record cited by path, locator and verbatim quote, or an absence — a record that went unanswered, with where the answer was looked for and since when. An Agent cites records and may flag one as awaiting a reply; the absence itself is computed in code, never claimed by an Agent.
 _Avoid_: citation, reference, source
 
 **Output**:
