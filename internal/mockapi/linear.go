@@ -25,6 +25,7 @@ func gqlError(w http.ResponseWriter, msg string) {
 const (
 	linearIssues   = "linear/issues.json"
 	linearProjects = "linear/projects.json"
+	linearComments = "linear/comments.json"
 )
 
 func (s *Server) linearGraphQL(w http.ResponseWriter, r *http.Request) {
@@ -41,6 +42,10 @@ func (s *Server) linearGraphQL(w http.ResponseWriter, r *http.Request) {
 		s.linearIssueUpdate(w, req)
 	case strings.Contains(q, "issueDelete"), strings.Contains(q, "issueArchive"):
 		s.linearIssueDelete(w, req)
+	case strings.Contains(q, "commentCreate"):
+		s.linearCommentCreate(w, req)
+	case strings.Contains(q, "comments"):
+		s.linearList(w, req, linearComments, "comments")
 	case strings.Contains(q, "projectCreate"):
 		s.linearProjectCreate(w, req)
 	case strings.Contains(q, "projects"):
@@ -48,7 +53,7 @@ func (s *Server) linearGraphQL(w http.ResponseWriter, r *http.Request) {
 	case strings.Contains(q, "issues"), strings.Contains(q, "issue"):
 		s.linearList(w, req, linearIssues, "issues")
 	default:
-		gqlError(w, "unsupported operation; this mock understands issues, projects, issueCreate, issueUpdate, issueDelete, projectCreate")
+		gqlError(w, "unsupported operation; this mock understands issues, projects, comments, issueCreate, issueUpdate, issueDelete, projectCreate, commentCreate")
 	}
 }
 
@@ -208,4 +213,33 @@ func (s *Server) linearProjectCreate(w http.ResponseWriter, req gqlRequest) {
 		return
 	}
 	writeJSON(w, http.StatusOK, obj{"data": obj{"projectCreate": obj{"success": true, "project": project}}})
+}
+
+// linearCommentCreate appends a comment. A Run comments where it may not overwrite, so this
+// is the busiest write path once a human has edited anything.
+func (s *Server) linearCommentCreate(w http.ResponseWriter, req gqlRequest) {
+	input, _ := req.Variables["input"].(map[string]any)
+	if input == nil {
+		gqlError(w, "variables.input is required")
+		return
+	}
+	s.store.mu.Lock()
+	defer s.store.mu.Unlock()
+
+	comments, err := s.store.readList(linearComments)
+	if err != nil {
+		gqlError(w, err.Error())
+		return
+	}
+	comment := obj{
+		"id":        fmt.Sprintf("cmt_%04d", len(comments)+1),
+		"issueId":   input["issueId"],
+		"body":      input["body"],
+		"createdAt": time.Now().UTC().Format(time.RFC3339),
+	}
+	if err := s.store.writeList(linearComments, append(comments, comment)); err != nil {
+		gqlError(w, err.Error())
+		return
+	}
+	writeJSON(w, http.StatusOK, obj{"data": obj{"commentCreate": obj{"success": true, "comment": comment}}})
 }
