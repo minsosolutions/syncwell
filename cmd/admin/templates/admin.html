@@ -1,0 +1,146 @@
+{{define "head"}}<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Syncwell — {{.}}</title>
+<script src="/assets/htmx.min.js"></script>
+<style>
+  :root { color-scheme: light dark; --line:#d8d8d8; --mute:#6b6b6b; --bg:#fff; --card:#fafafa; }
+  @media (prefers-color-scheme: dark) { :root { --line:#333; --mute:#999; --bg:#111; --card:#1a1a1a; } }
+  body { font: 15px/1.5 ui-sans-serif, system-ui, sans-serif; max-width: 62rem; margin: 2rem auto; padding: 0 1rem; background: var(--bg); }
+  h1 { font-size: 1.4rem; } h2 { font-size: 1.1rem; margin-top: 2rem; } h3 { font-size: 1rem; margin: .2rem 0; }
+  a { color: inherit; }
+  .mute { color: var(--mute); }
+  .card { border: 1px solid var(--line); border-radius: 6px; padding: .8rem 1rem; margin: .6rem 0; background: var(--card); }
+  .row { display: flex; gap: .6rem; align-items: baseline; justify-content: space-between; }
+  .tag { font-size: .75rem; border: 1px solid var(--line); border-radius: 99px; padding: .05rem .5rem; }
+  .high { border-color:#c0392b; color:#c0392b } .medium { border-color:#b8860b; color:#b8860b }
+  pre { white-space: pre-wrap; font-size: .85rem; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: .6rem; }
+  blockquote { margin: .3rem 0 .3rem .8rem; padding-left: .6rem; border-left: 3px solid var(--line); color: var(--mute); font-size:.9rem }
+  button { font: inherit; padding: .3rem .8rem; border: 1px solid var(--line); border-radius: 4px; background: var(--bg); cursor: pointer; }
+  table { border-collapse: collapse; width: 100% } td, th { text-align: left; padding: .4rem .6rem; border-bottom: 1px solid var(--line) }
+  ul { padding-left: 1.1rem }
+</style>
+</head><body>{{end}}
+
+{{define "foot"}}</body></html>{{end}}
+
+{{define "index"}}{{template "head" "customers"}}
+<h1>Syncwell</h1>
+<p class="mute">Pick a customer. This is the only page that names more than one.</p>
+<table>
+  <tr><th>Customer</th><th>Last run</th><th>Findings</th><th>Awaiting approval</th></tr>
+  {{range .Customers}}
+  <tr>
+    <td><a href="/c/{{.Slug}}"><strong>{{.Name}}</strong></a></td>
+    <td class="mute">{{if .LastRun}}{{clock .LastRun}}{{else}}never{{end}}</td>
+    <td>{{.Findings}}</td>
+    <td>{{if .Pending}}<strong>{{.Pending}}</strong>{{else}}<span class="mute">—</span>{{end}}</td>
+  </tr>
+  {{end}}
+</table>
+{{template "foot"}}{{end}}
+
+{{define "customer"}}{{template "head" .Customer.Slug}}
+<p><a href="/">← all customers</a></p>
+<h1>{{.Customer.Name}}</h1>
+
+<div id="run">{{template "runstatus" (dict "Slug" .Customer.Slug "Run" .Run)}}</div>
+
+<h2>Awaiting approval</h2>
+{{$slug := .Customer.Slug}}
+{{if not .Proposals}}<p class="mute">Nothing proposed. A run leaves proposals here when writing to the customer is the next step.</p>{{end}}
+{{range .Proposals}}{{template "proposal" (dict "Slug" $slug "P" .)}}{{end}}
+
+<h2>Findings{{if .Summary}} <span class="mute">— run of {{clock .Summary.RunAt}}</span>{{end}}</h2>
+{{if not .Summary}}<p class="mute">No run yet. Start one above.</p>{{else}}
+{{range .Summary.Report.Items}}
+<div class="card">
+  <div class="row"><h3>{{.Title}}</h3><span class="tag {{.Severity}}">{{.Severity}}</span></div>
+  <p class="mute"><code>{{.Key}}</code></p>
+  <p>{{.Summary}}</p>
+  {{if .Action}}<p><strong>Suggested action:</strong> {{.Action}}</p>{{end}}
+  <ul>
+  {{range .Evidence}}
+    {{if eq .Kind "absence"}}
+      <li><strong>Nothing found:</strong> {{.Claim}} <span class="mute">(searched {{range .Searched}}{{.}} {{end}}since {{.Since}})</span></li>
+    {{else}}
+      <li><code>{{.Source}}</code> {{.At}} —
+        <a href="/c/{{$slug}}/record?path={{.Path}}" target="_blank">{{.Path}}</a>
+        <span class="mute">{{.Locator}}</span>
+        <blockquote>{{.Quote}}</blockquote></li>
+    {{end}}
+  {{end}}
+  </ul>
+</div>
+{{end}}
+{{if .Summary.Dropped}}<h2>Dropped by validation</h2><ul class="mute">{{range .Summary.Dropped}}<li>{{.}}</li>{{end}}</ul>{{end}}
+{{end}}
+
+<h2>Drift since the last run</h2>
+{{if and .Summary .Summary.Drift}}
+<table><tr><th>Issue</th><th>What happened</th></tr>
+{{range .Summary.Drift}}<tr><td><code>{{.Identifier}}</code> <span class="tag">{{.Kind}}</span></td><td>{{.Detail}}</td></tr>{{end}}
+</table>
+{{else}}<p class="mute">Nothing a human changed underneath us.</p>{{end}}
+
+<h2>What this run wrote</h2>
+{{if and .Summary .Summary.Actions}}
+<table><tr><th></th><th>Output</th><th></th></tr>
+{{range .Summary.Actions}}<tr><td>{{.Verb}}</td><td><code>{{.Identifier}}</code> {{.Key}}</td><td class="mute">{{.Detail}}</td></tr>{{end}}
+</table>
+{{else}}<p class="mute">Nothing yet.</p>{{end}}
+
+<h2>Maintained outputs</h2>
+<table><tr><th>Key</th><th>Output</th><th>State</th></tr>
+{{range .Manifest.Outputs}}
+<tr><td><code>{{.Key}}</code></td>
+    <td>{{if .Identifier}}{{.Identifier}}{{else}}{{.Path}}{{end}} <span class="mute">{{.Kind}}</span></td>
+    <td>{{if .Deleted}}<span class="tag">suppressed: deleted by a human</span>
+        {{else if .HumanFields}}<span class="tag">human owns {{range .HumanFields}}{{.}} {{end}}</span>
+        {{else}}<span class="mute">maintained</span>{{end}}</td></tr>
+{{end}}
+</table>
+{{template "foot"}}{{end}}
+
+{{define "runstatus"}}
+<div class="card" id="run">
+  {{if not .Run}}
+    <form hx-post="/c/{{.Slug}}/run" hx-target="#run" hx-swap="outerHTML">
+      <button type="submit">Start a run</button>
+      <span class="mute">reads this customer's directory only, and writes what needs no approval</span>
+    </form>
+  {{else if not .Run.Done}}
+    <div hx-get="/c/{{.Slug}}/run" hx-trigger="load delay:2s" hx-target="#run" hx-swap="outerHTML">
+      <strong>Running…</strong> <span class="mute">started {{.Run.Started.Format "15:04:05"}}</span>
+    </div>
+  {{else if .Run.Err}}
+    <p><strong>Run failed.</strong></p><pre>{{.Run.Err}}</pre>
+    <form hx-post="/c/{{.Slug}}/run" hx-target="#run" hx-swap="outerHTML"><button type="submit">Try again</button></form>
+  {{else}}
+    <p><strong>Run finished</strong> — {{plural .Run.Summary.Findings "finding"}} in {{.Run.Summary.Duration}}.
+       <a href="/c/{{.Slug}}">reload to see it</a></p>
+    <form hx-post="/c/{{.Slug}}/run" hx-target="#run" hx-swap="outerHTML"><button type="submit">Run again</button></form>
+  {{end}}
+</div>
+{{end}}
+
+{{define "proposal"}}
+<div class="card" id="p-{{.P.Hash}}">
+  <div class="row">
+    <h3>{{.P.Subject}}</h3>
+    <span class="tag">{{.P.State}}</span>
+  </div>
+  <p class="mute">email to <strong>{{range .P.To}}{{.}} {{end}}</strong> · finding <code>{{.P.FindingKey}}</code> · artifact <code>{{short .P.Hash}}</code></p>
+  <pre>{{.P.Body}}</pre>
+  {{if .Error}}<p><strong>Failed:</strong> {{.Error}}</p>
+  {{else if eq .P.State "pending"}}
+    <button hx-post="/c/{{.Slug}}/proposal/{{.P.Hash}}/approve" hx-target="#p-{{.P.Hash}}" hx-swap="outerHTML">Approve and send</button>
+    <button hx-post="/c/{{.Slug}}/proposal/{{.P.Hash}}/reject" hx-target="#p-{{.P.Hash}}" hx-swap="outerHTML">Reject</button>
+  {{else if eq .P.State "rejected"}}
+    <p class="mute">Rejected {{clock .P.DecidedAt}}. Later runs will not propose this again.</p>
+    <button hx-post="/c/{{.Slug}}/proposal/{{.P.Hash}}/revoke" hx-target="#p-{{.P.Hash}}" hx-swap="outerHTML">Undo the rejection</button>
+  {{else}}
+    <p class="mute">Sent {{clock .P.DecidedAt}}, exactly as approved.</p>
+  {{end}}
+</div>
+{{end}}
