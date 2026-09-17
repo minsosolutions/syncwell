@@ -12,24 +12,29 @@ import (
 )
 
 func main() {
-	source := flag.String("source", "slack", "source to collect (only slack is implemented)")
+	source := flag.String("source", "slack", "source to collect: slack, transcripts")
 	api := flag.String("api", "http://localhost:8099", "mock API base URL")
 	token := flag.String("token", "dev-token", "bearer token; any non-empty value works")
 	configPath := flag.String("config", "config/syncwell.json", "routing config")
 	dataDir := flag.String("data", "data", "data directory")
 	flag.Parse()
 
-	if *source != "slack" {
-		log.Fatalf("source %q is not implemented — see data/sources/%s/README.md and write it", *source, *source)
-	}
-
 	cfg, err := routing.Load(*configPath)
 	if err != nil {
 		log.Fatal(err)
 	}
-	client := &collect.Client{BaseURL: *api, Token: *token, HTTP: &http.Client{Timeout: 10 * time.Second}}
 
-	rep, err := collect.Slack(client, cfg, *dataDir)
+	var rep collect.Report
+	switch *source {
+	case "slack":
+		client := &collect.Client{BaseURL: *api, Token: *token, HTTP: &http.Client{Timeout: 10 * time.Second}}
+		rep, err = collect.Slack(client, cfg, *dataDir)
+	case "transcripts":
+		// A file drop, not an API: no client, no token.
+		rep, err = collect.Transcripts(cfg, *dataDir)
+	default:
+		log.Fatalf("source %q is not implemented — see data/sources/%s/README.md and write it", *source, *source)
+	}
 	if err != nil {
 		log.Fatal(err)
 	}

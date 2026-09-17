@@ -1,7 +1,8 @@
-// Package collect holds the reference Collector.
+// Package collect holds the reference Collectors.
 //
-// Only Slack is implemented. The other three Sources are documented in
-// data/sources/<source>/README.md and left for you to write — that is the exercise.
+// Slack (an HTTP API) and meeting transcripts (a file drop) are implemented — one of each
+// shape. Zammad and email are documented in data/sources/<source>/README.md and left for you
+// to write — that is the exercise.
 package collect
 
 import (

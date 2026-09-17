@@ -65,3 +65,45 @@ func (c *Config) BySlackChannel(channel string) (*Customer, error) {
 	}
 	return found, nil
 }
+
+// ByAttendeeDomains routes a meeting on who was in the room. The Vendor's own domain is
+// stripped — it is in every meeting and says nothing — and exactly one Customer must own
+// what remains. Nobody left (an internal meeting about a Customer), two Customers, or an
+// attendee whose domain belongs to no Customer all quarantine: there is real signal in those
+// meetings and no deterministic rule that safely claims it.
+func (c *Config) ByAttendeeDomains(attendees []string) (*Customer, error) {
+	var found *Customer
+	for _, a := range attendees {
+		at := strings.LastIndex(a, "@")
+		if at < 0 {
+			return nil, &Unroutable{fmt.Sprintf("attendee %q has no domain", a)}
+		}
+		domain := strings.ToLower(strings.TrimSpace(a[at+1:]))
+		if domain == strings.ToLower(c.Vendor.Domain) {
+			continue
+		}
+		cust := c.byDomain(domain)
+		if cust == nil {
+			return nil, &Unroutable{fmt.Sprintf("attendee domain %q belongs to no customer", domain)}
+		}
+		if found != nil && found.Slug != cust.Slug {
+			return nil, &Unroutable{fmt.Sprintf("attendees span %s and %s", found.Slug, cust.Slug)}
+		}
+		found = cust
+	}
+	if found == nil {
+		return nil, &Unroutable{"no customer attendee; vendor-internal meeting"}
+	}
+	return found, nil
+}
+
+func (c *Config) byDomain(domain string) *Customer {
+	for i := range c.Customers {
+		for _, d := range c.Customers[i].Domains {
+			if strings.EqualFold(d, domain) {
+				return &c.Customers[i]
+			}
+		}
+	}
+	return nil
+}
