@@ -65,6 +65,10 @@ _Avoid_: job, sync, pass
 One thing needing a project manager's attention, held by an Agent's judgement and standing on its Evidence. Carries a key that identifies it across Runs.
 _Avoid_: issue, item, insight, alert
 
+**Finding Key**:
+A Finding's identity across Runs: proposed by an Agent as a readable slug, and honoured only when the Finding still shares a cited record with the one stored under that key. Carried by the Provenance Marker and the Manifest alike.
+_Avoid_: id, slug, fingerprint
+
 **Evidence**:
 What a Finding stands on: either a Source Record cited by path, locator and verbatim quote, or a stated absence — the thing that is not there, with where it was looked for and since when. An absence is verified in code, never taken on an Agent's word.
 _Avoid_: citation, reference, source
