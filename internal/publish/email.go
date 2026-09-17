@@ -2,6 +2,7 @@ package publish
 
 import (
 	"fmt"
+	"net/mail"
 	"net/smtp"
 	"os"
 	"path/filepath"
@@ -172,12 +173,31 @@ func Propose(customerDir string, cust *routing.Customer, m *state.Manifest, r ou
 
 // Send hands the approved artifact to the mail server byte for byte. The Provenance Marker
 // rides along in the footer: an Output a Customer reads still says who made it.
+//
+// The subject is the one header carrying the Agent's own words, so it is checked for CR and
+// LF before it becomes one. A gate that a model can write past by ending a line is not a gate.
 func Send(addr, from string, p state.Proposal) error {
+	if strings.ContainsAny(p.Subject, "\r\n") {
+		return fmt.Errorf("subject contains a line break, which would forge a header")
+	}
+	if len(p.To) == 0 {
+		return fmt.Errorf("no recipients")
+	}
+	for _, to := range p.To {
+		if _, err := mail.ParseAddress(to); err != nil {
+			return fmt.Errorf("recipient %q is not an address: %w", to, err)
+		}
+	}
 	body := p.Body + "\n\n-- \nSent by Syncwell on behalf of Minso.\n" +
 		state.Marker{Run: p.RunAt, Customer: p.Customer, Item: p.FindingKey}.String() + "\n"
 	msg := fmt.Sprintf("From: %s\r\nTo: %s\r\nSubject: %s\r\nContent-Type: text/plain; charset=utf-8\r\n\r\n%s",
-		from, strings.Join(p.To, ", "), p.Subject, strings.ReplaceAll(body, "\n", "\r\n"))
+		from, strings.Join(p.To, ", "), p.Subject, crlf(body))
 	return smtp.SendMail(addr, nil, from, p.To, []byte(msg))
+}
+
+// crlf gives the body SMTP's line ending exactly once, whatever it arrived with.
+func crlf(s string) string {
+	return strings.ReplaceAll(strings.ReplaceAll(s, "\r\n", "\n"), "\n", "\r\n")
 }
 
 // Approve applies a Proposal through the same writer path a Run would use, and records it in

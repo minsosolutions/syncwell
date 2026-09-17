@@ -95,3 +95,26 @@ func TestRecipientsAreNotDerivedFromJSONEscapes(t *testing.T) {
 		}
 	}
 }
+
+// The subject is the Agent's own words in a header position. A newline in it would forge a
+// Bcc past a human who approved a subject line and a body.
+func TestSendRefusesAHeaderForgedInTheSubject(t *testing.T) {
+	p := state.NewProposal("ebbahus", "export-off", "email",
+		"September disbursements\r\nBcc: someone@elsewhere.example", "Body",
+		[]string{"nina.dahl@ebbahus.se"}, "now")
+
+	// The address is unreachable on purpose: the check must fail before any connection.
+	err := Send("127.0.0.1:0", "robin@minso.se", p)
+	if err == nil || !strings.Contains(err.Error(), "line break") {
+		t.Fatalf("a subject with CRLF must be refused, got %v", err)
+	}
+}
+
+func TestSendRefusesARecipientThatIsNotAnAddress(t *testing.T) {
+	p := state.NewProposal("ebbahus", "export-off", "email", "Subject", "Body",
+		[]string{"nina.dahl@ebbahus.se, root@localhost\r\nBcc: x@y.example"}, "now")
+
+	if err := Send("127.0.0.1:0", "robin@minso.se", p); err == nil {
+		t.Fatal("a recipient that is not a single address must be refused")
+	}
+}
